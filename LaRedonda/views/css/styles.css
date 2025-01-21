@@ -1,0 +1,11 @@
+.nav-link.active {
+    background-color: #dc3545 !important; /* color danger */
+    color: white !important; /* para asegurar que el texto sea legible */
+}
+.nav-link:hover{
+  background-color: #881e29 !important; /* color danger */
+
+}
+.disabled:hover{
+    cursor: not-allowed;
+}

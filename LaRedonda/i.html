@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+  </head>
+<style>
+    /* Estilo personalizado para el tab activo */
+    .nav-link.active {
+        background-color: #dc3545 !important; /* color danger */
+        color: white !important; /* para asegurar que el texto sea legible */
+    }
+    .nav-link:hover{
+      background-color: #881e29 !important; /* color danger */
+
+    }
+    .disabled:hover{
+        cursor: not-allowed;
+    }
+
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg bg-danger nav-tabs " >
+        <div class="container-fluid">
+          <a class="navbar-brand text-light" href="#">
+            <img src="img/LaRedonda_logo-removebg-preview.png" alt="Logo" style="width:80px;height: 56px;" class="rounded-pill">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link text-light active" aria-current="page" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="#">Temporada 24/25</a>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="nav-link text-light dropdown-toggle"  data-bs-toggle="dropdown" aria-expanded="false">
+                          Otras temporadas
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Temporada 23/24</a></li>
+                          <li><a class="dropdown-item" href="#">Temporada 22/23</a></li>
+                          <li><a class="dropdown-item" href="#">Temporadas anteriores</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item favoritos disabled">
+                  <a class="nav-link text-light disabled" aria-disabled="true" href="#">Favoritos 🤍</a>
+                </li>
+                
+            </ul>
+            <ul class="nav ms-auto">
+                <li class="nav-item ">
+                    <a class="nav-link text-light " href="#">Iniciar sesión</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link text-light " href="#">Registrarme</a>
+                </li>
+            </ul>
+            
+        </div>
+      </nav>
+
+      <main>
+        <div class="container-fluid d-flex justify-content-center">
+          <div class="row ">
+            <h2>Resultados de la jornada anterior </h2>
+          </div>
+          <div class="row" id="logosEquipos">
+
+          </div>
+        </div>
+      </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script>
+
+    </script>
+</body>
+</html>
