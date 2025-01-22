@@ -4,8 +4,19 @@
 }
 .nav-link:hover{
   background-color: #881e29 !important; /* color danger */
+  cursor: pointer;
 
 }
 .disabled:hover{
     cursor: not-allowed;
+}
+.tarjetaResultado{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(221, 219, 219);
+  border-radius: 25px;   
+  padding: 2px;
+  width: 75%;
+  margin: 10px;
 }
