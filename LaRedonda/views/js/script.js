@@ -1,10 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
+    if (window.location.hash === '#inicio' || window.location.pathname === '/') {
+        ejecutarFuncionesInicio();
+    }
+});
+
+function ejecutarFuncionesInicio() {
     getPLResults();
     getLLResults();
     getSAResults();
     getBLResults();
     newsApi();
-});
+}
 
 async function getPLResults() {
     const resultadosPL = document.getElementById('resultadosPL');
@@ -16,11 +22,21 @@ async function getPLResults() {
             let resultDiv = document.createElement('div');
             resultDiv.classList.add('tarjetaResultado');
 
+            // Crear un contenedor para los logos y el marcador
+            const logoContainer = document.createElement('div');
+            logoContainer.style.display = 'flex';
+            logoContainer.style.alignItems = 'center'; // Centrar los elementos
+            logoContainer.style.justifyContent = 'center';
+
             const homeLogo = document.createElement('img');
             homeLogo.src = event.strHomeTeamBadge;
             homeLogo.alt = event.strHomeTeam + ' Logo';
             homeLogo.style.width = '30px';
             homeLogo.style.height = '30px';
+
+            const marcador = document.createElement('span');
+            marcador.innerHTML = event.intHomeScore + ' : ' + event.intAwayScore;
+            marcador.style.margin = '5px 0'; // Espaciado vertical
 
             const awayLogo = document.createElement('img');
             awayLogo.src = event.strAwayTeamBadge;
@@ -28,14 +44,19 @@ async function getPLResults() {
             awayLogo.style.width = '30px';
             awayLogo.style.height = '30px';
 
-            const marcador = document.createElement('span');
-            marcador.innerHTML = event.intHomeScore + ' : ' + event.intAwayScore;
-            marcador.style.margin = '5px';
+            // Agregar los logos y el marcador al contenedor
+            logoContainer.appendChild(homeLogo);
+            logoContainer.appendChild(marcador);
+            logoContainer.appendChild(awayLogo);
 
+            // Crear un elemento para el nombre del estadio
+            const venue = document.createElement('p');
+            venue.innerText = event.strVenue;
+            venue.style.textAlign = 'center'; // Centrar el texto
 
-            resultDiv.appendChild(homeLogo);
-            resultDiv.appendChild(marcador);
-            resultDiv.appendChild(awayLogo);
+            // Agregar el contenedor y el nombre del estadio al div de resultados
+            resultDiv.appendChild(logoContainer);
+            resultDiv.appendChild(venue);
             resultadosPL.appendChild(resultDiv);
         });
     } catch (err) {

@@ -9,10 +9,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="nav nav-tabs">
             <li class="nav-item">
-                <a class="nav-link text-light " aria-current="page" href="<?= BASE_PATH; ?>">Inicio</a>
+                <a id="inicio" class="nav-link text-light " aria-current="page" href="<?= BASE_PATH; ?>">Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light" href="<?= BASE_PATH . '/tempactual'; ?>">Temporada 24/25</a>
+                <a class="nav-link text-light" href="<?= BASE_PATH . '/temporadaactual'; ?>">Temporada 24/25</a>
             </li>
             <li class="nav-item">
                 <div class="dropdown">
