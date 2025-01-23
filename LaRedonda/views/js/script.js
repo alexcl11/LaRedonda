@@ -2,16 +2,108 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.location.hash === '#inicio' || window.location.pathname === '/') {
         ejecutarFuncionesInicio();
     }
+    const logoChampions = document.getElementById('logoChampions');
+    logoChampions.addEventListener('click', () => {
+        window.location = "http://localhost:8080/liga?id=1";
+    })
+    const logoPrem = document.getElementById('logoPrem');
+    logoPrem.addEventListener('click', () => {
+        window.location = "http://localhost:8080/liga?id=2";
+    })
+    const logoLaLiga = document.getElementById('logoLaLiga');
+    logoLaLiga.addEventListener('click', () => {
+        window.location = "http://localhost:8080/liga?id=3";
+    })
+    const logoSerieA = document.getElementById('logoSerieA');
+    logoSerieA.addEventListener('click', () => {
+        window.location = "http://localhost:8080/liga?id=4";
+    })
+    const logoBundes = document.getElementById('logoBundes');
+    logoBundes.addEventListener('click', () => {
+        window.location = "http://localhost:8080/liga?id=5";
+    })
 });
 
 function ejecutarFuncionesInicio() {
+    getCLResults();
     getPLResults();
     getLLResults();
     getSAResults();
     getBLResults();
     newsApi();
 }
+async function getCLResults() {
+    const resultadosCL = document.getElementById('resultadosCL');
+    try {
+        const response = await fetch('https://www.thesportsdb.com/api/v1/json/3/eventsround.php?id=4480&r=7&s=2024-2025');
+        const data = await response.json();
+        console.log(data);
+        data.events.forEach(event => {
+            let resultDiv = document.createElement('div');
+            resultDiv.classList.add('tarjetaResultado');
+            // Modificar cómo se crean los contenedores para los equipos y los nombres
+            const homeContainer = document.createElement('div');
+            homeContainer.classList.add('team-container'); // Añadido para uso de estilo
+            homeContainer.style.display = 'flex';
+            homeContainer.style.flexDirection = 'column';
+            homeContainer.style.alignItems = 'center';
 
+            const homeLogo = document.createElement('img');
+            homeLogo.classList.add('team-logo'); // Aplicando la clase de estilo
+            homeLogo.src = event.strHomeTeamBadge;
+            homeLogo.alt = event.strHomeTeam + ' Logo';
+
+            const homeName = document.createElement('p');
+            homeName.classList.add('team-name'); // Aplicando la clase de estilo
+            homeName.innerText = event.strHomeTeam;
+
+            homeContainer.appendChild(homeLogo);
+            homeContainer.appendChild(homeName);
+
+            // Lo mismo para el equipo visitante
+            const awayContainer = document.createElement('div');
+            awayContainer.classList.add('team-container');
+            awayContainer.style.display = 'flex';
+            awayContainer.style.flexDirection = 'column';
+            awayContainer.style.alignItems = 'center';
+
+            const awayLogo = document.createElement('img');
+            awayLogo.classList.add('team-logo'); // Aplicando la clase de estilo
+            awayLogo.src = event.strAwayTeamBadge;
+            awayLogo.alt = event.strAwayTeam + ' Logo';
+
+            const awayName = document.createElement('p');
+            awayName.classList.add('team-name'); // Aplicando la clase de estilo
+            awayName.innerText = event.strAwayTeam;
+
+            awayContainer.appendChild(awayLogo);
+            awayContainer.appendChild(awayName);
+
+            // El marcador
+            const marcador = document.createElement('span');
+            marcador.classList.add('marcador'); // Aplicando la clase de estilo
+            marcador.innerHTML = event.intHomeScore + ' : ' + event.intAwayScore;
+
+            // Creando el contenedor de los equipos y marcador
+            const logoContainer = document.createElement('div');
+            logoContainer.classList.add('logo-container'); // Aplicando la clase de estilo
+            logoContainer.appendChild(homeContainer);
+            logoContainer.appendChild(marcador);
+            logoContainer.appendChild(awayContainer);
+
+            // Agregar la ubicación del evento
+            const venue = document.createElement('p');
+            venue.classList.add('venue');
+            venue.innerText = event.strVenue;
+
+            resultDiv.appendChild(logoContainer);
+            resultDiv.appendChild(venue);
+            resultadosCL.appendChild(resultDiv);
+        });
+    } catch (err) {
+        console.error('Error:', err);
+    }
+}
 async function getPLResults() {
     const resultadosPL = document.getElementById('resultadosPL');
     try {
@@ -21,48 +113,71 @@ async function getPLResults() {
         data.events.forEach(event => {
             let resultDiv = document.createElement('div');
             resultDiv.classList.add('tarjetaResultado');
-
-            // Crear un contenedor para los logos y el marcador
-            const logoContainer = document.createElement('div');
-            logoContainer.style.display = 'flex';
-            logoContainer.style.alignItems = 'center'; // Centrar los elementos
-            logoContainer.style.justifyContent = 'center';
+            // Modificar cómo se crean los contenedores para los equipos y los nombres
+            const homeContainer = document.createElement('div');
+            homeContainer.classList.add('team-container'); // Añadido para uso de estilo
+            homeContainer.style.display = 'flex';
+            homeContainer.style.flexDirection = 'column';
+            homeContainer.style.alignItems = 'center';
 
             const homeLogo = document.createElement('img');
+            homeLogo.classList.add('team-logo'); // Aplicando la clase de estilo
             homeLogo.src = event.strHomeTeamBadge;
             homeLogo.alt = event.strHomeTeam + ' Logo';
-            homeLogo.style.width = '30px';
-            homeLogo.style.height = '30px';
 
-            const marcador = document.createElement('span');
-            marcador.innerHTML = event.intHomeScore + ' : ' + event.intAwayScore;
-            marcador.style.margin = '5px 0'; // Espaciado vertical
+            const homeName = document.createElement('p');
+            homeName.classList.add('team-name'); // Aplicando la clase de estilo
+            homeName.innerText = event.strHomeTeam;
+
+            homeContainer.appendChild(homeLogo);
+            homeContainer.appendChild(homeName);
+
+            // Lo mismo para el equipo visitante
+            const awayContainer = document.createElement('div');
+            awayContainer.classList.add('team-container');
+            awayContainer.style.display = 'flex';
+            awayContainer.style.flexDirection = 'column';
+            awayContainer.style.alignItems = 'center';
 
             const awayLogo = document.createElement('img');
+            awayLogo.classList.add('team-logo'); // Aplicando la clase de estilo
             awayLogo.src = event.strAwayTeamBadge;
             awayLogo.alt = event.strAwayTeam + ' Logo';
-            awayLogo.style.width = '30px';
-            awayLogo.style.height = '30px';
 
-            // Agregar los logos y el marcador al contenedor
-            logoContainer.appendChild(homeLogo);
+            const awayName = document.createElement('p');
+            awayName.classList.add('team-name'); // Aplicando la clase de estilo
+            awayName.innerText = event.strAwayTeam;
+
+            awayContainer.appendChild(awayLogo);
+            awayContainer.appendChild(awayName);
+
+            // El marcador
+            const marcador = document.createElement('span');
+            marcador.classList.add('marcador'); // Aplicando la clase de estilo
+            marcador.innerHTML = event.intHomeScore + ' : ' + event.intAwayScore;
+
+            // Creando el contenedor de los equipos y marcador
+            const logoContainer = document.createElement('div');
+            logoContainer.classList.add('logo-container'); // Aplicando la clase de estilo
+            logoContainer.appendChild(homeContainer);
             logoContainer.appendChild(marcador);
-            logoContainer.appendChild(awayLogo);
+            logoContainer.appendChild(awayContainer);
 
-            // Crear un elemento para el nombre del estadio
+            // Agregar la ubicación del evento
             const venue = document.createElement('p');
+            venue.classList.add('venue');
             venue.innerText = event.strVenue;
-            venue.style.textAlign = 'center'; // Centrar el texto
 
-            // Agregar el contenedor y el nombre del estadio al div de resultados
             resultDiv.appendChild(logoContainer);
             resultDiv.appendChild(venue);
             resultadosPL.appendChild(resultDiv);
+
         });
     } catch (err) {
         console.error('Error:', err);
     }
 }
+
 async function getLLResults() {
     const resultadosLL = document.getElementById('resultadosLL');
     try {
@@ -72,29 +187,63 @@ async function getLLResults() {
         data.events.forEach(event => {
             let resultDiv = document.createElement('div');
             resultDiv.classList.add('tarjetaResultado');
+            // Modificar cómo se crean los contenedores para los equipos y los nombres
+            const homeContainer = document.createElement('div');
+            homeContainer.classList.add('team-container'); // Añadido para uso de estilo
+            homeContainer.style.display = 'flex';
+            homeContainer.style.flexDirection = 'column';
+            homeContainer.style.alignItems = 'center';
 
             const homeLogo = document.createElement('img');
+            homeLogo.classList.add('team-logo'); // Aplicando la clase de estilo
             homeLogo.src = event.strHomeTeamBadge;
             homeLogo.alt = event.strHomeTeam + ' Logo';
-            homeLogo.style.width = '30px';
-            homeLogo.style.height = '30px';
+
+            const homeName = document.createElement('p');
+            homeName.classList.add('team-name'); // Aplicando la clase de estilo
+            homeName.innerText = event.strHomeTeam;
+
+            homeContainer.appendChild(homeLogo);
+            homeContainer.appendChild(homeName);
+
+            // Lo mismo para el equipo visitante
+            const awayContainer = document.createElement('div');
+            awayContainer.classList.add('team-container');
+            awayContainer.style.display = 'flex';
+            awayContainer.style.flexDirection = 'column';
+            awayContainer.style.alignItems = 'center';
 
             const awayLogo = document.createElement('img');
+            awayLogo.classList.add('team-logo'); // Aplicando la clase de estilo
             awayLogo.src = event.strAwayTeamBadge;
             awayLogo.alt = event.strAwayTeam + ' Logo';
-            awayLogo.style.width = '30px';
-            awayLogo.style.height = '30px';
 
+            const awayName = document.createElement('p');
+            awayName.classList.add('team-name'); // Aplicando la clase de estilo
+            awayName.innerText = event.strAwayTeam;
+
+            awayContainer.appendChild(awayLogo);
+            awayContainer.appendChild(awayName);
+
+            // El marcador
             const marcador = document.createElement('span');
+            marcador.classList.add('marcador'); // Aplicando la clase de estilo
             marcador.innerHTML = event.intHomeScore + ' : ' + event.intAwayScore;
-            marcador.style.margin = '5px';
 
+            // Creando el contenedor de los equipos y marcador
+            const logoContainer = document.createElement('div');
+            logoContainer.classList.add('logo-container'); // Aplicando la clase de estilo
+            logoContainer.appendChild(homeContainer);
+            logoContainer.appendChild(marcador);
+            logoContainer.appendChild(awayContainer);
 
-            resultDiv.appendChild(homeLogo);
-            resultDiv.appendChild(marcador);
-            resultDiv.appendChild(awayLogo);
+            // Agregar la ubicación del evento
+            const venue = document.createElement('p');
+            venue.classList.add('venue');
+            venue.innerText = event.strVenue;
 
-            console.log(resultDiv);
+            resultDiv.appendChild(logoContainer);
+            resultDiv.appendChild(venue);
             resultadosLL.appendChild(resultDiv);
         });
     } catch (err) {
@@ -110,27 +259,63 @@ async function getSAResults() {
         data.events.forEach(event => {
             let resultDiv = document.createElement('div');
             resultDiv.classList.add('tarjetaResultado');
+            // Modificar cómo se crean los contenedores para los equipos y los nombres
+            const homeContainer = document.createElement('div');
+            homeContainer.classList.add('team-container'); // Añadido para uso de estilo
+            homeContainer.style.display = 'flex';
+            homeContainer.style.flexDirection = 'column';
+            homeContainer.style.alignItems = 'center';
 
             const homeLogo = document.createElement('img');
+            homeLogo.classList.add('team-logo'); // Aplicando la clase de estilo
             homeLogo.src = event.strHomeTeamBadge;
             homeLogo.alt = event.strHomeTeam + ' Logo';
-            homeLogo.style.width = '30px';
-            homeLogo.style.height = '30px';
+
+            const homeName = document.createElement('p');
+            homeName.classList.add('team-name'); // Aplicando la clase de estilo
+            homeName.innerText = event.strHomeTeam;
+
+            homeContainer.appendChild(homeLogo);
+            homeContainer.appendChild(homeName);
+
+            // Lo mismo para el equipo visitante
+            const awayContainer = document.createElement('div');
+            awayContainer.classList.add('team-container');
+            awayContainer.style.display = 'flex';
+            awayContainer.style.flexDirection = 'column';
+            awayContainer.style.alignItems = 'center';
 
             const awayLogo = document.createElement('img');
+            awayLogo.classList.add('team-logo'); // Aplicando la clase de estilo
             awayLogo.src = event.strAwayTeamBadge;
             awayLogo.alt = event.strAwayTeam + ' Logo';
-            awayLogo.style.width = '30px';
-            awayLogo.style.height = '30px';
 
+            const awayName = document.createElement('p');
+            awayName.classList.add('team-name'); // Aplicando la clase de estilo
+            awayName.innerText = event.strAwayTeam;
+
+            awayContainer.appendChild(awayLogo);
+            awayContainer.appendChild(awayName);
+
+            // El marcador
             const marcador = document.createElement('span');
+            marcador.classList.add('marcador'); // Aplicando la clase de estilo
             marcador.innerHTML = event.intHomeScore + ' : ' + event.intAwayScore;
-            marcador.style.margin = '5px';
 
+            // Creando el contenedor de los equipos y marcador
+            const logoContainer = document.createElement('div');
+            logoContainer.classList.add('logo-container'); // Aplicando la clase de estilo
+            logoContainer.appendChild(homeContainer);
+            logoContainer.appendChild(marcador);
+            logoContainer.appendChild(awayContainer);
 
-            resultDiv.appendChild(homeLogo);
-            resultDiv.appendChild(marcador);
-            resultDiv.appendChild(awayLogo);
+            // Agregar la ubicación del evento
+            const venue = document.createElement('p');
+            venue.classList.add('venue');
+            venue.innerText = event.strVenue;
+
+            resultDiv.appendChild(logoContainer);
+            resultDiv.appendChild(venue);
             resultadosSA.appendChild(resultDiv);
         });
     } catch (err) {
@@ -146,27 +331,63 @@ async function getBLResults() {
         data.events.forEach(event => {
             let resultDiv = document.createElement('div');
             resultDiv.classList.add('tarjetaResultado');
+            // Modificar cómo se crean los contenedores para los equipos y los nombres
+            const homeContainer = document.createElement('div');
+            homeContainer.classList.add('team-container'); // Añadido para uso de estilo
+            homeContainer.style.display = 'flex';
+            homeContainer.style.flexDirection = 'column';
+            homeContainer.style.alignItems = 'center';
 
             const homeLogo = document.createElement('img');
+            homeLogo.classList.add('team-logo'); // Aplicando la clase de estilo
             homeLogo.src = event.strHomeTeamBadge;
             homeLogo.alt = event.strHomeTeam + ' Logo';
-            homeLogo.style.width = '30px';
-            homeLogo.style.height = '30px';
+
+            const homeName = document.createElement('p');
+            homeName.classList.add('team-name'); // Aplicando la clase de estilo
+            homeName.innerText = event.strHomeTeam;
+
+            homeContainer.appendChild(homeLogo);
+            homeContainer.appendChild(homeName);
+
+            // Lo mismo para el equipo visitante
+            const awayContainer = document.createElement('div');
+            awayContainer.classList.add('team-container');
+            awayContainer.style.display = 'flex';
+            awayContainer.style.flexDirection = 'column';
+            awayContainer.style.alignItems = 'center';
 
             const awayLogo = document.createElement('img');
+            awayLogo.classList.add('team-logo'); // Aplicando la clase de estilo
             awayLogo.src = event.strAwayTeamBadge;
             awayLogo.alt = event.strAwayTeam + ' Logo';
-            awayLogo.style.width = '30px';
-            awayLogo.style.height = '30px';
 
+            const awayName = document.createElement('p');
+            awayName.classList.add('team-name'); // Aplicando la clase de estilo
+            awayName.innerText = event.strAwayTeam;
+
+            awayContainer.appendChild(awayLogo);
+            awayContainer.appendChild(awayName);
+
+            // El marcador
             const marcador = document.createElement('span');
+            marcador.classList.add('marcador'); // Aplicando la clase de estilo
             marcador.innerHTML = event.intHomeScore + ' : ' + event.intAwayScore;
-            marcador.style.margin = '5px';
 
+            // Creando el contenedor de los equipos y marcador
+            const logoContainer = document.createElement('div');
+            logoContainer.classList.add('logo-container'); // Aplicando la clase de estilo
+            logoContainer.appendChild(homeContainer);
+            logoContainer.appendChild(marcador);
+            logoContainer.appendChild(awayContainer);
 
-            resultDiv.appendChild(homeLogo);
-            resultDiv.appendChild(marcador);
-            resultDiv.appendChild(awayLogo);
+            // Agregar la ubicación del evento
+            const venue = document.createElement('p');
+            venue.classList.add('venue');
+            venue.innerText = event.strVenue;
+
+            resultDiv.appendChild(logoContainer);
+            resultDiv.appendChild(venue);
             resultadosBL.appendChild(resultDiv);
         });
     } catch (err) {
@@ -175,15 +396,15 @@ async function getBLResults() {
 }
 
 const NEWS_API_KEY = "a65fa84a05d84917a83bcc883b3f6060";
-const urlNews = "https://newsapi.org/v2/everything?q=futbol&pageSize=5&sortBy=popularity&language=es&apiKey="+NEWS_API_KEY;
+const urlNews = "https://newsapi.org/v2/everything?q=futbol&pageSize=9&sortBy=popularity&language=es&apiKey=" + NEWS_API_KEY;
 
-async function newsApi(){
+async function newsApi() {
     const noticiasDiv = document.getElementById('noticias');
-    try{
+    try {
         const response = await fetch(urlNews);
         const data = await response.json();
         console.log(data)
-        data.articles.forEach(article=>{
+        data.articles.forEach(article => {
             const tarjetaNoticia = document.createElement('div');
             tarjetaNoticia.classList.add('tarjetaNoticia');
 
@@ -212,7 +433,8 @@ async function newsApi(){
             noticiasDiv.appendChild(tarjetaNoticia);
 
         })
-    }catch(err){
-        console.log('Error: '+err)
+    } catch (err) {
+        console.log('Error: ' + err)
     }
 }
+

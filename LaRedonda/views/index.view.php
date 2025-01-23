@@ -10,26 +10,45 @@
                         <h2>Resultados de la última jornada</h2>
                     </div>
                 </div>
-                <div class="row d-flex justify-content-center" id="resultadosPL">
-                    <div class="row">
-                        <img src="img/logoPremier.png" alt="Premier League Logo" style="width: 200px; 
+                <div class="row d-flex justify-content-center" id="resultadosCL">
+
+                    <div class="w-100 d-flex justify-content-center ">
+                        <img id="logoChampions" class="logo" src="img/logoChampions.png" alt="Champions League Logo"
+                            style="width: 200px; 
                         height: auto; margin: 10px 0;">
                     </div>
+
+
+                </div>
+                <div class="row d-flex justify-content-center" id="resultadosPL">
+
+                    <div class="w-100 d-flex justify-content-center ">
+                        <img id="logoPrem" class="logo" src="img/logoPremier.png" alt="Premier League Logo" style="width: 200px; 
+                        height: auto; margin: 10px 0;">
+                    </div>
+
+
                 </div>
                 <div class="row d-flex justify-content-center" id="resultadosLL">
-                    <img src="img/logoLaLiga.png" alt="Premier League Logo" style="width: 200px; 
+                    <div class="w-100 d-flex justify-content-center ">
+                        <img id="logoLaLiga" class="logo" src="img/logoLaLiga.png" alt="Premier League Logo" style="width: 200px; 
                         height: auto; margin: 10px 0;">
+                    </div>
+
                 </div>
                 <div class="row d-flex justify-content-center" id="resultadosSA">
-                    <div class="w-100">
-                        <img src="img/logoSerieA.png" alt="Premier League Logo" style="width: 100px; 
+                    <div class="w-100 d-flex justify-content-center ">
+                        <img id="logoSerieA" class="logo" src="img/logoSerieA.png" alt="Premier League Logo" style="width: 100px; 
                                                 height: auto; margin: 10px 0;">
                     </div>
-                    
+
                 </div>
                 <div class="row d-flex justify-content-center" id="resultadosBL">
-                    <img src="img/logoBundes.png" alt="Premier League Logo" style="width: 150px; 
+                    <div class="w-100 d-flex justify-content-center ">
+                        <img id="logoBundes" class="logo" src="img/logoBundes.png" alt="Premier League Logo" style="width: 150px; 
                         height: auto; margin: 10px 0;">
+                    </div>
+
                 </div>
             </div>
             <div class="col-4 " id="noticias">

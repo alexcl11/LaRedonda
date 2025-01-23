@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-danger nav-tabs " >
     <div class="container-fluid">
-        <a class="navbar-brand text-light" href="#">
+        <a class="navbar-brand text-light" href="<?= BASE_PATH; ?>">
         <img src="img/LaRedonda_logo-removebg-preview.png" alt="Logo" style="width:80px;height: 56px;" class="rounded-pill">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,12 +14,12 @@
             <li class="nav-item">
                 <a class="nav-link text-light" href="<?= BASE_PATH . '/temporadaactual'; ?>">Temporada 24/25</a>
             </li>
-            <li class="nav-item">
-                <div class="dropdown">
-                    <a class="nav-link text-light dropdown-toggle"  data-bs-toggle="dropdown" aria-expanded="false">
+            <li class="nav-item disabled">
+                <div class="dropdown ">
+                    <a class="nav-link text-light dropdown-toggle disabled"  data-bs-toggle="dropdown" aria-expanded="false">
                         Otras temporadas
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu ">
                         <li><a class="dropdown-item" href="#">Temporada 23/24</a></li>
                         <li><a class="dropdown-item" href="#">Temporada 22/23</a></li>
                         <li><a class="dropdown-item" href="#">Temporadas anteriores</a></li>
