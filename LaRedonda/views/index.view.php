@@ -4,7 +4,7 @@
 <main>
     <div class="container-fluid d-flex flex-column">
         <div class="row">
-            <div class="col-7">
+            <div class="col-7 border">
                 <div class="row ">
                     <div class="col border">
                         <h2>Resultados de la jornada anterior</h2>
@@ -25,7 +25,9 @@
                     <h4>Bundesliga</h4>
                 </div>
             </div>
-            <div class="col border" id="noticias"></div>
+            <div class="col-4 " id="noticias">
+                <h1>Últimas noticias</h1>
+            </div>
         </div>
     </div>
 </main>
