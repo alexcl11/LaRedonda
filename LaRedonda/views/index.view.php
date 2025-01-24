@@ -4,7 +4,7 @@
 <main>
     <div class="container-fluid d-flex flex-column">
         <div class="row">
-            <div class="col-7  m-1">
+            <div class="col-7 ">
                 <div class="row ">
                     <div class="col ">
                         <h2>Resultados de la última jornada</h2>
@@ -12,12 +12,18 @@
                 </div>
                 <div class="row d-flex justify-content-center" id="resultadosCL">
 
-                    <div class="w-100 d-flex justify-content-center ">
+                    <div class="w-100 d-flex flex-column justify-content-center align-items-center">
                         <img id="logoChampions" class="logo" src="img/logoChampions.png" alt="Champions League Logo"
                             style="width: 200px; 
                         height: auto; margin: 10px 0;">
+                        <select name="jornadaCL" id="jornadaCL">
+                            <option value="">Jornada</option>
+                            <option value="7">Jornada 7</option>
+                            <option value="6">Jornada 6</option>
+                            <option value="5">Jornada 5</option>
+                        </select>
                     </div>
-
+                    <div id="contenedorResultadosCL" class="w-100 d-flex flex-column align-items-center mt-4"></div>
 
                 </div>
                 <div class="row d-flex justify-content-center" id="resultadosPL">

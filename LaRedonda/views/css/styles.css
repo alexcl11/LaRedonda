@@ -3,84 +3,93 @@
   background-color: #dc3545 !important; /* color danger */
   color: white !important; /* para asegurar que el texto sea legible */
 }
-.nav-link:hover{
-background-color: #881e29 !important; /* color danger */
-cursor: pointer;
+.nav-link:hover {
+  background-color: #881e29 !important; /* color danger */
+  cursor: pointer;
 }
-.disabled:hover{
+.disabled:hover {
   cursor: not-allowed;
 }
 
 /* Tarjeta de resultado */
 .tarjetaResultado {
-width: 75%;
-margin: 10px; 
-padding: 5px; 
-border: 1px solid #ccc;
-text-align: center; 
-background-color: rgb(221, 219, 219);
-border-radius: 25px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+  margin: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  text-align: center;
+  background-color: rgb(221, 219, 219);
+  border-radius: 25px;
 }
 
 /* Contenedor principal de logos y marcador */
 .logo-container {
-display: flex;
-align-items: center;
-justify-content: space-around; /* Distribuye uniformemente */
-width: 100%;
-max-width: 300px; /* Ajusta el ancho máximo */
+  display: flex;
+  align-items: center;
+  justify-content: space-around; /* Distribuye uniformemente */
+  width: 100%;
+  max-width: 300px; /* Ajusta el ancho máximo */
 }
 
 /* Contenedor de equipo (logo y nombre) */
 .team-container {
-display: flex;
-flex-direction: column;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Asegura que los elementos estén centrados dentro */
+  width: 120px; /* Establece un ancho fijo para que todos los contenedores sean iguales */
+  min-height: 100px; /* Establece una altura mínima uniforme */
+  box-sizing: border-box; /* Incluye el padding y el borde en el cálculo del ancho y la altura */
 }
+
 
 /* Imagen del logo */
 .team-logo {
-width: 30px;
-height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 /* Nombre del equipo */
 .team-name {
-white-space: nowrap; /* No permite saltos de línea */
-overflow: hidden;
-text-overflow: ellipsis; /* Añade "..." si el texto es demasiado largo */
-max-width: 100px; /* Ancho máximo del nombre del equipo */
-text-align: center;
-margin: 5px 0;
+  white-space: nowrap; /* No permite saltos de línea */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Añade "..." si el texto es demasiado largo */
+  max-width: 100px; /* Ancho máximo del nombre del equipo */
+  text-align: center;
+  margin: 5px 0;
 }
 
 /* Marcador */
 .marcador {
-margin: 0 10px;
-font-size: 1.2em;
-font-weight: bold;
-text-align: center;
+  margin: 0 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
 }
 
 /* Lugar del evento */
 .venue {
-text-align: center;
-font-size: 0.9em;
-margin-top: 10px;
+  text-align: center;
+  font-size: 0.9em;
+  margin-top: 10px;
 }
 
 /* Espaciado para imágenes dentro de tarjetas */
 .tarjetaResultado img {
-margin: 5px; /* Espaciado entre imágenes */
+  margin: 5px; /* Espaciado entre imágenes */
 }
 
 /* Tarjeta de noticia */
 .tarjetaNoticia {
-padding: 2px;
-margin: 2px;
+  padding: 2px;
+  margin: 2px;
 }
 
 /* Hover en logos */
 .logo:hover {
-cursor: pointer;
+  cursor: pointer;
 }
