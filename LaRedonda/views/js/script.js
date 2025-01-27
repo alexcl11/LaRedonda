@@ -15,7 +15,7 @@ function ejecutarFuncionesInicio() {
   });
   const jornadaLL = document.getElementById("jornadaLL");
   jornadaLL.addEventListener("change", () => {
-    getPLResults(jornadaLL.value);
+    getLLResults(jornadaLL.value);
   });
   const jornadaSA = document.getElementById("jornadaSA");
   jornadaSA.addEventListener("change", () => {
@@ -24,6 +24,58 @@ function ejecutarFuncionesInicio() {
   const jornadaBL = document.getElementById("jornadaBL");
   jornadaBL.addEventListener("change", () => {
     getBLResults(jornadaBL.value);
+  });
+
+  const desplegarCL = document.getElementById("desplegarCL");
+  const resultadosCL = document.getElementById("resultadosCL");
+  const results = document.querySelectorAll(".results");
+  desplegarCL.addEventListener("click", () => {
+    results.forEach((result) => {
+      result.classList.remove("d-flex");
+      result.classList.add("d-none");
+    });
+    resultadosCL.classList.remove("d-none");
+    resultadosCL.classList.add("d-flex");
+  });
+  const desplegarPL = document.getElementById("desplegarPL");
+  const resultadosPL = document.getElementById("resultadosPL");
+  desplegarPL.addEventListener("click", () => {
+    results.forEach((result) => {
+      result.classList.remove("d-flex");
+      result.classList.add("d-none");
+    });
+    resultadosPL.classList.remove("d-none");
+    resultadosPL.classList.add("d-flex");
+  });
+  const desplegarSA = document.getElementById("desplegarSA");
+  const resultadosSA = document.getElementById("resultadosSA");
+  desplegarSA.addEventListener("click", () => {
+    results.forEach((result) => {
+      result.classList.remove("d-flex");
+      result.classList.add("d-none");
+    });
+    resultadosSA.classList.remove("d-none");
+    resultadosSA.classList.add("d-flex");
+  });
+  const desplegarBL = document.getElementById("desplegarBL");
+  const resultadosBL = document.getElementById("resultadosBL");
+  desplegarBL.addEventListener("click", () => {
+    results.forEach((result) => {
+      result.classList.remove("d-flex");
+      result.classList.add("d-none");
+    });
+    resultadosBL.classList.remove("d-none");
+    resultadosBL.classList.add("d-flex");
+  });
+  const desplegarLL = document.getElementById("desplegarLL");
+  const resultadosLL = document.getElementById("resultadosLL");
+  desplegarLL.addEventListener("click", () => {
+    results.forEach((result) => {
+      result.classList.remove("d-flex");
+      result.classList.add("d-none");
+    });
+    resultadosLL.classList.remove("d-none");
+    resultadosLL.classList.add("d-flex");
   });
 
   //getCLResults();
@@ -213,7 +265,7 @@ async function getLLResults(jornadaLL) {
     "contenedorResultadosLL"
   );
   try {
-    contenedorResultadosPL.innerHTML = "";
+    contenedorResultadosLL.innerHTML = "";
     const response = await fetch(
       "https://www.thesportsdb.com/api/v1/json/3/eventsround.php?id=4335&r=" +
         jornadaLL +
@@ -434,27 +486,30 @@ async function getBLResults(jornadaBL) {
   }
 }
 
-
 const NEWS_API_KEY = "a65fa84a05d84917a83bcc883b3f6060";
+let date = new Date();
+let today = date.toLocaleDateString();
 const urlNews =
-  "https://newsapi.org/v2/everything?q=futbol&pageSize=12&language=es&apiKey=" +
+  "https://newsapi.org/v2/everything?q=futbol&pageSize=12&sortBy=publishedAt&language=es&apiKey=" +
   NEWS_API_KEY;
 
 async function newsApi() {
-  const noticiasDiv = document.getElementById("noticias");
+  const noticiasDiv = document.getElementById("contenedorNoticias"); // Selecciona el contenedor dinámico
   try {
     const response = await fetch(urlNews);
     const data = await response.json();
     console.log(data);
+
+    // Limpiar el contenedor antes de agregar nuevas noticias
+    noticiasDiv.innerHTML = "";
+
     data.articles.forEach((article) => {
       const tarjetaNoticia = document.createElement("div");
       tarjetaNoticia.classList.add("tarjetaNoticia");
 
       const newImg = document.createElement("img");
-      newImg.src = article.urlToImage;
-      newImg.alt = article.urlToImage + " Logo";
-      newImg.style.width = "500px";
-      newImg.style.height = "250px";
+      newImg.src = article.urlToImage || "img/placeholder.png"; // Fallback si no hay imagen
+      newImg.alt = "Imagen de la noticia";
 
       const title = document.createElement("h4");
       title.innerText = article.title;
@@ -465,15 +520,21 @@ async function newsApi() {
       const urlToNew = document.createElement("a");
       urlToNew.href = article.url;
       urlToNew.textContent = "Leer noticia";
+      urlToNew.target = "_blank"; // Abre la noticia en una nueva pestaña
 
+      // Agregar los elementos a la tarjeta
       tarjetaNoticia.appendChild(newImg);
       tarjetaNoticia.appendChild(title);
       tarjetaNoticia.appendChild(description);
       tarjetaNoticia.appendChild(urlToNew);
 
+      // Agregar la tarjeta al contenedor de noticias
       noticiasDiv.appendChild(tarjetaNoticia);
     });
   } catch (err) {
-    console.log("Error: " + err);
+    console.error("Error al cargar las noticias:", err);
+
+    // Mensaje de error en caso de que falle la API
+    noticiasDiv.innerHTML = `<p>No se pudieron cargar las noticias. Inténtalo de nuevo más tarde.</p>`;
   }
 }

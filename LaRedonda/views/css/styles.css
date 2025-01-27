@@ -83,13 +83,92 @@
   margin: 5px; /* Espaciado entre imágenes */
 }
 
-/* Tarjeta de noticia */
-.tarjetaNoticia {
-  padding: 2px;
-  margin: 2px;
-}
 
 /* Hover en logos */
 .logo:hover {
   cursor: pointer;
+  font-size: 3px;
+}
+/* Sección de noticias */
+#noticias {
+  height: 500px; /* Altura fija para la sección de noticias */
+  overflow-y: auto; /* Habilitar scroll vertical */
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 25px; /* Consistente con las tarjetas de resultados */
+  background-color: rgb(245, 245, 245); /* Fondo similar al resto */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+}
+
+/* Contenedor de las tarjetas de noticias */
+#contenedorNoticias {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Separación entre las tarjetas */
+}
+
+/* Tarjeta de noticia */
+.tarjetaNoticia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid #ccc;
+  border-radius: 15px; /* Menor redondeo que las secciones */
+  padding: 10px;
+  background-color: #fff; /* Fondo blanco para destacar las tarjetas */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animación suave */
+}
+
+/* Efecto hover en las tarjetas */
+.tarjetaNoticia:hover {
+  transform: scale(1.02); /* Aumenta ligeramente el tamaño */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* Imagen de la tarjeta de noticia */
+.tarjetaNoticia img {
+  width: 100%; /* Ocupa todo el ancho disponible */
+  max-width: 400px; /* Tamaño máximo */
+  height: auto; /* Mantiene la proporción */
+  border-radius: 10px; /* Redondeo en las esquinas */
+  margin-bottom: 10px;
+}
+
+/* Título de la noticia */
+.tarjetaNoticia h4 {
+  font-size: 1.2em;
+  margin: 5px 0;
+  color: #333; /* Color de texto oscuro */
+  text-align: center;
+}
+
+/* Descripción de la noticia */
+.tarjetaNoticia p {
+  font-size: 0.9em;
+  color: #666; /* Color de texto gris */
+  margin-bottom: 10px;
+  text-align: justify; /* Alineación justificada */
+  line-height: 1.4; /* Espaciado entre líneas */
+}
+
+/* Enlace a la noticia */
+.tarjetaNoticia a {
+  font-size: 0.9em;
+  color: #dc3545; /* Color danger para los enlaces */
+  text-decoration: none; /* Sin subrayado */
+  font-weight: bold;
+}
+
+.tarjetaNoticia a:hover {
+  text-decoration: underline; /* Subrayado al pasar el cursor */
+  color: #881e29; /* Color danger más oscuro */
+}
+#resultadosJornadas{
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 25px; /* Consistente con las tarjetas de resultados */
+  background-color: rgb(245, 245, 245); /* Fondo similar al resto */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
 }

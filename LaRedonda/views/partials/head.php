@@ -6,5 +6,6 @@
     <title>La Redonda</title>
     <link rel="stylesheet" href="views/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="views/css/styles.css">
+    
 </head>
 <body>
