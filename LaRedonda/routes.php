@@ -1,5 +1,5 @@
 <?php
 return [
-    '/' => 'controllers/index.php',
+    '/' => 'controllers/home.php',
     '/temporadaactual' => 'controllers/tempactual.php',
 ];
