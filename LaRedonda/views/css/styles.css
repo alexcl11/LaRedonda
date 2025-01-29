@@ -1,4 +1,20 @@
+
+@font-face {
+  font-family: 'Klops Personal';
+  src: url(../fonts/klops/KlopsDPersonal-lxg3Z.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h2{
+  font-family: 'Klops Personal', sans-serif;
+  font-size: 40px;
+  color: #dc3545; /* Rojo */
+}
+
 /* Navegación */
+
+
 .nav-link.active {
   background-color: #dc3545 !important; /* color danger */
   color: white !important; /* para asegurar que el texto sea legible */
@@ -26,6 +42,49 @@
   border-radius: 25px;
 }
 
+.form-select {
+  background-color: white;
+  border: 2px solid #dc3545; /* Rojo */
+  color: #dc3545; /* Texto rojo */
+  font-weight: bold;
+  padding: 8px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 250px; /* Controla el ancho */
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Cambia el color cuando se enfoca */
+.form-select:focus {
+  border-color: #dc3545; /* Rojo más oscuro */
+  box-shadow: 0 0 5px #dc3545;
+  outline: none;
+}
+
+/* Opciones dentro del select */
+.form-select option {
+  background-color: white;
+  color: #dc3545;
+  font-weight: bold;
+}
+
+/* Hover en las opciones (para navegadores que lo soportan) */
+.form-select option:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Cuando el select está deshabilitado */
+.form-select:disabled {
+  background-color: #f8d7da; /* Rojo claro */
+  color: #dc3545;
+  border-color: #dc3545;
+  cursor: not-allowed;
+}
+
+
 /* Contenedor principal de logos y marcador */
 .logo-container {
   display: flex;
@@ -33,6 +92,19 @@
   justify-content: space-around; /* Distribuye uniformemente */
   width: 100%;
   max-width: 300px; /* Ajusta el ancho máximo */
+}
+
+.fecha-container{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.estado-partido{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  color: #dc3545;
 }
 
 /* Contenedor de equipo (logo y nombre) */
@@ -88,10 +160,11 @@
 .logo:hover {
   cursor: pointer;
   font-size: 3px;
+  
 }
 /* Sección de noticias */
 #noticias {
-  height: 500px; /* Altura fija para la sección de noticias */
+  height: 100vh; /* Altura fija para la sección de noticias */
   overflow-y: auto; /* Habilitar scroll vertical */
   border: 1px solid #ccc;
   padding: 10px;

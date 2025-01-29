@@ -122,6 +122,25 @@ async function getCLResults(jornadaCL) {
     data.events.forEach((event) => {
       let resultDiv = document.createElement("div");
       resultDiv.classList.add("tarjetaResultado");
+
+      const fechaContainer = document.createElement("div");
+      fechaContainer.classList.add("fecha-container");
+      const fecha = document.createElement("p");
+      if (event.strTimeLocal != null) {
+        fecha.innerText = event.dateEvent + " || " + event.strTimeLocal;
+      } else {
+        fecha.innerText = event.dateEvent;
+      }
+      fechaContainer.appendChild(fecha);
+
+      const estadoPartido = document.createElement("div");
+      estadoPartido.classList.add("estado-partido");
+      if (event.strStatus === "Match Finished") {
+        estadoPartido.innerText = "Finalizado";
+      } else {
+        estadoPartido.innerText = "Por disputar";
+      }
+
       // Modificar cómo se crean los contenedores para los equipos y los nombres
       const homeContainer = document.createElement("div");
       homeContainer.classList.add("team-container"); // Añadido para uso de estilo
@@ -163,7 +182,11 @@ async function getCLResults(jornadaCL) {
       // El marcador
       const marcador = document.createElement("span");
       marcador.classList.add("marcador"); // Aplicando la clase de estilo
-      marcador.innerHTML = event.intHomeScore + " : " + event.intAwayScore;
+      if (event.intHomeScore != null && event.intAwayScore != null) {
+        marcador.innerHTML = event.intHomeScore + " : " + event.intAwayScore;
+      } else {
+        marcador.innerHTML = "- : -";
+      }
 
       // Creando el contenedor de los equipos y marcador
       const logoContainer = document.createElement("div");
@@ -177,6 +200,8 @@ async function getCLResults(jornadaCL) {
       venue.classList.add("venue");
       venue.innerText = event.strVenue;
 
+      resultDiv.appendChild(fechaContainer);
+      resultDiv.appendChild(estadoPartido);
       resultDiv.appendChild(logoContainer);
       resultDiv.appendChild(venue);
       contenedorResultadosCL.appendChild(resultDiv);
@@ -202,6 +227,25 @@ async function getPLResults(jornadaPL) {
       let resultDiv = document.createElement("div");
       resultDiv.classList.add("tarjetaResultado");
 
+      const fechaContainer = document.createElement("div");
+      fechaContainer.classList.add("fecha-container");
+      const fecha = document.createElement("p");
+      if (event.strTimeLocal != null) {
+        fecha.innerText = event.dateEvent + " || " + event.strTimeLocal;
+      } else {
+        fecha.innerText = event.dateEvent;
+      }
+
+      fechaContainer.appendChild(fecha);
+
+      const estadoPartido = document.createElement("div");
+      estadoPartido.classList.add("estado-partido");
+      if (event.strStatus === "Match Finished") {
+        estadoPartido.innerText = "Finalizado";
+      } else {
+        estadoPartido.innerText = "Por disputar";
+      }
+
       const homeContainer = document.createElement("div");
       homeContainer.classList.add("team-container");
       homeContainer.style.display = "flex";
@@ -240,7 +284,11 @@ async function getPLResults(jornadaPL) {
 
       const marcador = document.createElement("span");
       marcador.classList.add("marcador");
-      marcador.innerHTML = event.intHomeScore + " : " + event.intAwayScore;
+      if (event.intHomeScore != null && event.intAwayScore != null) {
+        marcador.innerHTML = event.intHomeScore + " : " + event.intAwayScore;
+      } else {
+        marcador.innerHTML = "- : -";
+      }
 
       const logoContainer = document.createElement("div");
       logoContainer.classList.add("logo-container");
@@ -252,6 +300,8 @@ async function getPLResults(jornadaPL) {
       venue.classList.add("venue");
       venue.innerText = event.strVenue;
 
+      resultDiv.appendChild(fechaContainer);
+      resultDiv.appendChild(estadoPartido);
       resultDiv.appendChild(logoContainer);
       resultDiv.appendChild(venue);
       contenedorResultadosPL.appendChild(resultDiv);
@@ -277,6 +327,24 @@ async function getLLResults(jornadaLL) {
       let resultDiv = document.createElement("div");
       resultDiv.classList.add("tarjetaResultado");
 
+      const fechaContainer = document.createElement("div");
+      fechaContainer.classList.add("fecha-container");
+      const fecha = document.createElement("p");
+      if (event.strTimeLocal != null) {
+        fecha.innerText = event.dateEvent + " || " + event.strTimeLocal;
+      } else {
+        fecha.innerText = event.dateEvent;
+      }
+      fechaContainer.appendChild(fecha);
+
+      const estadoPartido = document.createElement("div");
+      estadoPartido.classList.add("estado-partido");
+      if (event.strStatus === "Match Finished") {
+        estadoPartido.innerText = "Finalizado";
+      } else {
+        estadoPartido.innerText = "Por disputar";
+      }
+
       const homeContainer = document.createElement("div");
       homeContainer.classList.add("team-container");
       homeContainer.style.display = "flex";
@@ -315,7 +383,11 @@ async function getLLResults(jornadaLL) {
 
       const marcador = document.createElement("span");
       marcador.classList.add("marcador");
-      marcador.innerHTML = event.intHomeScore + " : " + event.intAwayScore;
+      if (event.intHomeScore != null && event.intAwayScore != null) {
+        marcador.innerHTML = event.intHomeScore + " : " + event.intAwayScore;
+      } else {
+        marcador.innerHTML = "- : -";
+      }
 
       const logoContainer = document.createElement("div");
       logoContainer.classList.add("logo-container");
@@ -327,6 +399,8 @@ async function getLLResults(jornadaLL) {
       venue.classList.add("venue");
       venue.innerText = event.strVenue;
 
+      resultDiv.appendChild(fechaContainer);
+      resultDiv.appendChild(estadoPartido);
       resultDiv.appendChild(logoContainer);
       resultDiv.appendChild(venue);
       contenedorResultadosLL.appendChild(resultDiv);
@@ -352,6 +426,24 @@ async function getSAResults(jornadaSA) {
       let resultDiv = document.createElement("div");
       resultDiv.classList.add("tarjetaResultado");
 
+      const fechaContainer = document.createElement("div");
+      fechaContainer.classList.add("fecha-container");
+      const fecha = document.createElement("p");
+      if (event.strTimeLocal != null) {
+        fecha.innerText = event.dateEvent + " || " + event.strTimeLocal;
+      } else {
+        fecha.innerText = event.dateEvent;
+      }
+      fechaContainer.appendChild(fecha);
+
+      const estadoPartido = document.createElement("div");
+      estadoPartido.classList.add("estado-partido");
+      if (event.strStatus === "Match Finished") {
+        estadoPartido.innerText = "Finalizado";
+      } else {
+        estadoPartido.innerText = "Por disputar";
+      }
+
       const homeContainer = document.createElement("div");
       homeContainer.classList.add("team-container");
       homeContainer.style.display = "flex";
@@ -390,7 +482,11 @@ async function getSAResults(jornadaSA) {
 
       const marcador = document.createElement("span");
       marcador.classList.add("marcador");
-      marcador.innerHTML = event.intHomeScore + " : " + event.intAwayScore;
+      if (event.intHomeScore != null && event.intAwayScore != null) {
+        marcador.innerHTML = event.intHomeScore + " : " + event.intAwayScore;
+      } else {
+        marcador.innerHTML = "- : -";
+      }
 
       const logoContainer = document.createElement("div");
       logoContainer.classList.add("logo-container");
@@ -402,6 +498,8 @@ async function getSAResults(jornadaSA) {
       venue.classList.add("venue");
       venue.innerText = event.strVenue;
 
+      resultDiv.appendChild(fechaContainer);
+      resultDiv.appendChild(estadoPartido);
       resultDiv.appendChild(logoContainer);
       resultDiv.appendChild(venue);
       contenedorResultadosSA.appendChild(resultDiv);
@@ -427,6 +525,24 @@ async function getBLResults(jornadaBL) {
       let resultDiv = document.createElement("div");
       resultDiv.classList.add("tarjetaResultado");
 
+      const fechaContainer = document.createElement("div");
+      fechaContainer.classList.add("fecha-container");
+      const fecha = document.createElement("p");
+      if (event.strTimeLocal != null) {
+        fecha.innerText = event.dateEvent + " || " + event.strTimeLocal;
+      } else {
+        fecha.innerText = event.dateEvent;
+      }
+      fechaContainer.appendChild(fecha);
+
+      const estadoPartido = document.createElement("div");
+      estadoPartido.classList.add("estado-partido");
+      if (event.strStatus === "Match Finished") {
+        estadoPartido.innerText = "Finalizado";
+      } else {
+        estadoPartido.innerText = "Por disputar";
+      }
+
       const homeContainer = document.createElement("div");
       homeContainer.classList.add("team-container");
       homeContainer.style.display = "flex";
@@ -477,6 +593,8 @@ async function getBLResults(jornadaBL) {
       venue.classList.add("venue");
       venue.innerText = event.strVenue;
 
+      resultDiv.appendChild(fechaContainer);
+      resultDiv.appendChild(estadoPartido);
       resultDiv.appendChild(logoContainer);
       resultDiv.appendChild(venue);
       contenedorResultadosBL.appendChild(resultDiv);
@@ -490,7 +608,7 @@ const NEWS_API_KEY = "a65fa84a05d84917a83bcc883b3f6060";
 let date = new Date();
 let today = date.toLocaleDateString();
 const urlNews =
-  "https://newsapi.org/v2/everything?q=futbol&pageSize=12&sortBy=publishedAt&language=es&apiKey=" +
+  "https://newsapi.org/v2/everything?q=fútbol&pageSize=12&sortBy=publishedAt&language=es&apiKey=" +
   NEWS_API_KEY;
 
 async function newsApi() {

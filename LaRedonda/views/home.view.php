@@ -7,7 +7,7 @@
             <div class="col-md-7" id="resultadosJornadas">
                 <div class="row ">
                     <div class="col ">
-                        <h2>Resultados de la última jornada</h2>
+                        <h2>Resultados por jornada</h2>
                     </div>
                 </div>
                 <div class="row d-flex align-items-baseline">
@@ -33,11 +33,12 @@
                         <img id="logoChampions" class="logo" src="img/logoChampions.png" alt="Champions League Logo"
                             style="width: 200px; 
                         height: auto; margin: 10px 0;">
-                        <select name="jornadaCL" id="jornadaCL">
-                            <option value="">Jornada</option>
-                            <option value="7">Jornada 7</option>
-                            <option value="6">Jornada 6</option>
-                            <option value="5">Jornada 5</option>
+                        <select class="form-select w-50 selectpicker" data-live-search="true" size="3" name="jornadacL" id="jornadaCL">
+                            <script>
+                                for (var i = 1; i < 14; i++) {
+                                    document.write(`<option value="${i}">Jornada ${i}</option>`);
+                                }
+                            </script>
                         </select>
                     </div>
                     <div id="contenedorResultadosCL" class="w-100 d-flex flex-column align-items-center mt-4"></div>
@@ -49,11 +50,12 @@
 
                         <img id="logoPrem" class="logo" src="img/logoPremier.png" alt="Premier League Logo" style="width: 200px; 
                             height: auto; margin: 10px 0;">
-                        <select name="jornadaPL" id="jornadaPL">
-                            <option value="">Jornada</option>
-                            <option value="22">Jornada 22</option>
-                            <option value="21">Jornada 21</option>
-                            <option value="20">Jornada 20</option>
+                        <select class="form-select w-50 selectpicker" data-live-search="true" size="3" name="jornadaPL" id="jornadaPL">
+                            <script>
+                                for (var i = 1; i < 39; i++) {
+                                    document.write(`<option value="${i}">Jornada ${i}</option>`);
+                                }
+                            </script>
                         </select>
 
                         <div id="contenedorResultadosPL" class="w-100 d-flex flex-column align-items-center mt-4"></div>
@@ -66,11 +68,12 @@
 
                         <img id="logoLaLiga" class="logo" src="img/logoLaLiga.png" alt="LaLiga Logo" style="width: 200px; 
                             height: auto; margin: 10px 0;">
-                        <select name="jornadaLL" id="jornadaLL">
-                            <option value="">Jornada</option>
-                            <option value="22">Jornada 22</option>
-                            <option value="21">Jornada 21</option>
-                            <option value="20">Jornada 20</option>
+                        <select class="form-select w-50 selectpicker" data-live-search="true" size="3" name="jornadaLL" id="jornadaLL">
+                            <script>
+                                for (var i = 1; i < 39; i++) {
+                                    document.write(`<option value="${i}">Jornada ${i}</option>`);
+                                }
+                            </script>
                         </select>
 
                         <div id="contenedorResultadosLL" class="w-100 d-flex flex-column align-items-center mt-4"></div>
@@ -83,14 +86,12 @@
 
                         <img id="logoSerieA" class="logo img-fluid" src="img/logoSerieA.png" alt="Serie A Logo" style="width: 250px; 
                             height: auto; margin: 10px 0;">
-                        <select class="form-select w-50 selectpicker" data-live-search="true" data-size="3" name="jornadaSA" id="jornadaSA">
-                            <option value="">Jornada</option>
-                            <option value="22">Jornada 22</option>
-                            <option value="21">Jornada 21</option>
-                            <option value="20">Jornada 20</option>
-                            <option value="19">Jornada 19</option>
-                            <option value="18">Jornada 18</option>
-                            <option value="17">Jornada 17</option>
+                        <select class="form-select w-50 selectpicker" data-live-search="true" size="3" name="jornadaSA" id="jornadaSA">
+                            <script>
+                                for (var i = 1; i < 39; i++) {
+                                    document.write(`<option value="${i}">Jornada ${i}</option>`);
+                                }
+                            </script>
                         </select>
 
                         <div id="contenedorResultadosSA" class="w-100 d-flex flex-column align-items-center mt-4"></div>
@@ -103,11 +104,12 @@
 
                         <img id="logoBundes" class="logo img-fluid" src="img/logoBundes.png" alt="Bundes Logo" style="width: 200px; 
                             height: auto; margin: 10px 0;">
-                        <select name="jornadaBL" id="jornadaBL">
-                            <option value="">Jornada</option>
-                            <option value="22">Jornada 22</option>
-                            <option value="21">Jornada 21</option>
-                            <option value="20">Jornada 20</option>
+                        <select class="form-select w-50 selectpicker" data-live-search="true" size="3" name="jornadaBL" id="jornadaBL">
+                            <script>
+                                for (var i = 1; i < 35; i++) {
+                                    document.write(`<option value="${i}">Jornada ${i}</option>`);
+                                }
+                            </script>
                         </select>
 
                         <div id="contenedorResultadosBL" class="w-100 d-flex flex-column align-items-center mt-4"></div>
