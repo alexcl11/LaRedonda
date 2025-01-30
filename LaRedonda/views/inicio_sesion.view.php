@@ -3,10 +3,10 @@
     require_once 'partials/nav.php';
 ?>
 
-<main>
-    <div class="container">
+<main >
+    <div class="container mt-5">
     <h1 class="text-center">Iniciar sesión</h1>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center"> 
       <div class="col-10 col-md-4">
         <form>
           <div class="mb-3">
@@ -18,12 +18,12 @@
             <input type="password" class="form-control" id="password">
           </div>
           <div class="d-grid">
-            <button class="btn btn-primary" type="button">Continuar</button>
+            <button class="btn btn-danger" type="button">Continuar</button>
           </div>
         </form>
-        <h4 class="text-center mt-5">¿No te has registrado?</h4>
+        <h6 class="text-center mt-5">¿No te has registrado?</h6>
         <div class="d-grid">
-          <a href="<?= BASE_PATH . '/crear-cuenta'; ?>" class="btn btn-outline-primary">Crea tu cuenta</a>
+          <a href="<?= BASE_PATH . '/crear_cuenta'; ?>" class="btn btn-outline-danger">Crea tu cuenta</a>
         </div>
       </div>
     </div>
