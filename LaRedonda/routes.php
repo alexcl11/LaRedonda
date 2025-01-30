@@ -1,5 +1,6 @@
 <?php
 return [
     '/' => 'controllers/home.php',
-    '/temporadaactual' => 'controllers/tempactual.php',
+    '/temporada_actual' => 'controllers/tempactual.php',
+    '/inicio_sesion' => 'controllers/inicio_sesion.php',
 ];

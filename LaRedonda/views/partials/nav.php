@@ -12,7 +12,7 @@
                     <a id="inicio" class="nav-link text-light " aria-current="page" href="<?= BASE_PATH; ?>">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="<?= BASE_PATH . '/temporadaactual'; ?>">Temporada 24/25</a>
+                    <a class="nav-link text-light" href="<?= BASE_PATH . '/temporada_actual'; ?>">Temporada 24/25</a>
                 </li>
                 <li class="nav-item disabled">
                     <div class="dropdown ">
@@ -33,10 +33,7 @@
             </ul>
             <ul class="nav ms-auto">
                 <li class="nav-item ">
-                    <a class="nav-link text-light " href="#">Iniciar sesión</a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link text-light " href="#">Registrarme</a>
+                    <a class="nav-link text-light " href="<?= BASE_PATH . '/inicio_sesion'; ?>">Iniciar sesión</a>
                 </li>
             </ul>
 
