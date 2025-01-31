@@ -37,12 +37,10 @@
                         <button class="btn btn-danger" id="signin" type="submit" disabled>Registrarse</button>
                     </div>
                 </form>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col justify-content-center">
-                <h6>¿Ya tienes cuenta?</h6>
-                <button class="btn btn-danger" id="signin" type="submit" disabled>Inicia sesión</button>
+                <h6 class="text-center mt-5">¿Ya tienes cuenta?</h6>
+                <div class="d-grid">
+                    <a href="<?= BASE_PATH . '/inicio_sesion'; ?>" class="btn btn-outline-danger">Inicia sesión</a>
+                </div>
             </div>
         </div>
     </div>
