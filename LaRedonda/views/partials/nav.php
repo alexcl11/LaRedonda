@@ -39,7 +39,7 @@
             <?php if(isset($_SESSION['currentUser'])):  ?>
             <ul class="nav ms-auto">
                 <li class="nav-item ">
-                    <a class="nav-link text-light " href="<?= BASE_PATH . '/cuenta_user'; ?>">Cuenta</a>
+                    <a class="nav-link text-light " href="<?= BASE_PATH . '/cerrar_sesion'; ?>">Cerrar sesión</a>
                 </li>
             </ul>
             <?php else: ?>

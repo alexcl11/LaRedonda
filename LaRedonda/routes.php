@@ -5,5 +5,6 @@ return [
     '/inicio_sesion' => 'controllers/inicio_sesion.php',
     '/crear_cuenta' => 'controllers/crear_cuenta.php',
     '/registro' => 'controllers/registro.php',
+    '/cerrar_sesion' => 'controllers/cerrar_sesion.php',
     '/liga' => 'controllers/pagina_liga.php',
 ];
