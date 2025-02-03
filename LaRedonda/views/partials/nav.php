@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+
 <nav class="navbar navbar-expand-lg bg-danger nav-tabs">
     <div class="container-fluid">
         <a class="navbar-brand text-light" href="<?= BASE_PATH; ?>">
