@@ -8,19 +8,14 @@
             <div class="col-10 col-md-4">
                 <form action="<?= BASE_PATH . '/registro'; ?>" method="POST">
                     <div class="mb-3">
-                        <label for="name" class="form-label">Nombre</label>
-                        <i class="bi bi-check-lg d-none" id="name-check"></i>
-                        <input type="text" class="form-control" id="name" name="name">
-                    </div>
-                    <div class="mb-3">
-                        <label for="last-name" class="form-label">Apellido</label>
-                        <i class="bi bi-check-lg d-none" id="last-name-check"></i>
-                        <input type="text" class="form-control" id="last-name" name="last-name">
-                    </div>
-                    <div class="mb-3">
                         <label for="email" class="form-label">Correo electrónico</label>
                         <i class="bi bi-check-lg d-none" id="email-check"></i>
                         <input type="email" class="form-control" id="email" name="email">
+                    </div>                    
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nombre de usuario</label>
+                        <i class="bi bi-check-lg d-none" id="name-check"></i>
+                        <input type="text" class="form-control" id="name" name="name">
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Contraseña</label>

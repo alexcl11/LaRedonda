@@ -1,6 +1,5 @@
 <?php require_once 'views/partials/head.php'; ?>
 <?php require_once 'views/partials/nav.php'; ?>
-<?php require_once 'views/partials/footer.php'; ?>
 <main>
     <div class="container-fluid d-flex flex-column">
         <div class="row d-flex justify-content-between p-1">
@@ -125,3 +124,5 @@
         </div>
     </div>
 </main>
+
+<?php require_once 'views/partials/footer.php'; ?>
