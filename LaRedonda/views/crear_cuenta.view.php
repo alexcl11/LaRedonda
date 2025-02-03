@@ -29,7 +29,7 @@
                         <input type="password" class="form-control" id="password-confirm">
                     </div>
                     <div class="d-grid">
-                        <button class="btn btn-danger" id="signin" type="submit" disabled>Registrarse</button>
+                        <button class="btn btn-danger" id="signin" type="submit" >Registrarse</button>
                     </div>
                 </form>
                 <h6 class="text-center mt-5">¿Ya tienes cuenta?</h6>

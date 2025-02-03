@@ -34,13 +34,13 @@ class Database
         return $instance->query($query)->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public static function createUser($email, $nombreUsuario, $password)
+    public static function createUser($email, $name, $password)
     {
         $instance = new self();
-        $query = "INSERT INTO Usuarios(nombre, apellido, correo, contrasena) VALUES (:email, :nombreUsuario, :password)";
+        $query = "INSERT INTO usuarios(email, name, password) VALUES (:email, :name, :password)";
         $params = [
             'email' => $email,
-            'nombreUsuario' => $nombreUsuario,
+            'name' => $name,
             'password' => password_hash($password, PASSWORD_DEFAULT)
         ];
         $instance->query($query, $params);

@@ -14,8 +14,7 @@ if (!validCredentials($name, $email, $password)) {
 $userExists = userExists($email);
 
 if (!$userExists) {
-    Database::createUser($name, $lastName, $email, $password);
+    Database::createUser($email, $name, $password);
 }
 
-$page = 'registro';
 require 'views/registro.view.php';
