@@ -13,7 +13,7 @@
                         <input type="email" class="form-control" id="email" name="email">
                     </div>                    
                     <div class="mb-3">
-                        <label for="name" class="form-label">Nombre de usuario</label>
+                        <label for="name" class="form-label">Nombre</label>
                         <i class="bi bi-check-lg d-none" id="name-check"></i>
                         <input type="text" class="form-control" id="name" name="name">
                     </div>
@@ -29,7 +29,7 @@
                         <input type="password" class="form-control" id="password-confirm">
                     </div>
                     <div class="d-grid">
-                        <button class="btn btn-danger" id="signin" type="submit" >Registrarse</button>
+                        <button class="btn btn-danger" id="signin" type="submit" disabled>Registrarse</button>
                     </div>
                 </form>
                 <h6 class="text-center mt-5">¿Ya tienes cuenta?</h6>

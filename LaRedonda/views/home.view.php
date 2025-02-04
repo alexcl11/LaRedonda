@@ -34,7 +34,7 @@
                         height: auto; margin: 10px 0;">
                         <select class="form-select w-50 selectpicker" data-live-search="true" size="3" name="jornadacL" id="jornadaCL">
                             <script>
-                                for (var i = 1; i < 14; i++) {
+                                for (var i = 1; i < 9; i++) {
                                     document.write(`<option value="${i}">Jornada ${i}</option>`);
                                 }
                             </script>

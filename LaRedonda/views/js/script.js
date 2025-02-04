@@ -1,12 +1,16 @@
 import { newsApi } from "./noticias.js";
 import { getCLResults, getPLResults, getLLResults, getSAResults, getBLResults } from "./results.js";
 import { getLeague } from "./pagLiga.js";
+import { initSignUp } from "./validacionRegistro.js";
 document.addEventListener("DOMContentLoaded", () => {
   if (window.location.pathname === "/") {
     ejecutarFuncionesInicio();
   }
   if (window.location.pathname === "/liga") {
-    getLeague()
+    ejecutarFuncionesLiga();
+  }
+  if (window.location.pathname === "/crear_cuenta") {
+    initSignUp();
   }
 });
 
@@ -88,22 +92,28 @@ function ejecutarFuncionesInicio() {
 
   const logoChampions = document.getElementById("logoChampions");
   logoChampions.addEventListener("click", () => {
-    window.location = "http://localhost:8080/liga?id=1";
+    window.location = "http://localhost:8080/liga?id=4480";
   });
   const logoPrem = document.getElementById("logoPrem");
   logoPrem.addEventListener("click", () => {
-    window.location = "http://localhost:8080/liga?id=2";
+    window.location = "http://localhost:8080/liga?id=4328";
   });
   const logoLaLiga = document.getElementById("logoLaLiga");
   logoLaLiga.addEventListener("click", () => {
-    window.location = "http://localhost:8080/liga?id=3";
+    window.location = "http://localhost:8080/liga?id=4335";
   });
   const logoSerieA = document.getElementById("logoSerieA");
   logoSerieA.addEventListener("click", () => {
-    window.location = "http://localhost:8080/liga?id=4";
+    window.location = "http://localhost:8080/liga?id=4332";
   });
   const logoBundes = document.getElementById("logoBundes");
   logoBundes.addEventListener("click", () => {
-    window.location = "http://localhost:8080/liga?id=5";
+    window.location = "http://localhost:8080/liga?id=4331";
   });
+}
+
+function ejecutarFuncionesLiga() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const leagueId = urlParams.get("id");
+  getLeague(leagueId);
 }

@@ -1,19 +1,17 @@
-
 @font-face {
-  font-family: 'Klops Personal';
-  src: url(../fonts/klops/KlopsDPersonal-lxg3Z.ttf) format('truetype');
+  font-family: "Klops Personal";
+  src: url(../fonts/klops/KlopsDPersonal-lxg3Z.ttf) format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
-h2{
-  font-family: 'Klops Personal', sans-serif;
+h2 {
+  font-family: "Klops Personal", sans-serif;
   font-size: 40px;
   color: #dc3545; /* Rojo */
 }
 
 /* Navegación */
-
 
 .nav-link.active {
   background-color: #dc3545 !important; /* color danger */
@@ -84,7 +82,6 @@ h2{
   cursor: not-allowed;
 }
 
-
 /* Contenedor principal de logos y marcador */
 .logo-container {
   display: flex;
@@ -94,13 +91,13 @@ h2{
   max-width: 300px; /* Ajusta el ancho máximo */
 }
 
-.fecha-container{
+.fecha-container {
   height: 100%;
   display: flex;
   justify-content: center;
 }
 
-.estado-partido{
+.estado-partido {
   height: 100%;
   display: flex;
   justify-content: center;
@@ -117,7 +114,6 @@ h2{
   min-height: 100px; /* Establece una altura mínima uniforme */
   box-sizing: border-box; /* Incluye el padding y el borde en el cálculo del ancho y la altura */
 }
-
 
 /* Imagen del logo */
 .team-logo {
@@ -155,12 +151,10 @@ h2{
   margin: 5px; /* Espaciado entre imágenes */
 }
 
-
 /* Hover en logos */
 .logo:hover {
   cursor: pointer;
   font-size: 3px;
-  
 }
 /* Sección de noticias */
 #noticias {
@@ -238,10 +232,41 @@ h2{
   text-decoration: underline; /* Subrayado al pasar el cursor */
   color: #881e29; /* Color danger más oscuro */
 }
-#resultadosJornadas{
+#resultadosJornadas {
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 25px; /* Consistente con las tarjetas de resultados */
   background-color: rgb(245, 245, 245); /* Fondo similar al resto */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+}
+.leagueTable{
+  border-radius: 10em;
+}
+.leagueTable th {
+  background-color: #dc3545;
+  color: white;
+  text-align: left;
+  padding: 5px;
+  font-weight: bold;
+}
+.leagueTable td {
+  background-color: #ccc;
+  padding: 5px;
+  border-bottom: 1px solid ;
+}
+.cha td{
+  background-color: #6ecdf3 ; 
+  
+}
+.uefa td{
+  background-color: #f6cd5c; 
+}
+.elimconf td{
+  background-color: #059669; 
+}
+.desc td{
+  background-color: #dc2626; 
+}
+.normal td{
+  background-color: #f3f4f6; 
 }
