@@ -11,7 +11,8 @@
                         <label for="email" class="form-label">Correo electrónico</label>
                         <i class="bi bi-check-lg d-none" id="email-check"></i>
                         <input type="email" class="form-control" id="email" name="email">
-                    </div>                    
+                        <small id="emailHelp" class="form-text text-muted">Ejemplo: ejemplo@gmail.com</small>
+                    </div>
                     <div class="mb-3">
                         <label for="name" class="form-label">Nombre</label>
                         <i class="bi bi-check-lg d-none" id="name-check"></i>
@@ -20,8 +21,10 @@
                     <div class="mb-3">
                         <label for="password" class="form-label">Contraseña</label>
                         <i class="bi bi-check-lg d-none" id="password-check"></i>
-                        <input type="password" class="form-control" id="password" name="password"
-                            placeholder="Al menos ocho caracteres">
+                        <input type="password" class="form-control" id="password" name="password">
+                        <small id="passwordHelp" class="form-text text-muted">Debe contener: más de 8 
+                            caracteres, al menos una letra mayúscula, al menos una letra mayúscula, 
+                            al menos números y al menos un caracter especial.</small>
                     </div>
                     <div class="mb-3">
                         <label for="password-confirm" class="form-label">Confirma la contraseña</label>

@@ -28,24 +28,30 @@ export function initSignUp() {
 
 
     emailInput.addEventListener("input", () => {
+        const emailHelp = document.getElementById("emailHelp");
         if (isValidEmail(emailInput.value)) {
             validEmail = true;
             emailCheck.classList.remove("d-none");
+            emailHelp.classList.add("d-none");
         } else {
             validEmail = false;
             emailCheck.classList.add("d-none");
+            emailHelp.classList.remove("d-none");
         }
         validateSignUpForm();
     });
 
     passwordInput.addEventListener("input", () => {
-        if (passwordInput.value.length >= 8) {
+        const passwordHelp = document.getElementById("passwordHelp");        
+        if (isValidPassword(passwordInput.value)) {
             validPassword = true;
             passwordCheck.classList.remove("d-none");
+            passwordHelp.classList.add("d-none");
             validatePasswordConfirm();
         } else {
             validPassword = false;
             passwordCheck.classList.add("d-none");
+            passwordHelp.classList.remove("d-none");
             validatePasswordConfirm();
         }
         validateSignUpForm();
@@ -78,4 +84,9 @@ export function initSignUp() {
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return regex.test(email);
     }
+
+    function isValidPassword(password) {
+        const regex = /^(?=.{9,})(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).*$/;
+        return regex.test(password);
+      }
 }
