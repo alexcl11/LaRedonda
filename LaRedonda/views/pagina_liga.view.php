@@ -15,10 +15,10 @@
                     <th>V</th>
                     <th>E</th>
                     <th>D</th>
-                    <th>GF</th>
-                    <th>GC</th>
+                    <th class="d-none d-md-table-cell">GF</th>
+                    <th class="d-none d-md-table-cell">GC</th>
                     <th>DG</th>
-                    <th>Últimos 5</th>
+                    <th class="d-none d-md-table-cell">Últimos 5</th>
                 </tr>
             </thead>
             <tbody id="tbodyLeague">

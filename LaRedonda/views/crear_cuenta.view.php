@@ -23,8 +23,8 @@
                         <i class="bi bi-check-lg d-none" id="password-check"></i>
                         <input type="password" class="form-control" id="password" name="password">
                         <small id="passwordHelp" class="form-text text-muted">Debe contener: más de 8 
-                            caracteres, al menos una letra mayúscula, al menos una letra mayúscula, 
-                            al menos números y al menos un caracter especial.</small>
+                            caracteres, al menos una letra mayúscula, al menos una letra minúscula, 
+                            al menos un número y al menos un caracter especial.</small>
                     </div>
                     <div class="mb-3">
                         <label for="password-confirm" class="form-label">Confirma la contraseña</label>

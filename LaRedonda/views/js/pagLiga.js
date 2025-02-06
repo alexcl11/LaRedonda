@@ -46,10 +46,10 @@ export async function getLeague(ligaId) {
                 <td>${team.intWin}</td>    
                 <td>${team.intDraw}</td>    
                 <td>${team.intLoss}</td>    
-                <td>${team.intGoalsFor}</td>    
-                <td>${team.intGoalsAgainst}</td>    
+                <td class="d-none d-md-table-cell">${team.intGoalsFor}</td>    
+                <td class="d-none d-md-table-cell">${team.intGoalsAgainst}</td>    
                 <td>${team.intGoalDifference}</td>    
-                <td>${team.strForm || "-"}</td> 
+                <td class="d-none d-md-table-cell">${team.strForm || "-"}</td> 
         `
     );
     leagueTable.appendChild(trLeague);

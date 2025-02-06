@@ -7,8 +7,8 @@ if (session_status() === PHP_SESSION_NONE) {
 <nav class="navbar navbar-expand-lg bg-danger nav-tabs">
     <div class="container-fluid">
         <a class="navbar-brand text-light" href="<?= BASE_PATH; ?>">
-            <img src="img/LaRedonda_logo-removebg-preview.png" alt="Logo" style="width:80px;height: 56px;"
-                class="rounded-pill">
+            <img src="img/logo.png" alt="Logo" style="width:80px;height: 56px;"
+                class="">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,7 +44,7 @@ if (session_status() === PHP_SESSION_NONE) {
             <?php if(isset($_SESSION['currentUser'])):  ?>
             <ul class="nav ms-auto">
                 <li class="nav-item ">
-                    <a class="nav-link text-light " href="<?= BASE_PATH . '/cerrar_sesion'; ?>">Cerrar sesión</a>
+                    <a class="nav-link text-light " href="<?= BASE_PATH . '/perfil'; ?>">Mi perfil</a>
                 </li>
             </ul>
             <?php else: ?>

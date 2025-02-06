@@ -17,8 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION['currentUser'] = [
             'id' => $user['id'],
-            'email' => $user['correo'],
-            'name' => $user['nombre']
+            'email' => $user['email'],
+            'name' => $user['name']
         ];
         header('Location: /');
         exit();

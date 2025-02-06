@@ -1,122 +1,113 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 
-<!-- Footer -->
+
 <footer class="text-center text-lg-start bg-danger text-muted mt-5">
-  <!-- Section: Social media -->
-  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-    <!-- Left -->
-    <div class="me-5 d-none d-lg-block">
-      <span>Get connected with us on social networks:</span>
-    </div>
-    <!-- Left -->
 
-    <!-- Right -->
+  <section class="d-flex justify-content-center justify-content-lg-start p-4 border-bottom">
+
+    <div class="me-5 text-white d-none d-lg-block">
+      <span>Accede a nuestras redes sociales:</span>
+    </div>
+
+
+
     <div>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-facebook-f"></i>
+      <a href="" class="me-4 text-white">
+        <i class="bi bi-facebook"></i>
       </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-twitter"></i>
+      <a href="" class="me-4 text-white">
+        <i class="bi bi-twitter-x"></i>
       </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-google"></i>
+      <a href="" class="me-4 text-white">
+        <i class="bi bi-instagram"></i>
       </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-github"></i>
+      <a href="" class="me-4 text-white">
+        <i class="bi bi-github"></i>
       </a>
     </div>
-    <!-- Right -->
-  </section>
-  <!-- Section: Social media -->
 
-  <!-- Section: Links  -->
+  </section>
+
+
   <section class="">
     <div class="container text-center text-md-start mt-5">
-      <!-- Grid row -->
+
       <div class="row mt-3">
-        <!-- Grid column -->
+  
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-          <!-- Content -->
-          <h6 class="text-uppercase fw-bold mb-4">
-            <i class="fas fa-gem me-3"></i>Company name
-          </h6>
-          <p>
-            Here you can use rows and columns to organize your footer content. Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit.
+    
+          <img class="img-fluid" src="../img/logo.png" alt="La Redonda">
           </p>
         </div>
-        <!-- Grid column -->
+ 
 
-        <!-- Grid column -->
+   
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
-            Products
+      
+          <h6 class="text-uppercase text-white fw-bold mb-4">
+            Clasificaciones
           </h6>
           <p>
-            <a href="#!" class="text-reset">Angular</a>
+            <a href="<?= BASE_PATH .'/liga?id=4328'?>" class="text-white">Premier League</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">React</a>
+            <a href="<?= BASE_PATH .'/liga?id=4335'?>" class="text-white">La Liga</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Vue</a>
+            <a href="<?= BASE_PATH .'/liga?id=4332'?>" class="text-white">Serie A</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Laravel</a>
+            <a href="<?= BASE_PATH .'/liga?id=4331'?>" class="text-white">Bundesliga</a>
           </p>
         </div>
-        <!-- Grid column -->
+       
 
-        <!-- Grid column -->
+       
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
-            Useful links
+ 
+          <h6 class="text-uppercase text-white fw-bold mb-4">
+            Páginas de interés
           </h6>
           <p>
-            <a href="#!" class="text-reset">Pricing</a>
+            <a href="<?= BASE_PATH; ?>" class="text-white">Inicio</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Settings</a>
+            <a href="<?= BASE_PATH . '/temporada_actual'; ?>" class="text-white">Temporada 24/25</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Orders</a>
+            <a href="<?= BASE_PATH ?>" class="text-white <?=(isset($_SESSION['currentUser'])) ? '' : 'disabled'?>">Otras temporadas</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Help</a>
+          <a href="<?= BASE_PATH ?> " class="text-white <?=(isset($_SESSION['currentUser'])) ? '' : 'disabled'?>">Favoritos🤍</a>
           </p>
         </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
+        
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-          <!-- Links -->
+      
           <h6 class="text-uppercase fw-bold mb-4 text-white">Contacto</h6>
           <p class="text-white"><i class="bi bi-geo-alt-fill text-white"></i> Madrid, España</p>
           <p class="text-white"><i class="bi bi-envelope-fill text-white"></i> laredonda@gmail.com</p>
           <p class="text-white"><i class="bi bi-telephone-fill text-white"></i> +34 645663721</p>
         </div>
-        <!-- Grid column -->
+        
       </div>
-      <!-- Grid row -->
+
     </div>
   </section>
-  <!-- Section: Links  -->
 
-  <!-- Copyright -->
+
+ 
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05); color: black;">
     © 2025 Copyright:
     <a class="text-white fw-bold" href="<?= BASE_PATH; ?>">LaRedonda.com</a>
   </div>
-  <!-- Copyright -->
+
 </footer>
-<!-- Footer -->
+
 <script type="module" src="views/js/script.js"></script>
 <script src="views/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
