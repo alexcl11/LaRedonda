@@ -55,6 +55,15 @@ class Database
         ];
         $instance->query($query, $params);
     }
+    public static function updateUserName($id, $name){
+        $instance = new self();
+        $query = "UPDATE `usuarios` SET `name` = :name WHERE `usuarios`.`id` = :id";
+        $params = [
+            'name' => $name,
+            'id' => $id
+        ];
+        $instance->query($query, $params);
+    }
 
     
 }

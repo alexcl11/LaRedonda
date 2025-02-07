@@ -10,24 +10,28 @@ require_once 'partials/nav.php';
             <div class="col-4 m-3 p-2 d-flex flex-column align-content-center border rounded">
                 <h3>Tus datos:</h3>
                 <p><b>ID de usuario:</b> <?= $_SESSION['currentUser']['id']?></p>
-                <p><b>email:</b> <?= $_SESSION['currentUser']['email']?></p> <button id="cambiarEmail">Cambiar email</button>
-                <form action="<?= BASE_PATH . '/updateDatos'; ?>" method="POST">
-                    <input id="newEmail" class="d-none" type="text" value="<?= $_SESSION['currentUser']['email']?>" name="newEmail">
-                    <small class="text-danger"><?=isset($_SESSION['validEmail']) ? $_SESSION['validEmail'] :''?></small>
-                    <button id="submitCambiarEmail" class="d-none" type="submit">Cambiar</button>
+                <p><b>email:</b> <?= $_SESSION['currentUser']['email']?><i id="cambiarEmail"
+                        class="bi bi-pencil-fill ms-1" style="cursor:pointer"></i></p>
+                <small id="existEmail"
+                    class="text-danger"><?=isset($_SESSION['currentUser']['existNewEmail'])&& !$_SESSION['currentUser']['existNewEmail'] ? 'El email ' . $_SESSION['currentUser']['invalidEmail'] . ' ya existe' :''?></small>
+
+                <form action="<?= BASE_PATH . '/updateDatos'; ?>" method="POST" id="formEmail"
+                    class="form d-none flex-column">
+                    <input id="newEmail" class="" type="text" value="<?= $_SESSION['currentUser']['email']?>"
+                        name="newEmail">
+                    <button id="submitCambiarEmail" class=" w-md-25 m-1 btn btn-danger" type="submit">Cambiar</button>
                 </form>
-                <p><b>Nombre:</b> <?= $_SESSION['currentUser']['name']?></p>
-                <form action="" method="POST"><input id="newName" class="d-none" type="text" value="<?= $_SESSION['currentUser']['name']?>" name="newName"></form>
+                <p><b>Nombre:</b> <?= $_SESSION['currentUser']['name']?><i id="cambiarNombre"
+                        class="bi bi-pencil-fill ms-1" style="cursor:pointer"></i></p>
+                <form id="formNombre" class="d-none form flex-column" action="<?= BASE_PATH . '/updateDatos'; ?>"
+                    method="POST">
+                    <input id="newName" class="" type="text" value="<?= $_SESSION['currentUser']['name']?>"
+                        name="newName">
+                    <button id="submitCambiarNombre" class="w-md-25 m-1 btn btn-danger" type="submit">Cambiar</button>
+                </form>
                 <a href="<?= BASE_PATH . '/cerrar_sesion'?>" class="btn btn-outline-danger">Cerrar sesión</a>
             </div>
         </div>
     </div>
 </main>
-<script>
-    const cambiarEmail = document.getElementById('cambiarEmail');
-    cambiarEmail.addEventListener('click', () => {
-        document.getElementById('newEmail').classList.remove('d-none');
-        document.getElementById('submitCambiarEmail').classList.remove('d-none');
-    });
-</script>
 <?php require_once 'partials/footer.php' ?>

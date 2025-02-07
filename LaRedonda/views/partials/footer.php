@@ -38,7 +38,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
       <div class="row mt-3">
   
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+        <div class="col-5 col-md-2 col-lg-3 col-xl-3 mx-auto mb-4">
     
           <img class="img-fluid" src="../img/logo.png" alt="La Redonda">
           </p>

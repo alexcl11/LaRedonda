@@ -2,6 +2,7 @@ import { newsApi } from "./noticias.js";
 import { getCLResults, getPLResults, getLLResults, getSAResults, getBLResults } from "./results.js";
 import { getLeague } from "./pagLiga.js";
 import { initSignUp } from "./validacionRegistro.js";
+import { cambiarEmail, cambiarNombre } from "./cambiarDatosPerfil.js";
 document.addEventListener("DOMContentLoaded", () => {
   if (window.location.pathname === "/") {
     ejecutarFuncionesInicio();
@@ -11,6 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   if (window.location.pathname === "/crear_cuenta") {
     initSignUp();
+  }
+  if (window.location.pathname === "/perfil") {
+    cambiarEmail();
+    cambiarNombre();
   }
 });
 

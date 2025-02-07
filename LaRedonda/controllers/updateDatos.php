@@ -11,12 +11,16 @@ if(isset($_POST['newEmail'])){
     if(!$user){
         $update = Database::updateUserEmail($_SESSION['currentUser']['id'], $newEmail);
         $_SESSION['currentUser']['email'] = $newEmail;
+        $_SESSION['currentUser']['existNewEmail'] = true;
     } else {
-        $_SESSION['validEmail'] = 'Este email ya existe';
+        $_SESSION['currentUser']['existNewEmail'] = false;
+        $_SESSION['currentUser']['invalidEmail'] = $newEmail;
     }
-    header("Location: /perfil");
+    
 }
-if(isset($_POST['name'])){
+if(isset($_POST['newName'])){
     $newName = $_POST['newName'];
+    $update = Database::updateUserName($_SESSION['currentUser']['id'], $newName);
+    $_SESSION['currentUser']['name'] = $newName;
 }
-
+header("Location: /perfil");
