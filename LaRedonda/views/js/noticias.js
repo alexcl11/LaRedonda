@@ -1,7 +1,6 @@
 
 const NEWS_API_KEY = "a65fa84a05d84917a83bcc883b3f6060";
-let date = new Date();
-let today = date.toLocaleDateString();
+
 const urlNews =
   "https://newsapi.org/v2/everything?q=fútbol&pageSize=12&sortBy=publishedAt&language=es&apiKey=" +
   NEWS_API_KEY;
@@ -27,6 +26,10 @@ export async function newsApi() {
       const title = document.createElement("h4");
       title.innerText = article.title;
 
+      const date = new Date(article.publishedAt);
+      const fechaPublicacion = document.createElement("p");
+      fechaPublicacion.innerText = 'Publicado: '+date.toLocaleDateString();
+
       const description = document.createElement("p");
       description.innerText = article.description;
 
@@ -38,6 +41,7 @@ export async function newsApi() {
       // Agregar los elementos a la tarjeta
       tarjetaNoticia.appendChild(newImg);
       tarjetaNoticia.appendChild(title);
+      tarjetaNoticia.appendChild(fechaPublicacion);
       tarjetaNoticia.appendChild(description);
       tarjetaNoticia.appendChild(urlToNew);
 
