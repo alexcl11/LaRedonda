@@ -1,4 +1,5 @@
 export async function getLeague(ligaId) {
+  const tablaClasiH4 = document.getElementById('tablaClasiH4');
   const leagueTable = document.getElementById("tbodyLeague");
   const nombreLiga = document.getElementById("nombreLiga");
   const response = await fetch(
@@ -12,6 +13,7 @@ export async function getLeague(ligaId) {
     console.error("No se encontraron datos de la liga.");
     return;
   }
+  tablaClasiH4.innerText += ' última actualización: ' + data.table[0].dateUpdated; 
   nombreLiga.innerText = data.table[0].strLeague;
   data.table.forEach((team) => {
     const trLeague = document.createElement("tr");

@@ -3,6 +3,7 @@ import { getCLResults, getPLResults, getLLResults, getSAResults, getBLResults } 
 import { getLeague } from "./pagLiga.js";
 import { initSignUp } from "./validacionRegistro.js";
 import { cambiarEmail, cambiarNombre } from "./cambiarDatosPerfil.js";
+import { validarEmail } from "./validacionCambioDatos.js";
 document.addEventListener("DOMContentLoaded", () => {
   if (window.location.pathname === "/") {
     ejecutarFuncionesInicio();
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (window.location.pathname === "/perfil") {
     cambiarEmail();
     cambiarNombre();
+    validarEmail();
   }
 });
 

@@ -4,16 +4,18 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 require_once 'models/Database.php';
+require_once 'controllers/functions.php';
 
 if(isset($_POST['newEmail'])){
     $newEmail = $_POST['newEmail'];
+       
     $user = Database::getUser($newEmail);
-    if(!$user){
+    if(!$user || $newEmail == $_SESSION['currentUser']['email']){
         $update = Database::updateUserEmail($_SESSION['currentUser']['id'], $newEmail);
         $_SESSION['currentUser']['email'] = $newEmail;
-        $_SESSION['currentUser']['existNewEmail'] = true;
-    } else {
         $_SESSION['currentUser']['existNewEmail'] = false;
+    } else {
+        $_SESSION['currentUser']['existNewEmail'] = true;
         $_SESSION['currentUser']['invalidEmail'] = $newEmail;
     }
     

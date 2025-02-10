@@ -13,13 +13,13 @@ require_once 'partials/nav.php';
                 <p><b>email:</b> <?= $_SESSION['currentUser']['email']?><i id="cambiarEmail"
                         class="bi bi-pencil-fill ms-1" style="cursor:pointer"></i></p>
                 <small id="existEmail"
-                    class="text-danger"><?=isset($_SESSION['currentUser']['existNewEmail'])&& !$_SESSION['currentUser']['existNewEmail'] ? 'El email ' . $_SESSION['currentUser']['invalidEmail'] . ' ya existe' :''?></small>
-
+                    class="d-none text-danger"><?=isset($_SESSION['currentUser']['existNewEmail'])&& !$_SESSION['currentUser']['existNewEmail'] ? '' : 'El email ' . $_SESSION['currentUser']['invalidEmail'] . ' ya existe'?></small>
+                <small id="incorrectEmail" class="d-none ">El formato del email debe ser:  ejemplo@gmail.com</small>
                 <form action="<?= BASE_PATH . '/updateDatos'; ?>" method="POST" id="formEmail"
                     class="form d-none flex-column">
                     <input id="newEmail" class="" type="text" value="<?= $_SESSION['currentUser']['email']?>"
                         name="newEmail">
-                    <button id="submitCambiarEmail" class=" w-md-25 m-1 btn btn-danger" type="submit">Cambiar</button>
+                    <button id="submitCambiarEmail" class=" w-md-25 m-1 btn btn-danger" type="submit" >Cambiar</button>
                 </form>
                 <p><b>Nombre:</b> <?= $_SESSION['currentUser']['name']?><i id="cambiarNombre"
                         class="bi bi-pencil-fill ms-1" style="cursor:pointer"></i></p>

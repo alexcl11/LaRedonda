@@ -4,7 +4,7 @@
 <main>
     <div class="container">
         <h2 id="nombreLiga"></h2>
-        <h4>Tabla de clasificación</h4>
+        <h4 id="tablaClasiH4">Tabla de clasificación</h4>
         <table id="leagueTable" class="display table leagueTable ">
             <thead>
                 <tr>
