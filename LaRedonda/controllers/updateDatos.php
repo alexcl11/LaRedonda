@@ -14,6 +14,7 @@ if(isset($_POST['newEmail'])){
         $update = Database::updateUserEmail($_SESSION['currentUser']['id'], $newEmail);
         $_SESSION['currentUser']['email'] = $newEmail;
         $_SESSION['currentUser']['existNewEmail'] = false;
+        $_SESSION['currentUser']['invalidEmail'] = '';
     } else {
         $_SESSION['currentUser']['existNewEmail'] = true;
         $_SESSION['currentUser']['invalidEmail'] = $newEmail;

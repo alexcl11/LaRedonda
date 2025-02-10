@@ -13,7 +13,7 @@ require_once 'partials/nav.php';
                 <p><b>email:</b> <?= $_SESSION['currentUser']['email']?><i id="cambiarEmail"
                         class="bi bi-pencil-fill ms-1" style="cursor:pointer"></i></p>
                 <small id="existEmail"
-                    class="d-none text-danger"><?=isset($_SESSION['currentUser']['existNewEmail'])&& !$_SESSION['currentUser']['existNewEmail'] ? '' : 'El email ' . $_SESSION['currentUser']['invalidEmail'] . ' ya existe'?></small>
+                    class="d-none text-danger"><?=isset($_SESSION['currentUser']['existNewEmail'])&& $_SESSION['currentUser']['existNewEmail'] ? 'Ya existe un usuario ' . $_SESSION['currentUser']['invalidEmail']:''?></small>
                 <small id="incorrectEmail" class="d-none ">El formato del email debe ser:  ejemplo@gmail.com</small>
                 <form action="<?= BASE_PATH . '/updateDatos'; ?>" method="POST" id="formEmail"
                     class="form d-none flex-column">

@@ -4,6 +4,7 @@ import { getLeague } from "./pagLiga.js";
 import { initSignUp } from "./validacionRegistro.js";
 import { cambiarEmail, cambiarNombre } from "./cambiarDatosPerfil.js";
 import { validarEmail } from "./validacionCambioDatos.js";
+import { ligasPais } from "./buscarLigasPais.js";
 document.addEventListener("DOMContentLoaded", () => {
   if (window.location.pathname === "/") {
     ejecutarFuncionesInicio();
@@ -18,6 +19,11 @@ document.addEventListener("DOMContentLoaded", () => {
     cambiarEmail();
     cambiarNombre();
     validarEmail();
+  }
+  if (window.location.pathname === "/ligas_pais") {
+    const urlParams = new URLSearchParams(window.location.search); 
+    const nomPais = urlParams.get('p');
+    ligasPais(nomPais);
   }
 });
 
