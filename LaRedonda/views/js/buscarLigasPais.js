@@ -7,7 +7,7 @@ export async function ligasPais(nomPais){
     const filaCopas = document.getElementById('filaCopas');
 
     data.countries.forEach(competition => {
-        if(competition.strCurrentSeason === "2024-2025"){
+        if(competition.strCurrentSeason.includes("2025")){
             const divCompetition = document.createElement('div');
             divCompetition.classList.add('col')
             divCompetition.classList.add('iconoLiga')
