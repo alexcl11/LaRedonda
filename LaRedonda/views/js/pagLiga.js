@@ -21,7 +21,7 @@ export async function getLeague(ligaId) {
     const description = team.strDescription ? team.strDescription.toLowerCase() : ""; 
 
     switch (true) {
-      case description.includes("champions"):
+      case description.includes("champions") || description.includes('promotion'):
         trLeague.classList.add("cha");
         break;
       case description.includes("europa"):

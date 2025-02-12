@@ -20,9 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
     cambiarNombre();
     validarEmail();
   }
-  if (window.location.pathname === "/ligas_pais") {
+  if (window.location.pathname === "/ligas_pais") {    
     const urlParams = new URLSearchParams(window.location.search); 
+    console.log("Parametros url: "+urlParams)
     const nomPais = urlParams.get('p');
+    console.log(nomPais)
     ligasPais(nomPais);
   }
 });
@@ -101,6 +103,7 @@ function ejecutarFuncionesInicio() {
     resultadosLL.classList.add("d-flex");
   });
 
+  
   newsApi();
 
   const logoChampions = document.getElementById("logoChampions");
