@@ -1,5 +1,5 @@
 export async function getLeague(ligaId) {
-  const tablaClasiH4 = document.getElementById('tablaClasiH4');
+  const tablaClasiH4 = document.getElementById("tablaClasiH4");
   const leagueTable = document.getElementById("tbodyLeague");
   const nombreLiga = document.getElementById("nombreLiga");
   const response = await fetch(
@@ -13,15 +13,20 @@ export async function getLeague(ligaId) {
     console.error("No se encontraron datos de la liga.");
     return;
   }
-  tablaClasiH4.innerText += ' última actualización: ' + data.table[0].dateUpdated; 
+
+  tablaClasiH4.innerText +=
+    " última actualización: " + data.table[0].dateUpdated;
   nombreLiga.innerText = data.table[0].strLeague;
   data.table.forEach((team) => {
     const trLeague = document.createElement("tr");
-    
-    const description = team.strDescription ? team.strDescription.toLowerCase() : ""; 
+
+    const description = team.strDescription
+      ? team.strDescription.toLowerCase()
+      : "";
 
     switch (true) {
-      case description.includes("champions") || description.includes('promotion'):
+      case description.includes("champions") ||
+        description.includes("promotion"):
         trLeague.classList.add("cha");
         break;
       case description.includes("europa"):
@@ -34,25 +39,22 @@ export async function getLeague(ligaId) {
         trLeague.classList.add("desc");
         break;
       default:
-        trLeague.classList.add("normal"); 
+        trLeague.classList.add("normal");
         break;
     }
     trLeague.insertAdjacentHTML(
       "beforeend",
-      `<td>${team.intRank}</td>   
-                <td><img class="img-fluid" src=${team.strBadge} width="30"> ${
-        team.strTeam
-      }</td>   
-                <td>${team.intPlayed}</td>   
-                <td>${team.intPoints}</td>   
-                <td>${team.intWin}</td>    
-                <td>${team.intDraw}</td>    
-                <td>${team.intLoss}</td>    
-                <td class="d-none d-md-table-cell">${team.intGoalsFor}</td>    
-                <td class="d-none d-md-table-cell">${team.intGoalsAgainst}</td>    
-                <td>${team.intGoalDifference}</td>    
-                <td class="d-none d-md-table-cell">${team.strForm || "-"}</td> 
-        `
+      `<td>${team.intRank}</td>
+       <td><a style="text-decoration: none; color: black;" href="http://localhost:8080/equipo?t=${team.strTeam}" ><img class="img-fluid" src=${team.strBadge} width="30"> ${team.strTeam}</a></td>   
+       <td>${team.intPlayed}</td>   
+       <td>${team.intPoints}</td>   
+       <td>${team.intWin}</td>    
+       <td>${team.intDraw}</td>    
+       <td>${team.intLoss}</td>    
+       <td class="d-none d-md-table-cell">${team.intGoalsFor}</td>    
+       <td class="d-none d-md-table-cell">${team.intGoalsAgainst}</td>    
+       <td>${team.intGoalDifference}</td>    
+       <td class="d-none d-md-table-cell">${team.strForm || "-"}</td>`
     );
     leagueTable.appendChild(trLeague);
   });

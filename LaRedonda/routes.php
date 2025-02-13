@@ -10,5 +10,5 @@ return [
     '/updateDatos' => 'controllers/updateDatos.php',
     '/liga' => 'controllers/pagina_liga.php',
     '/ligas_pais' => 'controllers/ligas_pais.php',
-
+    '/equipo' => 'controllers/equipos.php',
 ];

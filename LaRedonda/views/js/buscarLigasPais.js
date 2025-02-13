@@ -5,6 +5,7 @@ export async function ligasPais(nomPais){
     console.log(data)
     const filaLigas = document.getElementById('filaLigas');
     const filaCopas = document.getElementById('filaCopas');
+    
 
     data.countries.forEach(competition => {
         if(competition.strCurrentSeason.includes("2025")){
