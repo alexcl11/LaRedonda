@@ -1,11 +1,11 @@
 
-import { desplegarResults } from "./desplegarResultadosNoticias.js";
-import { obtenerLigaPorId } from "./obtenerLiga.js";
-import { initSignUp } from "./validacionRegistro.js";
-import { cambiarEmail, cambiarNombre } from "./cambiarDatosPerfil.js";
-import { validarEmail } from "./validacionCambioDatos.js";
-import { ligasPais } from "./buscarLigasPais.js";
-import { datosEquipos } from "./datosEquipos.js"; 
+import { desplegarResults } from "./modules/desplegarResultadosNoticias.js";
+import { obtenerLigaPorId } from "./modules/obtenerLiga.js";
+import { initSignUp } from "./modules/validacionRegistro.js";
+import { cambiarEmail, cambiarNombre } from "./modules/cambiarDatosPerfil.js";
+import { validarEmail } from "./modules/validacionCambioDatos.js";
+import { ligasPais } from "./modules/buscarLigasPais.js";
+import { datosEquipos } from "./modules/datosEquipos.js"; 
 document.addEventListener("DOMContentLoaded", () => {
 
   const page = window.location.pathname
