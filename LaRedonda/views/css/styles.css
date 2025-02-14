@@ -5,6 +5,8 @@
   font-style: normal;
 }
 
+
+
 h2 {
   font-family: "Klops Personal", sans-serif;
   font-size: 40px;
@@ -22,6 +24,7 @@ h4, h5{
 }
 .nav-link:hover {
   background-color: #881e29 !important; /* color danger */
+  color: white !important;
   cursor: pointer;
 }
 .disabled:hover {
@@ -42,6 +45,30 @@ h4, h5{
   background-color: rgb(221, 219, 219);
   border-radius: 25px;
 }
+.tarjetaResultadoEquipo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 10px;
+  padding: 2px;
+  border: 1px solid #ccc;
+  text-align: center;
+  background-color: rgb(221, 219, 219);
+  border-radius: 25px;
+}
+
+.league-name {
+  font-family: "Klops Personal", sans-serif;
+  color: #dc3545;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
 
 .form-select {
   background-color: white;

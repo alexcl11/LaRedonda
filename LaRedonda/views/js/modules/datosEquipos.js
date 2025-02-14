@@ -20,7 +20,7 @@ export async function datosEquipos(idEquipo){
     formedYear.innerHTML = "<p><b>Año de formación:</b> "+data.teams[0].intFormedYear+"</p>" 
 
     const estadioEquipo = document.createElement('p');
-    estadioEquipo.innerHTML = "<p><b>Estadio: </b> "+data.teams[0].strStadium+" ("+data.teams[0].intStadiumCapacity+")</p>";
+    estadioEquipo.innerHTML = "<p><b>Estadio (capacidad): </b> "+data.teams[0].strStadium+" ("+data.teams[0].intStadiumCapacity+")</p>";
 
     const localizacion = document.createElement('p');
     localizacion.innerHTML = "<p><b>Localización: </b> "+data.teams[0].strLocation+" ("+data.teams[0].strCountry+")</p>";
@@ -46,15 +46,158 @@ export async function datosEquipos(idEquipo){
     infoEquipo.appendChild(localizacion)
     infoEquipo.appendChild(listCompeticionesP)
 
-
+    const seccionUltimosResultados = document.getElementById('seccionUltimosResultados');
+    const resultados = await obtenerResultados(data.teams);
+    seccionUltimosResultados.appendChild(resultados)
+    //obtenerResultados(data.teams)
     const seccionDescripcion = document.getElementById('seccionDescripcion');
+    seccionDescripcion.appendChild(obtenerDescripcion(data.teams))
+    console.log(obtenerDescripcion(data.teams));
 
+    const seccionPlantilla = document.getElementById('seccionPlantilla');
+        
+    const ultimosResultadosLink = document.getElementById('ultimosResultadosLink');
+    ultimosResultadosLink.addEventListener('click',()=>{
+        seccionUltimosResultados.classList.remove('d-none');
+        ultimosResultadosLink.classList.add('active');
+        
+        seccionPlantilla.classList.add('d-none');
+        plantillaLink.classList.remove('active');
+        
+        seccionDescripcion.classList.add('d-none');
+        descripcionLink.classList.remove('active');
+    });
+
+    const descripcionLink = document.getElementById('descripcionLink');
+    descripcionLink.addEventListener('click',()=>{
+        seccionDescripcion.classList.remove('d-none');
+        descripcionLink.classList.add('active');
+
+        seccionUltimosResultados.classList.add('d-none');
+        ultimosResultadosLink.classList.remove('active');
+
+        seccionPlantilla.classList.add('d-none');
+        plantillaLink.classList.remove('active');
+    })
+
+    const plantillaLink = document.getElementById('plantillaLink');
+    plantillaLink.addEventListener('click',()=>{
+        seccionDescripcion.classList.remove('d-none');
+        plantillaLink.classList.add('active');
+
+        seccionUltimosResultados.classList.add('d-none');
+        ultimosResultadosLink.classList.remove('active');
+
+        seccionDescripcion.classList.add('d-none');
+        descripcionLink.classList.remove('active');
+    })
+}
+
+async function obtenerPlantilla(){
+
+}
+
+function obtenerDescripcion(array){
     const descripcion = document.createElement('p');
-    if(data.teams[0].strDescriptionES!=="" && data.teams[0].strDescriptionES!=null){
-        descripcion.innerText = data.teams[0].strDescriptionES
+    if(array[0].strDescriptionES!=="" && array[0].strDescriptionES!=null){
+        descripcion.innerText = array[0].strDescriptionES
     }else{ 
-        descripcion.innerText = data.teams[0].strDescriptionEN
+        descripcion.innerText = array[0].strDescriptionEN
     }
+    return descripcion;
+}
+async function obtenerResultados(array) {
+    const url = "https://www.thesportsdb.com/api/v1/json/3/eventslast.php?id=" + array[0].idTeam;
+    const response = await fetch(url);
+    const data = await response.json();
 
-    seccionDescripcion.appendChild(descripcion)
+    const resultDiv = document.createElement("div");
+
+    data.results.forEach((results) => {
+        let gameDiv = document.createElement("div");
+        gameDiv.classList.add("tarjetaResultadoEquipo");
+        gameDiv.style.width = "100%";
+
+        const leagueContainer = document.createElement("div");
+        leagueContainer.classList.add("league-container");
+        const leagueName = document.createElement("p");
+        leagueName.classList.add("league-name");
+        leagueName.innerText = results.strLeague || "Competición desconocida";
+        leagueContainer.appendChild(leagueName);
+
+        const fechaContainer = document.createElement("div");
+        fechaContainer.classList.add("fecha-container");
+        const fecha = document.createElement("p");
+        fecha.innerText = results.strTimeLocal ? `${results.dateEvent} || ${results.strTimeLocal}` : results.dateEvent;
+        fechaContainer.appendChild(fecha);
+
+        const estadoPartido = document.createElement("div");
+        estadoPartido.classList.add("estado-partido");
+        estadoPartido.innerText = results.strStatus === "Match Finished" ? "Finalizado" : "Por disputar";
+
+        const homeContainer = document.createElement("div");
+        homeContainer.classList.add("team-container");
+        homeContainer.style.display = "flex";
+        homeContainer.style.flexDirection = "column";
+        homeContainer.style.alignItems = "center";
+
+        const homeLogo = document.createElement("img");
+        homeLogo.classList.add("team-logo");
+        homeLogo.src = results.strHomeTeamBadge;
+        homeLogo.alt = results.strHomeTeam + " Logo";
+
+        const homeName = document.createElement("p");
+        homeName.classList.add("team-name");
+        homeName.innerText = results.strHomeTeam;
+
+        homeContainer.appendChild(homeLogo);
+        homeContainer.appendChild(homeName);
+
+        const awayContainer = document.createElement("div");
+        awayContainer.classList.add("team-container");
+        awayContainer.style.display = "flex";
+        awayContainer.style.flexDirection = "column";
+        awayContainer.style.alignItems = "center";
+
+        const aAwayLogo = document.createElement("a");
+        aAwayLogo.href = `http://localhost:8080/equipo?t=${results.strAwayTeam}`;
+        const awayLogo = document.createElement("img");
+        awayLogo.classList.add("team-logo");
+        awayLogo.src = results.strAwayTeamBadge;
+        awayLogo.alt = results.strAwayTeam + " Logo";
+        aAwayLogo.appendChild(awayLogo);
+
+        const awayName = document.createElement("p");
+        awayName.classList.add("team-name");
+        awayName.innerText = results.strAwayTeam;
+
+        awayContainer.appendChild(aAwayLogo);
+        awayContainer.appendChild(awayName);
+
+        const marcador = document.createElement("span");
+        marcador.classList.add("marcador");
+        marcador.innerHTML = results.intHomeScore != null && results.intAwayScore != null
+            ? `${results.intHomeScore} : ${results.intAwayScore}`
+            : "- : -";
+
+        const logoContainer = document.createElement("div");
+        logoContainer.classList.add("logo-container");
+        logoContainer.appendChild(homeContainer);
+        logoContainer.appendChild(marcador);
+        logoContainer.appendChild(awayContainer);
+
+        const venue = document.createElement("p");
+        venue.classList.add("venue");
+        venue.innerText = results.strVenue;
+
+        gameDiv.appendChild(leagueContainer);
+        gameDiv.appendChild(fechaContainer);
+        gameDiv.appendChild(estadoPartido);
+        gameDiv.appendChild(logoContainer);
+        gameDiv.appendChild(venue);
+
+        resultDiv.appendChild(gameDiv);
+    });
+
+    return resultDiv;
 }
