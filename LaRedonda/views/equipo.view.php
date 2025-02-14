@@ -25,7 +25,7 @@ require_once 'partials/nav.php';
                 </ul>
 
                 <div>
-                    <div id="seccionUltimosResultados" class="d-flex justify-content-center w-100 border"></div>
+                    <div id="seccionUltimosResultados" class="d-flex justify-content-center "></div>
                     <div id="seccionDescripcion" class="col d-none"></div>
                     <div id="seccionPlantilla" class="col d-none"></div>
                 </div>
