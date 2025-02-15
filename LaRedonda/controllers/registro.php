@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once 'models/Database.php';
 require 'functions.php';
 
@@ -15,6 +17,13 @@ $userExists = userExists($email);
 
 if (!$userExists) {
     Database::createUser($email, $name, $password);
-}
+    $_SESSION['currentUser'] = [
+        'id' => $id,
+        'email' => $email,
+        'name' => $name
+    ];
+    header('Location: /');
+    exit();
+} 
 
-require 'views/registro.view.php';
+require_once 'views/registro.view.php';

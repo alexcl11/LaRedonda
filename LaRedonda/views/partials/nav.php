@@ -20,7 +20,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     <a id="inicio" class="nav-link text-light " aria-current="page" href="<?= BASE_PATH; ?>">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="<?= BASE_PATH . '/temporada_actual'; ?>">Temporada 24/25</a>
+                    <a class="nav-link text-light" href="<?= BASE_PATH . '/temporada?s=2024-2025'; ?>">Temporada 24/25</a>
                 </li>
                 <li class="nav-item <?= (isset($_SESSION['currentUser'])) ? '' : 'disabled'; ?>">
                     <div class="dropdown ">
@@ -29,8 +29,8 @@ if (session_status() === PHP_SESSION_NONE) {
                             Otras temporadas
                         </a>
                         <ul class="dropdown-menu ">
-                            <li><a class="dropdown-item" href="#">Temporada 23/24</a></li>
-                            <li><a class="dropdown-item" href="#">Temporada 22/23</a></li>
+                            <li><a class="dropdown-item" href="<?= BASE_PATH . '/temporada?s=2023-2024'; ?>">Temporada 23/24</a></li>
+                            <li><a class="dropdown-item" href="<?= BASE_PATH . '/temporada?s=2022-2023'; ?>">Temporada 22/23</a></li>
                             <li><a class="dropdown-item" href="#">Temporadas anteriores</a></li>
                         </ul>
                     </div>
@@ -44,7 +44,7 @@ if (session_status() === PHP_SESSION_NONE) {
             <?php if(isset($_SESSION['currentUser'])):  ?>
             <ul class="nav ms-auto">
                 <li class="nav-item ">
-                    <a class="nav-link text-light " href="<?= BASE_PATH . '/perfil'; ?>">Mi perfil</a>
+                    <a class="nav-link text-light " href="<?= BASE_PATH . '/perfil'; ?>"><i class="bi bi-person-fill"></i> <?=$_SESSION['currentUser']['name']?></a>
                 </li>
             </ul>
             <?php else: ?>

@@ -1,7 +1,7 @@
 <?php
 return [
     '/' => 'controllers/home.php',
-    '/temporada_actual' => 'controllers/tempactual.php',
+    '/temporada' => 'controllers/temporada.php',
     '/inicio_sesion' => 'controllers/inicio_sesion.php',
     '/crear_cuenta' => 'controllers/crear_cuenta.php',
     '/registro' => 'controllers/registro.php',

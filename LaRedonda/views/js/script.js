@@ -27,7 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
       case "/ligas_pais":
         const urlParamsLiga = new URLSearchParams(window.location.search); 
         const nomPais = urlParamsLiga.get('p');
-        ligasPais(nomPais);
+        const season = urlParamsLiga.get('s');
+        ligasPais(nomPais, season);
         break;
       case "/equipo":
         const urlParamsEquipo = new URLSearchParams(window.location.search); 
