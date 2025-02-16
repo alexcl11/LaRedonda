@@ -5,6 +5,14 @@
   font-style: normal;
 }
 
+#seccionResultados {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+}
+
 
 
 h2 {

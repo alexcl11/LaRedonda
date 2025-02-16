@@ -6,15 +6,17 @@ import { cambiarEmail, cambiarNombre } from "./modules/cambiarDatosPerfil.js";
 import { validarEmail } from "./modules/validacionCambioDatos.js";
 import { ligasPais } from "./modules/buscarLigasPais.js";
 import { datosEquipos } from "./modules/datosEquipos.js"; 
+import { desplegarClasificacionResultados } from "./modules/resultsPorLiga.js"
 document.addEventListener("DOMContentLoaded", () => {
 
   const page = window.location.pathname
     switch (page){
       case "/":
-        desplegarResults()
+        desplegarResults();
         break;
       case "/liga":
-        obtenerLigaPorId()
+        obtenerLigaPorId();
+        desplegarClasificacionResultados();
         break;
       case "/crear_cuenta":
         initSignUp();
@@ -25,9 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
         validarEmail();
         break;
       case "/ligas_pais":
-        const urlParamsLiga = new URLSearchParams(window.location.search); 
-        const nomPais = urlParamsLiga.get('p');
-        const season = urlParamsLiga.get('s');
+        const urlParamsLigaPais = new URLSearchParams(window.location.search); 
+        const nomPais = urlParamsLigaPais.get('p');
+        const season = urlParamsLigaPais.get('s');
         ligasPais(nomPais, season);
         break;
       case "/equipo":

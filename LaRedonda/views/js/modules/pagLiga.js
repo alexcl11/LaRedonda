@@ -32,7 +32,7 @@ export async function getLeague(ligaId, season) {
           (description.includes("promotion") && (!description.includes("play-off") && !description.includes("conference")&&(!description.includes("europa")))):
           trLeague.classList.add("cha");
           break;
-        case description.includes("europa") || description.includes("play-off"):
+        case description.includes("europa league") || description.includes("play-off"):
           trLeague.classList.add("uefa");
           break;
         case description.includes("conference"):
