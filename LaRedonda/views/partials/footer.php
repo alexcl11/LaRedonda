@@ -52,16 +52,16 @@ if (session_status() === PHP_SESSION_NONE) {
             Clasificaciones
           </h6>
           <p>
-            <a href="<?= BASE_PATH .'/liga?id=4328'?>" class="text-white">Premier League</a>
+            <a href="<?= BASE_PATH .'/liga?id=4328&s=2024-2025'?>" class="text-white">Premier League</a>
           </p>
           <p>
-            <a href="<?= BASE_PATH .'/liga?id=4335'?>" class="text-white">La Liga</a>
+            <a href="<?= BASE_PATH .'/liga?id=4335&s=2024-2025'?>" class="text-white">La Liga</a>
           </p>
           <p>
-            <a href="<?= BASE_PATH .'/liga?id=4332'?>" class="text-white">Serie A</a>
+            <a href="<?= BASE_PATH .'/liga?id=4332&s=2024-2025'?>" class="text-white">Serie A</a>
           </p>
           <p>
-            <a href="<?= BASE_PATH .'/liga?id=4331'?>" class="text-white">Bundesliga</a>
+            <a href="<?= BASE_PATH .'/liga?id=4331&s=2024-2025'?>" class="text-white">Bundesliga</a>
           </p>
         </div>
        

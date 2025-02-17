@@ -37,7 +37,7 @@
                     </tbody>
                 </table>
             </div>
-            <div id="seccionResultados" class="d-none">
+            <div id="seccionResultados" class="d-none m-4">
                 <h2>Seleccione la jornada </h2>
                 <select class="form-select w-50 selectpicker" data-live-search="true" size="3" name="jornada"
                     id="jornada">
