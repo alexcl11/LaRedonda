@@ -26,4 +26,4 @@ if (!$userExists) {
     exit();
 } 
 
-require_once 'views/registro.view.php';
+require_once 'views/Registration/registro.view.php';

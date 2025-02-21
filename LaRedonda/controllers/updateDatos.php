@@ -4,7 +4,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 require_once 'models/Database.php';
-require_once 'controllers/functions.php';
+require_once 'controllers/Resgistration/functions.php';
 
 if(isset($_POST['newEmail'])){
     $newEmail = $_POST['newEmail'];

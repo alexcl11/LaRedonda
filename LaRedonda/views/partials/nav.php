@@ -7,7 +7,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <nav class="navbar navbar-expand-lg bg-danger nav-tabs">
     <div class="container-fluid">
         <a class="navbar-brand text-light" href="<?= BASE_PATH; ?>">
-            <img src="img/logo.png" alt="Logo" style="width:80px;height: 56px;"
+            <img src="views/img/logo.png" alt="Logo" style="width:80px;height: 56px;"
                 class="">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -24,7 +24,7 @@ if (session_status() === PHP_SESSION_NONE) {
                 </li>
                 <li class="nav-item <?= (isset($_SESSION['currentUser'])) ? '' : 'disabled'; ?>">
                     <div class="dropdown ">
-                        <a class="nav-link text-light dropdown-toggle <?= (isset($_SESSION['currentUser'])) ? '' : 'disabled'; ?>"
+                        <a class="nav-link text-light dropdown-toggle"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Otras temporadas
                         </a>

@@ -40,7 +40,7 @@ if (session_status() === PHP_SESSION_NONE) {
   
         <div class="col-5 col-md-2 col-lg-3 col-xl-3 mx-auto mb-4">
     
-          <img class="img-fluid" src="../img/logo.png" alt="La Redonda">
+          <img class="img-fluid" src="views/img/logo.png" alt="La Redonda">
           </p>
         </div>
  

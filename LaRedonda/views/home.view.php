@@ -11,25 +11,25 @@
                 </div>
                 <div class="row d-flex align-items-baseline">
                     <div class="col logo" id="desplegarCL">
-                        <img class="img-fluid" src="img/logoChampions.png" alt="">
+                        <img class="img-fluid" src="views/img/logoChampions.png" alt="">
                     </div>
                     <div class="col logo" id="desplegarPL">
-                        <img class="img-fluid" src="img/logoPremier.png" alt="">
+                        <img class="img-fluid" src="views/img/logoPremier.png" alt="">
                     </div>
                     <div class="col logo" id="desplegarLL">
-                        <img class="img-fluid" src="img/logoLaliga.png" alt="">
+                        <img class="img-fluid" src="views/img/logoLaliga.png" alt="">
                     </div>
                     <div class="col logo" id="desplegarSA">
-                        <img class="img-fluid" src="img/logoSerieA.png" alt="">
+                        <img class="img-fluid" src="views/img/logoSerieA.png" alt="">
                     </div>
                     <div class="col logo" id="desplegarBL">
-                        <img class="img-fluid" src="img/logoBundes.png" alt="" width="100px">
+                        <img class="img-fluid" src="views/img/logoBundes.png" alt="" width="100px">
                     </div>
                 </div>
                 <div class="row d-none justify-content-center results" id="resultadosCL">
 
                     <div class="w-100 d-flex flex-column justify-content-center align-items-center">
-                        <img id="logoChampions" class="logo" src="img/logoChampions.png" alt="Champions League Logo"
+                        <img id="logoChampions" class="logo" src="views/img/logoChampions.png" alt="Champions League Logo"
                             style="width: 200px; 
                         height: auto; margin: 10px 0;">
                         <select class="form-select w-50 selectpicker" data-live-search="true" size="3" name="jornadacL" id="jornadaCL">
@@ -47,7 +47,7 @@
                     <div class="w-100 d-flex flex-column justify-content-center align-items-center">
 
 
-                        <img id="logoPrem" class="logo" src="img/logoPremier.png" alt="Premier League Logo" style="width: 200px; 
+                        <img id="logoPrem" class="logo" src="views/img/logoPremier.png" alt="Premier League Logo" style="width: 200px; 
                             height: auto; margin: 10px 0;">
                         <select class="form-select w-50 selectpicker" data-live-search="true" size="3" name="jornadaPL" id="jornadaPL">
                             <script>
@@ -65,7 +65,7 @@
                     <div class="w-100 d-flex flex-column justify-content-center align-items-center">
 
 
-                        <img id="logoLaLiga" class="logo" src="img/logoLaLiga.png" alt="LaLiga Logo" style="width: 200px; 
+                        <img id="logoLaLiga" class="logo" src="views/img/logoLaLiga.png" alt="LaLiga Logo" style="width: 200px; 
                             height: auto; margin: 10px 0;">
                         <select class="form-select w-50 selectpicker" data-live-search="true" size="3" name="jornadaLL" id="jornadaLL">
                             <script>
@@ -83,7 +83,7 @@
                     <div class="w-100 d-flex flex-column justify-content-center align-items-center">
 
 
-                        <img id="logoSerieA" class="logo img-fluid" src="img/logoSerieA.png" alt="Serie A Logo" style="width: 250px; 
+                        <img id="logoSerieA" class="logo img-fluid" src="views/img/logoSerieA.png" alt="Serie A Logo" style="width: 250px; 
                             height: auto; margin: 10px 0;">
                         <select class="form-select w-50 selectpicker" data-live-search="true" size="3" name="jornadaSA" id="jornadaSA">
                             <script>
@@ -101,7 +101,7 @@
                     <div class="w-100 d-flex flex-column justify-content-center align-items-center">
 
 
-                        <img id="logoBundes" class="logo img-fluid" src="img/logoBundes.png" alt="Bundes Logo" style="width: 200px; 
+                        <img id="logoBundes" class="logo img-fluid" src="views/img/logoBundes.png" alt="Bundes Logo" style="width: 200px; 
                             height: auto; margin: 10px 0;">
                         <select class="form-select w-50 selectpicker" data-live-search="true" size="3" name="jornadaBL" id="jornadaBL">
                             <script>

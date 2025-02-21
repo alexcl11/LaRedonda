@@ -27,4 +27,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-require 'views/inicio_sesion.view.php';
+require 'views/Session/inicio_sesion.view.php';
