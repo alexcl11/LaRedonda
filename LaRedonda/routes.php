@@ -11,5 +11,6 @@ return [
     '/liga' => 'controllers/pagina_liga.php',
     '/ligas_pais' => 'controllers/ligas_pais.php',
     '/equipo' => 'controllers/equipos.php',
-    '/eliminar_cuenta' => 'controllers/Session/eliminar_cuenta.php'
+    '/eliminar_cuenta' => 'controllers/Session/eliminar_cuenta.php',
+    '/favoritos' => 'controllers/favoritos.php'
 ];

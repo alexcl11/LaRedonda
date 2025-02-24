@@ -37,7 +37,7 @@ if (session_status() === PHP_SESSION_NONE) {
                 </li>
                 <li class="nav-item favoritos <?= (isset($_SESSION['currentUser'])) ? '' : 'disabled'; ?>">
                     <a class="nav-link text-light <?= (isset($_SESSION['currentUser'])) ? '' : 'disabled'; ?>"
-                        href="#">Favoritos 🤍</a>
+                        href="<?= BASE_PATH . '/favoritos'; ?>">Favoritos 🤍</a>
                 </li>
 
             </ul>

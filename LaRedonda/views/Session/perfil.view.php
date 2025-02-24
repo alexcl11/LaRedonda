@@ -7,8 +7,9 @@ require_once 'views/partials/nav.php';
 <main>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-4 m-3 p-2 d-flex flex-column align-content-center border rounded">
+            <div class=" col-8 col-md-4 m-3 p-2 d-flex flex-column align-content-center border rounded">
                 <h3>Tus datos:</h3>
+                <p><b>Id de usuario: </b><?=$_SESSION['currentUser']['id']?></p>
                 <p><b>email:</b> <?= $_SESSION['currentUser']['email'] ?><i id="cambiarEmail"
                         class="bi bi-pencil-fill ms-1" style="cursor:pointer"></i></p>
                 <small id="existEmail"
@@ -28,8 +29,8 @@ require_once 'views/partials/nav.php';
                         name="newName">
                     <button id="submitCambiarNombre" class="w-md-25 m-1 btn btn-danger" type="submit">Cambiar</button>
                 </form>
-                <a href="<?= BASE_PATH . '/eliminar_cuenta' ?>" class="btn btn-outline-danger">Eliminar cuenta</a>
-                <a href="<?= BASE_PATH . '/cerrar_sesion' ?>" class="btn btn-outline-danger">Cerrar sesión</a>
+                <a href="<?= BASE_PATH . '/eliminar_cuenta' ?>" class="btn btn-outline-danger m-1">Eliminar cuenta</a>
+                <a href="<?= BASE_PATH . '/cerrar_sesion' ?>" class="btn btn-outline-danger m-1">Cerrar sesión</a>
             </div>
         </div>
     </div>
