@@ -2,4 +2,4 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-require_once 'views/perfil.view.php';
+require_once 'views/Session/perfil.view.php';

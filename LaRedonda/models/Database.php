@@ -65,5 +65,14 @@ class Database
         $instance->query($query, $params);
     }
 
+    public static function deleteUser($id){    
+        $instance = new self();
+        $query = "DELETE FROM `usuarios` WHERE `usuarios`.`id` = :id";
+        $params = [
+            'id' => $id
+        ];
+        $instance->query($query, $params);    
+    } 
+
     
 }

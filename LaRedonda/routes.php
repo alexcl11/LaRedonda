@@ -6,7 +6,7 @@ return [
     '/crear_cuenta' => 'controllers/Registration/crear_cuenta.php',
     '/registro' => 'controllers/Registration/registro.php',
     '/cerrar_sesion' => 'controllers/Session/cerrar_sesion.php',
-    '/perfil' => 'controllers/perfil.php',
+    '/perfil' => 'controllers/Session/perfil.php',
     '/updateDatos' => 'controllers/updateDatos.php',
     '/liga' => 'controllers/pagina_liga.php',
     '/ligas_pais' => 'controllers/ligas_pais.php',
