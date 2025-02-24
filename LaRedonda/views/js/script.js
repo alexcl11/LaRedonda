@@ -6,7 +6,7 @@ import { cambiarEmail, cambiarNombre } from "./modules/cambiarDatosPerfil.js";
 import { validarEmail } from "./modules/validacionCambioDatos.js";
 import { ligasPais } from "./modules/buscarLigasPais.js";
 import { datosEquipos } from "./modules/datosEquipos.js"; 
-import { desplegarClasificacionResultados } from "./modules/resultsPorLiga.js"
+import { desplegarClasificacionResultados } from "./modules/resultsPorLiga.js";
 document.addEventListener("DOMContentLoaded", () => {
 
   const page = window.location.pathname

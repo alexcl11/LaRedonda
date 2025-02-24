@@ -2,7 +2,7 @@
 session_start();
 
 require_once 'models/Database.php';
-require 'functions.php';
+require 'controllers/Core/functions.php';
 
 $name = $_POST['name'];
 $email = $_POST['email'];
