@@ -18,6 +18,7 @@ class Database
     }
 
     
+    
     public static function getUser($email)
     {
         $instance = new self();
@@ -65,11 +66,11 @@ class Database
         $instance->query($query, $params);
     }
 
-    public static function deleteUser($id){    
+    public static function deleteUser($email){    
         $instance = new self();
-        $query = "DELETE FROM `usuarios` WHERE `usuarios`.`id` = :id";
+        $query = "DELETE FROM `usuarios` WHERE `usuarios`.`email` = :email";
         $params = [
-            'id' => $id
+            'email' => $email
         ];
         $instance->query($query, $params);    
     } 
