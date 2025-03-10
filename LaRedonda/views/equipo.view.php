@@ -10,7 +10,7 @@ require_once 'partials/nav.php';
                 <div class="row justify-content-between mx-1">
                     <div id="logoEquipo" class="col-6 p-2 rounded" style="background: #8e8c8c;border: solid #dc3545;">
                     </div>
-                    <div class="col-1"><i id="favoritos" class="bi bi-heart text-dark" style="font-size: 30px;"></i></div>
+                    <div id="favoritos" class="col-1 text-dark"><i  class="bi bi-heart " style="font-size: 30px;"></i></div>
 
                 </div>
 

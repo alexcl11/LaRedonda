@@ -8,4 +8,6 @@ if(!isset($_SESSION['currentUser'])){
     exit();
 }
 
+
+
 require_once 'views/favoritos.view.php';

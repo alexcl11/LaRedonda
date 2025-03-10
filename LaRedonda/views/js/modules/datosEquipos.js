@@ -1,9 +1,9 @@
-export async function datosEquipos(idEquipo){
-    const url = "https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t="+idEquipo
+export async function datosEquipos(idEquipo) {
+    const url = "https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t=" + idEquipo
     const response = await fetch(url);
     const data = await response.json();
     console.log(data)
-     
+
     const logoEquipo = document.getElementById("logoEquipo");
     const nomEquipoDiv = document.getElementById("nomEquipo");
     const infoEquipo = document.getElementById("infoEquipo");
@@ -17,14 +17,14 @@ export async function datosEquipos(idEquipo){
     nomEquipo.innerText = data.teams[0].strTeam;
 
     const formedYear = document.createElement('p');
-    formedYear.innerHTML = "<p><b>Año de formación:</b> "+data.teams[0].intFormedYear+"</p>" 
+    formedYear.innerHTML = "<p><b>Año de formación:</b> " + data.teams[0].intFormedYear + "</p>"
 
     const estadioEquipo = document.createElement('p');
-    estadioEquipo.innerHTML = "<p><b>Estadio (capacidad): </b> "+data.teams[0].strStadium+" ("+data.teams[0].intStadiumCapacity+")</p>";
+    estadioEquipo.innerHTML = "<p><b>Estadio (capacidad): </b> " + data.teams[0].strStadium + " (" + data.teams[0].intStadiumCapacity + ")</p>";
 
     const localizacion = document.createElement('p');
-    localizacion.innerHTML = "<p><b>Localización: </b> "+data.teams[0].strLocation+" ("+data.teams[0].strCountry+")</p>";
-    
+    localizacion.innerHTML = "<p><b>Localización: </b> " + data.teams[0].strLocation + " (" + data.teams[0].strCountry + ")</p>";
+
 
     const listCompeticionesP = document.createElement('p');
     listCompeticionesP.innerHTML = "<p><b>Competiciones</b><p/>";
@@ -55,21 +55,21 @@ export async function datosEquipos(idEquipo){
     console.log(obtenerDescripcion(data.teams));
 
     const seccionPlantilla = document.getElementById('seccionPlantilla');
-        
+
     const ultimosResultadosLink = document.getElementById('ultimosResultadosLink');
-    ultimosResultadosLink.addEventListener('click',()=>{
+    ultimosResultadosLink.addEventListener('click', () => {
         seccionUltimosResultados.classList.remove('d-none');
         ultimosResultadosLink.classList.add('active');
-        
+
         seccionPlantilla.classList.add('d-none');
         plantillaLink.classList.remove('active');
-        
+
         seccionDescripcion.classList.add('d-none');
         descripcionLink.classList.remove('active');
     });
 
     const descripcionLink = document.getElementById('descripcionLink');
-    descripcionLink.addEventListener('click',()=>{
+    descripcionLink.addEventListener('click', () => {
         seccionDescripcion.classList.remove('d-none');
         descripcionLink.classList.add('active');
 
@@ -81,7 +81,7 @@ export async function datosEquipos(idEquipo){
     })
 
     const plantillaLink = document.getElementById('plantillaLink');
-    plantillaLink.addEventListener('click',()=>{
+    plantillaLink.addEventListener('click', () => {
         seccionDescripcion.classList.remove('d-none');
         plantillaLink.classList.add('active');
 
@@ -92,19 +92,18 @@ export async function datosEquipos(idEquipo){
         descripcionLink.classList.remove('active');
     })
 
-    
 
 }
 
-async function obtenerPlantilla(){
+async function obtenerPlantilla() {
 
 }
 
-function obtenerDescripcion(array){
+function obtenerDescripcion(array) {
     const descripcion = document.createElement('p');
-    if(array[0].strDescriptionES!=="" && array[0].strDescriptionES!=null){
+    if (array[0].strDescriptionES !== "" && array[0].strDescriptionES != null) {
         descripcion.innerText = array[0].strDescriptionES
-    }else{ 
+    } else {
         descripcion.innerText = array[0].strDescriptionEN
     }
     return descripcion;
