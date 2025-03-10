@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>No se ha encontrado la página</h1>
-</body>
-</html>
+<?php
+require_once 'views/partials/head.php';
+require_once 'views/partials/nav.php';
+?>
+<main class=" d-flex flex-column align-items-center  m-5">
+    <h2>No se ha encontrado la página</h2>
+    <a href="<?=BASE_PATH . '/'?>" class="btn btn-danger"> Volver al inicio</a>
+</main>
+<?php
+require_once 'views/partials/footer.php';
+?>
