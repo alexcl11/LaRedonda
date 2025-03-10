@@ -91,6 +91,9 @@ export async function datosEquipos(idEquipo){
         seccionDescripcion.classList.add('d-none');
         descripcionLink.classList.remove('active');
     })
+
+    
+
 }
 
 async function obtenerPlantilla(){
