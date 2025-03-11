@@ -12,5 +12,7 @@ return [
     '/ligas_pais' => 'controllers/ligas_pais.php',
     '/equipo' => 'controllers/equipos.php',
     '/eliminar_cuenta' => 'controllers/Session/eliminar_cuenta.php',
-    '/favoritos' => 'controllers/favoritos.php'
+    '/favoritos' => 'controllers/favoritos.php',
+    '/insertar_favorito' => '/controllers/Core/insertar_favorito.php',
+    '/borrar_favorito' => '/controllers/Core/borrar_favorito.php'
 ];

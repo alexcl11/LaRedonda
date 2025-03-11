@@ -92,6 +92,43 @@ export async function datosEquipos(idEquipo) {
         descripcionLink.classList.remove('active');
     })
 
+    const favoritosButton = document.getElementById('favoritos');
+    favoritosButton.addEventListener('click', () => {
+        let heartIcon = document.getElementById("heartIcon"); // Obtiene el ícono dentro del botón
+        let idUser = favoritosButton.dataset.userId; // ID del usuario (extraído del atributo data)
+        let idFavourite = favoritosButton.dataset.favId; // ID del equipo o favorito
+        let nombreFavorito = favoritosButton.dataset.favName; // Nombre del favorito
+        let tipoFavorito = favoritosButton.dataset.favType; // Tipo de favorito (por si lo necesitas)
+
+        if (heartIcon.classList.contains("bi-heart-fill")) {
+            // Si está relleno, lo vaciamos y eliminamos el favorito
+            heartIcon.classList.remove("bi-heart-fill");
+            heartIcon.classList.add("bi-heart");
+
+            fetch("controllers/Core/borrar_favorito.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: `id_user=${idUser}&id_favourite=${data.teams[0].idTeam}`
+            })
+                .then(response => response.json())
+                .then(data => console.log(data.message))
+                .catch(error => console.error("Error:", error));
+
+        } else {
+            // Si está vacío, lo rellenamos y agregamos el favorito
+            heartIcon.classList.remove("bi-heart");
+            heartIcon.classList.add("bi-heart-fill");
+
+            fetch("controllers/Core/insertar_favorito.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: `id_user=${idUser}&id_favourite=${data.teams[0].idTeam}&nombre_favorito=${data.teams[0].strTeam}&tipo_favorito=equipo`
+            })
+                .then(response => response.json())
+                .then(data => console.log(data.message))
+                .catch(error => console.error("Error:", error));
+        }
+    })
 
 }
 

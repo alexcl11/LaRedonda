@@ -3,6 +3,15 @@ require_once 'partials/head.php';
 require_once 'partials/nav.php';
 ?>
 
+<!-- <?= isset($_SESSION['currentUser']) ? '<div id="favoritos" class="col-1 " 
+                    data-user-id="' . $_SESSION['currentUser']['id'] . '"
+                    data-fav-id="' . $equipo['id_favorito'] . '"
+                    data-fav-name="' . $equipo['nombre_favorito'] . '"
+                    data-fav-type="equipo"><i class="bi ' . $favoritosButton . '"
+                    style="font-size: 30px;"></i>
+                </div>
+                ' : ''?> -->
+
 <main>
     <div class="container m-2">
         <div class="row ">
@@ -10,7 +19,20 @@ require_once 'partials/nav.php';
                 <div class="row justify-content-between mx-1">
                     <div id="logoEquipo" class="col-6 p-2 rounded" style="background: #8e8c8c;border: solid #dc3545;">
                     </div>
-                    <div id="favoritos" class="col-1 text-dark"><i  class="bi bi-heart " style="font-size: 30px;"></i></div>
+                    <?php if(isset($_SESSION['currentUser'])){
+                      echo  '<div id="favoritos" class="col-1 " data-user-id="'.$_SESSION['currentUser']['id'].'"><i id="heartIcon" class="bi '.$favoritosButton.'
+                    " style="font-size: 30px;"></i></div>';
+                
+                    } else if(isset($equipo)){
+                        echo '<div id="favoritos" class="col-1 "data-fav-id="'.$equipo['id_favorito'].'" data-name-fav="'.$equipo['nombre_favorito'].'" data-fav-type="equipo"><i id="heartIcon" class="bi '.$favoritosButton.'
+                    " style="font-size: 30px;"></i>
+                    </div>';
+                    } else {
+                        echo '';
+                    }
+                    ?>
+                
+
 
                 </div>
 
