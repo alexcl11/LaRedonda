@@ -17,10 +17,11 @@ $userExists = userExists($email);
 
 if (!$userExists) {
     Database::createUser($email, $name, $password);
+    $user = Database::getUser($email);
     $_SESSION['currentUser'] = [
-        'id' => $id,
-        'email' => $email,
-        'name' => $name
+        'id' => $user['id'],
+        'email' => $user['email'],
+        'name' => $user['name']
     ];
     header('Location: /');
     exit();
