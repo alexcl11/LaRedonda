@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-03-2025 a las 10:46:08
+-- Tiempo de generación: 16-03-2025 a las 12:19:47
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -54,22 +54,17 @@ CREATE TABLE `usuario_favoritos` (
   `id_usuario` int(11) NOT NULL,
   `id_favorito` int(11) NOT NULL,
   `nombre_favorito` varchar(255) NOT NULL,
-  `tipo_favorito` varchar(255) NOT NULL,
-  `img_favorito` varchar(255) NOT NULL
+  `tipo_favorito` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuario_favoritos`
 --
 
-INSERT INTO `usuario_favoritos` (`id_usuario`, `id_favorito`, `nombre_favorito`, `tipo_favorito`, `img_favorito`) VALUES
-(3, 133739, 'Barcelona', 'equipo', ''),
-(3, 133729, 'Atletico Madrid', 'equipo', ''),
-(1, 133729, 'Atletico Madrid', 'equipo', ''),
-(2, 133729, 'Atletico Madrid', 'equipo', 'https://r2.thesportsdb.com/images/media/team/badge/0ulh3q1719984315.png'),
-(2, 4328, 'English Premier League', 'competicion', '\"/views/img/logos_ligas/4328.png\"'),
-(2, 4332, 'Italian Serie A', 'competicion', '\"/views/img/logos_ligas/4332.png\"'),
-(2, 133739, 'Barcelona', 'equipo', 'https://r2.thesportsdb.com/images/media/team/badge/wq9sir1639406443.png');
+INSERT INTO `usuario_favoritos` (`id_usuario`, `id_favorito`, `nombre_favorito`, `tipo_favorito`) VALUES
+(3, 133739, 'Barcelona', 'equipo'),
+(3, 133729, 'Atletico Madrid', 'equipo'),
+(1, 133729, 'Atletico Madrid', 'equipo');
 
 --
 -- Índices para tablas volcadas

@@ -31,7 +31,7 @@
                     <?php
                     if(isset($competitions)){
                         foreach($competitions as $competition){
-                            echo "<div class='col-2'><a href='" . BASE_PATH . "/liga?id=".$competition['id']."&s=2024-2025'><img src=".$competition['img']." class='img-fluid' alt='Logo ".$competition['name']."'></a></div>";
+                            echo "<div class='col-4'><a href='" . BASE_PATH . "/liga?id=".$competition['id']."&s=2024-2025'><img src=".$competition['img']." class='img-fluid' alt='Logo ".$competition['name']."'></a></div>";
                                 
                         }
                     }

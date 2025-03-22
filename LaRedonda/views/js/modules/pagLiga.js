@@ -91,7 +91,7 @@ export async function getLeague(ligaId, season) {
               fetch("controllers/Core/insertar_favorito.php", {
                   method: "POST",
                   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                  body: `id_user=${idUser}&id_favourite=${data.table[0].idLeague}&nombre_favorito=${data.table[0].strLeague}&tipo_favorito=competicion&img_favorito="/views/img/${data.table[0].idLeague}.png"`
+                  body: `id_user=${idUser}&id_favourite=${data.table[0].idLeague}&nombre_favorito=${data.table[0].strLeague}&tipo_favorito=competicion&img_favorito="/views/img/logos_ligas/${data.table[0].idLeague}.png"`
               })
                   .then(response => response.json())
                   .then(data => console.log(data.message))
