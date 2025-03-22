@@ -15,7 +15,22 @@
 
         <div class="border rounded">
             <div class="container" id="seccionClasificacion">
-                <h2 id="nombreLiga"></h2>
+                <div class="row">
+                    <div class="col"><h2 id="nombreLiga"></h2></div>
+                    <?php if(isset($_SESSION['currentUser'])){
+                        echo  '<div id="favoritos" class="col-1 m-1 " data-user-id="'.$_SESSION['currentUser']['id'].'"><i id="heartIcon" class="bi '.$favoritosButton.'
+                        " style="font-size: 30px;"></i></div>';
+                    
+                        } else if(isset($competicion)){
+                            echo '<div id="favoritos" class="col-1 m-1 "data-fav-id="'.$competicion['id_favorito'].'" data-name-fav="'.$competicion['nombre_favorito'].'" data-fav-type="competicion"><i id="heartIcon" class="bi '.$favoritosButton.'
+                        " style="font-size: 30px;"></i>
+                        </div>';
+                        } else {
+                            echo '';
+                        }
+                    ?>
+                </div>
+                
                 <h4 id="tablaClasiH4">Tabla de clasificación</h4>
                 <table id="leagueTable" class="display table leagueTable ">
                     <thead>

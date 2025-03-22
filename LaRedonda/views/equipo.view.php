@@ -3,14 +3,7 @@ require_once 'partials/head.php';
 require_once 'partials/nav.php';
 ?>
 
-<!-- <?= isset($_SESSION['currentUser']) ? '<div id="favoritos" class="col-1 " 
-                    data-user-id="' . $_SESSION['currentUser']['id'] . '"
-                    data-fav-id="' . $equipo['id_favorito'] . '"
-                    data-fav-name="' . $equipo['nombre_favorito'] . '"
-                    data-fav-type="equipo"><i class="bi ' . $favoritosButton . '"
-                    style="font-size: 30px;"></i>
-                </div>
-                ' : ''?> -->
+
 
 <main>
     <div class="container m-2">

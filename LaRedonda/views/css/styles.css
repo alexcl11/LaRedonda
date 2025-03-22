@@ -313,3 +313,7 @@ h4, h5{
   flex-direction: column;
   justify-content: center;
 }
+
+#heartIcon{
+  cursor: pointer;
+}

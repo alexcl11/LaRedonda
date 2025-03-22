@@ -60,9 +60,49 @@ export async function getLeague(ligaId, season) {
          <td class="d-none d-md-table-cell">${team.strForm || "-"}</td>`
       );
       leagueTableBody.appendChild(trLeague);
+
+      
+
     });
+    const favoritosButton = document.getElementById('favoritos');
+      favoritosButton.addEventListener('click', () => {
+          let heartIcon = document.getElementById("heartIcon"); // Obtiene el ícono dentro del botón
+          let idUser = favoritosButton.dataset.userId; // ID del usuario (extraído del atributo data)
+          
+          if (heartIcon.classList.contains("bi-heart-fill")) {
+              // Si está relleno, lo vaciamos y eliminamos el favorito
+              heartIcon.classList.remove("bi-heart-fill");
+              heartIcon.classList.add("bi-heart");
+  
+              fetch("controllers/Core/borrar_favorito.php", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                  body: `id_user=${idUser}&id_favourite=${data.table[0].idLeague}`
+              })
+                  .then(response => response.json())
+                  .then(data => console.log(data.message))
+                  .catch(error => console.error("Error:", error));
+  
+          } else {
+              // Si está vacío, lo rellenamos y agregamos el favorito
+              heartIcon.classList.remove("bi-heart");
+              heartIcon.classList.add("bi-heart-fill");
+  
+              fetch("controllers/Core/insertar_favorito.php", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                  body: `id_user=${idUser}&id_favourite=${data.table[0].idLeague}&nombre_favorito=${data.table[0].strLeague}&tipo_favorito=competicion&img_favorito="/views/img/${data.table[0].idLeague}.png"`
+              })
+                  .then(response => response.json())
+                  .then(data => console.log(data.message))
+                  .catch(error => console.error("Error:", error));
+          }
+      })
   } catch (error) {
     leagueTable.classList.add('d-none');
     tablaClasiH4.innerText = 'No se han encontrado datos para esta Liga para la temporada seleccionada.'
   }
+
+  
+
 }

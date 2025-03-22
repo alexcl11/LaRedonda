@@ -87,14 +87,15 @@ class Database
         }
     }
 
-    public static function insertFavourite($id_favourite, $nombre_favorito, $tipo_favorito, $id_user){        
+    public static function insertFavourite($id_favourite, $nombre_favorito, $tipo_favorito, $img_favorito, $id_user){        
         $instance = new self();
-        $query = "INSERT INTO `usuario_favoritos`(id_favorito, nombre_favorito, tipo_favorito, id_usuario) 
-            VALUES (:id_favourite, :name_favourite, :tipo_favorito, :id_user)";
+        $query = "INSERT INTO `usuario_favoritos`(id_favorito, nombre_favorito, tipo_favorito, img_favorito, id_usuario) 
+            VALUES (:id_favourite, :name_favourite, :tipo_favorito, :img_favorito, :id_user)";
         $params = [
             "id_favourite" => $id_favourite, 
             "name_favourite" => $nombre_favorito,
             "tipo_favorito" => $tipo_favorito,
+            "img_favorito" => $img_favorito,
             "id_user" => $id_user
         ];
         $instance -> query($query, $params);
