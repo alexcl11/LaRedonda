@@ -24,11 +24,11 @@ export async function ligasPais(nomPais, season){
 
             //downloadImage(competition.strBadge, competition.idLeague);
 
-            const nameCompetition = document.createElement('small');
-            nameCompetition.innerText = competition.strLeague;
+            // const nameCompetition = document.createElement('small');
+            // nameCompetition.innerText = competition.strLeague;
 
             divCompetition.appendChild(aCompetition);
-            divCompetition.appendChild(nameCompetition);
+            //divCompetition.appendChild(nameCompetition);
             
 
             (competition.idCup === "1") ? '' : filaLigas.appendChild(divCompetition);

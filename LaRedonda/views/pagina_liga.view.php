@@ -16,7 +16,7 @@
         <div class="border rounded">
             <div class="container" id="seccionClasificacion">
                 <div class="row">
-                    <div class="col"><h2 id="nombreLiga"></h2></div>
+                    <div class="col-1 m-3"><img class="img-fluid" src="" id="logoLiga"></div>
                     <?php if(isset($_SESSION['currentUser'])){
                         echo  '<div id="favoritos" class="col-1 m-1 " data-user-id="'.$_SESSION['currentUser']['id'].'"><i id="heartIcon" class="bi '.$favoritosButton.'
                         " style="font-size: 30px;"></i></div>';

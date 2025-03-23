@@ -31,7 +31,7 @@ if (session_status() === PHP_SESSION_NONE) {
                         <ul class="dropdown-menu ">
                             <li><a class="dropdown-item" href="<?= BASE_PATH . '/temporada?s=2023-2024'; ?>">Temporada 23/24</a></li>
                             <li><a class="dropdown-item" href="<?= BASE_PATH . '/temporada?s=2022-2023'; ?>">Temporada 22/23</a></li>
-                            <li><a class="dropdown-item" href="#">Temporadas anteriores</a></li>
+                            <li><a class="dropdown-item" href="<?= BASE_PATH . '/temporadas_anteriores'; ?>">Temporadas anteriores</a></li>
                         </ul>
                     </div>
                 </li>

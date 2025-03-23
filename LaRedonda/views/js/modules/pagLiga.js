@@ -3,7 +3,7 @@ export async function getLeague(ligaId, season) {
   const tablaClasiH4 = document.getElementById("tablaClasiH4");
   const leagueTable = document.getElementById("leagueTable");
   const leagueTableBody = document.getElementById("tbodyLeague");
-  const nombreLiga = document.getElementById("nombreLiga");
+  const logoLiga = document.getElementById("logoLiga");
   try {
     const response = await fetch(
       "https://www.thesportsdb.com/api/v1/json/3/lookuptable.php?l=" +
@@ -19,7 +19,7 @@ export async function getLeague(ligaId, season) {
   
     tablaClasiH4.innerText +=
       " última actualización: " + data.table[0].dateUpdated;
-    nombreLiga.innerText = data.table[0].strLeague+' - '+season;
+    logoLiga.src = '/views/img/logos_ligas/'+data.table[0].idLeague+'.png';
     data.table.forEach((team) => {
       const trLeague = document.createElement("tr");
   
