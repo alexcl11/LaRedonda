@@ -1,3 +1,5 @@
+import downloadImage from "./downloadBadge.js";
+
 export async function ligasPais(nomPais, season){
     const url = "https://www.thesportsdb.com/api/v1/json/3/search_all_leagues.php?c="+nomPais+"&s=Soccer";
     const response = await fetch(url);
@@ -19,6 +21,8 @@ export async function ligasPais(nomPais, season){
             imgCompetition.src = competition.strBadge;
             imgCompetition.style.width = "50px";
             aCompetition.appendChild(imgCompetition);
+
+            //downloadImage(competition.strBadge, competition.idLeague);
 
             const nameCompetition = document.createElement('small');
             nameCompetition.innerText = competition.strLeague;
