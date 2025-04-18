@@ -79,7 +79,10 @@ if (session_status() === PHP_SESSION_NONE) {
             <a href="<?= BASE_PATH . '/temporada_actual'; ?>" class="text-white">Temporada 24/25</a>
           </p>
           <p>
-            <a href="<?= BASE_PATH . '/temporadas_anteriores'?>" class="text-white <?=(isset($_SESSION['currentUser'])) ? '' : 'disabled'?>">Otras temporadas</a>
+            <a href="<?= BASE_PATH . '/temporadas_anteriores'; ?>" class="text-white">Otras temporadas</a>
+          </p>
+          <p>
+            <a href="<?= BASE_PATH . '/jugadores'?>" class="text-white <?=(isset($_SESSION['currentUser'])) ? '' : 'disabled'?>">Jugadores</a>
           </p>
           <p>
           <a href="<?= BASE_PATH . '/favoritos'?> " class="text-white <?=(isset($_SESSION['currentUser'])) ? '' : 'disabled'?>">Favoritos🤍</a>
