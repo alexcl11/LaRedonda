@@ -65,6 +65,7 @@ export async function getLeague(ligaId, season) {
 
     });
     const favoritosButton = document.getElementById('favoritos');
+    if(favoritosButton){
       favoritosButton.addEventListener('click', () => {
           let heartIcon = document.getElementById("heartIcon"); // Obtiene el ícono dentro del botón
           let idUser = favoritosButton.dataset.userId; // ID del usuario (extraído del atributo data)
@@ -98,6 +99,7 @@ export async function getLeague(ligaId, season) {
                   .catch(error => console.error("Error:", error));
           }
       })
+    }
   } catch (error) {
     leagueTable.classList.add('d-none');
     tablaClasiH4.innerText = 'No se han encontrado datos para esta Liga para la temporada seleccionada.'

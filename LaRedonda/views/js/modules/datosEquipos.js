@@ -61,8 +61,8 @@ export async function datosEquipos(idEquipo) {
         seccionUltimosResultados.classList.remove('d-none');
         ultimosResultadosLink.classList.add('active');
 
-        seccionPlantilla.classList.add('d-none');
-        plantillaLink.classList.remove('active');
+        // seccionPlantilla.classList.add('d-none');
+        // plantillaLink.classList.remove('active');
 
         seccionDescripcion.classList.add('d-none');
         descripcionLink.classList.remove('active');
@@ -73,24 +73,24 @@ export async function datosEquipos(idEquipo) {
         seccionDescripcion.classList.remove('d-none');
         descripcionLink.classList.add('active');
 
-        seccionUltimosResultados.classList.add('d-none');
-        ultimosResultadosLink.classList.remove('active');
+        // seccionUltimosResultados.classList.add('d-none');
+        // ultimosResultadosLink.classList.remove('active');
 
         seccionPlantilla.classList.add('d-none');
         plantillaLink.classList.remove('active');
     })
 
-    const plantillaLink = document.getElementById('plantillaLink');
-    plantillaLink.addEventListener('click', () => {
-        seccionDescripcion.classList.remove('d-none');
-        plantillaLink.classList.add('active');
+    // const plantillaLink = document.getElementById('plantillaLink');
+    // plantillaLink.addEventListener('click', () => {
+    //     seccionDescripcion.classList.remove('d-none');
+    //     plantillaLink.classList.add('active');
 
-        seccionUltimosResultados.classList.add('d-none');
-        ultimosResultadosLink.classList.remove('active');
+    //     seccionUltimosResultados.classList.add('d-none');
+    //     ultimosResultadosLink.classList.remove('active');
 
-        seccionDescripcion.classList.add('d-none');
-        descripcionLink.classList.remove('active');
-    })
+    //     seccionDescripcion.classList.add('d-none');
+    //     descripcionLink.classList.remove('active');
+    // })
 
     const favoritosButton = document.getElementById('favoritos');
     favoritosButton.addEventListener('click', () => {

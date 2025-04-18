@@ -41,15 +41,15 @@ require_once 'partials/nav.php';
                     <li class="nav-item">
                         <a id="descripcionLink" class="nav-link text-danger" href="#">Descripción</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a id="plantillaLink" class="nav-link text-danger" href="#">Plantilla</a>
-                    </li>
+                    </li> -->
                 </ul>
 
                 <div>
                     <div id="seccionUltimosResultados" class="d-flex justify-content-center "></div>
                     <div id="seccionDescripcion" class="col d-none"></div>
-                    <div id="seccionPlantilla" class="col d-none"></div>
+                    <!-- <div id="seccionPlantilla" class="col d-none"></div> -->
                 </div>
             </div>
 
