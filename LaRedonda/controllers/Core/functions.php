@@ -23,7 +23,8 @@ function validCredentials($name, $email, $password)
 
 function userExists($email)
 {
-    $users = Database::getUsers();
+    $usuarioModel = new Usuario();
+    $users = $usuarioModel->getUsers();
     foreach ($users as $user) {
         if ($user['email'] === $email) {
             return true;

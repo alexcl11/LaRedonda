@@ -3,14 +3,14 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-require_once 'models/Database.php';
+require_once 'models/Favoritos.php';
 
 if(!isset($_SESSION['currentUser'])){
     header('Location: /inicio_sesion');
     exit();
 }
-
-$userFavs = Database::getUserFavourites($_SESSION['currentUser']['id']);
+$usuarioFavoritos = new Favoritos();
+$userFavs = $usuarioFavoritos->getUserFavourites($_SESSION['currentUser']['id']);
 
 if($userFavs){
     $teams = [];

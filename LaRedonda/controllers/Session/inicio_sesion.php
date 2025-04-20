@@ -4,15 +4,15 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 
-require 'models/Database.php';
+require 'models/Usuario.php';
 
 $errorMessage;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
-
-    $user = Database::getUser($email);
+    $usuarioModel = new Usuario();
+    $user = $usuarioModel->getUser($email);
 
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION['currentUser'] = [

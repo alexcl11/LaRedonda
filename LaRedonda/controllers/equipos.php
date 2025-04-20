@@ -4,10 +4,11 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-require_once 'models/Database.php';
+require_once 'models/Favoritos.php';
 
 if(isset($_SESSION['currentUser'])){
-    $favsUser = Database::getUserFavourites($_SESSION['currentUser']['id']);
+    $usuarioFavoritos = new Favoritos();
+    $favsUser = $usuarioFavoritos->getUserFavourites($_SESSION['currentUser']['id']);
 
 // Inicializar el valor de $favoritosButton como "bi-heart" por defecto
 $favoritosButton = 'bi-heart text-danger';

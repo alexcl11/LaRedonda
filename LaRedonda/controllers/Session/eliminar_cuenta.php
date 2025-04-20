@@ -4,7 +4,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 
-require 'models/Database.php';
+require 'models/Usuario.php';
 
 if (!isset($_SESSION['currentUser'])) {
     header('Location: /');
@@ -17,12 +17,13 @@ $errorMessage;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
-    $user = Database::getUser($email);
+    $usuarioModel = new Usuario();
+    $user = $usuarioModel->getUser($email);
 
     if (password_verify($password, $user['password'])) {
         session_unset();
         session_destroy();
-        Database::deleteUser($email);
+        $usuarioModel->deleteUser($email);
         header('Location: /');
         exit();
     } else {

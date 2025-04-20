@@ -1,7 +1,7 @@
 <?php
 header("Content-Type: application/json"); // ⚡ Forzar respuesta JSON
 
-require_once '../../models/Database.php';
+require_once '../../models/Favoritos.php';
 
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -11,7 +11,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $tipo_favorito = $_POST['tipo_favorito'];
     $img_favorito = $_POST['img_favorito'];
 
-    $result = Database::insertFavourite($id_favourite, $nombre_favorito, $tipo_favorito, $img_favorito, $id_user);
+    $userFavourite = new Favoritos();
+    $result = $userFavourite->insertFavourite($id_favourite, $nombre_favorito, $tipo_favorito, $img_favorito, $id_user);
 
     if ($result) {
         echo json_encode(["message" => "Favorito agregado con éxito"]);

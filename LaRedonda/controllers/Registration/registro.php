@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once 'models/Database.php';
+require_once 'models/Usuario.php';
 require 'controllers/Core/functions.php';
 
 $name = $_POST['name'];
@@ -16,8 +16,9 @@ if (!validCredentials($name, $email, $password)) {
 $userExists = userExists($email);
 
 if (!$userExists) {
-    Database::createUser($email, $name, $password);
-    $user = Database::getUser($email);
+    $usuarioModel = new Usuario();
+    $usuarioModel->createUser($email, $name, $password);
+    $user = $usuarioModel->getUser($email);
     $_SESSION['currentUser'] = [
         'id' => $user['id'],
         'email' => $user['email'],
