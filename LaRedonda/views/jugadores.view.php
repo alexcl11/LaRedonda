@@ -8,8 +8,8 @@
         <div class="row">
             <div class="col">
                 <h4>Jugadores Destacados</h4>
-                <?php foreach($featuredPlayers as $player):?>
-                    <a href="<?=BASE_PATH?>/jugador" style="text-decoration: none;"><div class="featured-card">
+                <?php foreach($featuredPlayers as $player):?>                    
+                    <a href="<?=BASE_PATH .'/jugador?p='.$player['strPlayer']?>" style="text-decoration: none;"><div class="featured-card">
                         <img class="featured-img" src="<?= $player['strCutout'] ?: 'https://via.placeholder.com/50' ?>" alt="Foto de <?= $player['strPlayer'] ?>">
                         <div class="featured-name"><?= $player['strPlayer'] ?></div>
                     </div></a>

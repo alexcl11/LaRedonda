@@ -5,13 +5,7 @@
 
 <main>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f0f4f8;
-      margin: 0;
-      padding: 2rem;
-      color: #333;
-    }
+    
 
     .player-page {
       max-width: 900px;
@@ -102,10 +96,6 @@
     }
   </style>
 
-  <?php
-    $player = $data['player'][0]; // Solo uno
-    $positionClass = str_replace(' ', '-', $player['strPosition']); // Ej. "Centre-Back"
-  ?>
 
   <div class="player-page">
     <div class="player-header">
