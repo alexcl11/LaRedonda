@@ -73,11 +73,8 @@ export async function datosEquipos(idEquipo) {
         seccionDescripcion.classList.remove('d-none');
         descripcionLink.classList.add('active');
 
-        // seccionUltimosResultados.classList.add('d-none');
-        // ultimosResultadosLink.classList.remove('active');
-
-        seccionPlantilla.classList.add('d-none');
-        plantillaLink.classList.remove('active');
+        seccionUltimosResultados.classList.add('d-none');
+        ultimosResultadosLink.classList.remove('active');
     })
 
     // const plantillaLink = document.getElementById('plantillaLink');

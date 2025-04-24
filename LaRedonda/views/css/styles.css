@@ -39,44 +39,6 @@ h4, h5{
   cursor: not-allowed;
 }
 
-/* Tarjeta de resultado */
-.tarjetaResultado {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 75%;
-  margin: 10px;
-  padding: 5px;
-  border: 1px solid #ccc;
-  text-align: center;
-  background-color: rgb(221, 219, 219);
-  border-radius: 25px;
-}
-.tarjetaResultadoEquipo{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 10px;
-  padding: 2px;
-  border: 1px solid #ccc;
-  text-align: center;
-  background-color: rgb(221, 219, 219);
-  border-radius: 25px;
-}
-
-.league-name {
-  font-family: "Klops Personal", sans-serif;
-  color: #dc3545;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 8px;
-  text-transform: uppercase;
-}
-
 
 .form-select {
   background-color: white;
@@ -120,76 +82,6 @@ h4, h5{
   cursor: not-allowed;
 }
 
-/* Contenedor principal de logos y marcador */
-.logo-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-around; /* Distribuye uniformemente */
-  width: 100%;
-  max-width: 300px; /* Ajusta el ancho máximo */
-}
-
-.fecha-container {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.estado-partido {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  color: #dc3545;
-}
-
-/* Contenedor de equipo (logo y nombre) */
-.team-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; /* Asegura que los elementos estén centrados dentro */
-  width: 120px; /* Establece un ancho fijo para que todos los contenedores sean iguales */
-  min-height: 100px; /* Establece una altura mínima uniforme */
-  box-sizing: border-box; /* Incluye el padding y el borde en el cálculo del ancho y la altura */
-}
-
-/* Imagen del logo */
-.team-logo {
-  width: 30px;
-  height: 30px;
-}
-
-/* Nombre del equipo */
-.team-name {
-  white-space: nowrap; /* No permite saltos de línea */
-  overflow: hidden;
-  text-overflow: ellipsis; /* Añade "..." si el texto es demasiado largo */
-  max-width: 100px; /* Ancho máximo del nombre del equipo */
-  text-align: center;
-  margin: 5px 0;
-}
-
-/* Marcador */
-.marcador {
-  margin: 0 10px;
-  font-size: 1.2em;
-  font-weight: bold;
-  text-align: center;
-}
-
-/* Lugar del evento */
-.venue {
-  text-align: center;
-  font-size: 0.9em;
-  margin-top: 10px;
-}
-
-/* Espaciado para imágenes dentro de tarjetas */
-.tarjetaResultado img {
-  margin: 5px; /* Espaciado entre imágenes */
-}
-
-/* Hover en logos */
 .logo:hover {
   cursor: pointer;
   font-size: 3px;
@@ -316,4 +208,151 @@ h4, h5{
 
 #heartIcon{
   cursor: pointer;
+}
+
+.player-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.player-card {
+  width: 200px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.player-card:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.player-card img {
+  width: 100%;
+  height: auto;
+}
+
+.player-name {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #333;
+}
+.featured-players {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.featured-card {
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: background-color 0.2s;
+  cursor: pointer;
+  width: 60%;
+}
+
+.featured-card:hover {
+  background-color: #f0f0f0;
+}
+
+.featured-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+  border: 2px solid #ccc;
+}
+
+.featured-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.tarjetaResultadoEquipo {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s;
+  max-width: 600px;
+  margin: auto;
+}
+
+.tarjetaResultadoEquipo:hover {
+  transform: scale(1.01);
+}
+
+.fecha-container p {
+  font-size: 0.9rem;
+  color: #777;
+  margin: 0;
+  text-align: center;
+}
+
+.estado-partido {
+  text-align: center;
+  font-weight: bold;
+  color: #444;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.team-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+}
+
+.team-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.team-name {
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: center;
+  color: #222;
+}
+
+.marcador {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #111;
+  min-width: 60px;
+  text-align: center;
+}
+
+.venue {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
 }

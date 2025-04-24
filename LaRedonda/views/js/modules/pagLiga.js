@@ -7,8 +7,8 @@ export async function getLeague(ligaId, season) {
   try {
     const response = await fetch(
       "https://www.thesportsdb.com/api/v1/json/3/lookuptable.php?l=" +
-        ligaId +
-        "&s="+season
+      ligaId +
+      "&s="+season
     );
     const data = await response.json();
     console.log(data);
