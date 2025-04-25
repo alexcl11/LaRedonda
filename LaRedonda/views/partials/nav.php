@@ -35,13 +35,11 @@ if (session_status() === PHP_SESSION_NONE) {
                         </ul>
                     </div>
                 </li>
-                <li class="nav-item <?= (isset($_SESSION['currentUser'])) ? '' : 'disabled'; ?>">
-                    <a class="nav-link text-light <?= (isset($_SESSION['currentUser'])) ? '' : 'disabled'; ?>"
-                        href="<?= BASE_PATH . '/jugadores'; ?>">Jugadores</a>
+                <li class="nav-item">
+                    <a class="nav-link text-light" <?= (isset($_SESSION['currentUser'])) ? 'href="'.BASE_PATH .'/jugadores"' : 'href="#" data-bs-toggle="modal" data-bs-target="#modalInicioSesion"'; ?> >Jugadores</a>
                 </li>
-                <li class="nav-item favoritos <?= (isset($_SESSION['currentUser'])) ? '' : 'disabled'; ?>">
-                    <a class="nav-link text-light <?= (isset($_SESSION['currentUser'])) ? '' : 'disabled'; ?>"
-                        href="<?= BASE_PATH . '/favoritos'; ?>">Favoritos 🤍</a>
+                <li class="nav-item favoritos">
+                    <a class="nav-link text-light " <?= (isset($_SESSION['currentUser'])) ? 'href="'. BASE_PATH . '/favoritos"' : 'href="#" data-bs-toggle="modal" data-bs-target="#modalInicioSesion"'; ?> >Favoritos 🤍</a>
                 </li>
 
             </ul>
@@ -58,6 +56,24 @@ if (session_status() === PHP_SESSION_NONE) {
                 </li>
             </ul>
             <?php endif; ?>
+            
+            <div class="modal fade" id="modalInicioSesion" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="loginModalLabel">Acceso restringido</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        Para acceder a esta página, primero debes iniciar sesión.
+                    </div>
+                    <div class="modal-footer">
+                        <a href="<?=BASE_PATH?>/inicio_sesion" class="btn btn-primary">Iniciar sesión</a>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
 
 
 

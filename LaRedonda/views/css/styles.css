@@ -163,7 +163,7 @@ h4, h5{
   color: #881e29; /* Color danger más oscuro */
 }
 #resultadosJornadas {
-  border: 1px solid #dc2626;
+  border: 1px solid #ccc;
   padding: 10px;
   border-radius: 25px; /* Consistente con las tarjetas de resultados */
   background-color: rgb(245, 245, 245); /* Fondo similar al resto */
@@ -290,7 +290,7 @@ h4, h5{
   margin-bottom: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s;
-  max-width: 600px;
+  max-width: 800px;
   margin: auto;
 }
 
@@ -452,5 +452,44 @@ h4, h5{
 
   .player-details h1 {
     font-size: 1.5rem;
+  }
+}
+ 
+.favoritos-section {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  margin: 0.5rem auto 1.5rem;
+}
+
+.img-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.favoritos-img {
+  height: 50px;
+  width: auto;
+  border-radius: 0.5rem;
+  transition: transform 0.2s ease-in-out;
+  padding: 2px;
+  background-color: #fff;
+  /* border: 1px solid #dee2e6; */
+}
+
+.favoritos-img:hover {
+  transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+  h2 {
+      font-size: 2rem;
+  }
+
+  .favoritos-img {
+      height: 60px;
   }
 }

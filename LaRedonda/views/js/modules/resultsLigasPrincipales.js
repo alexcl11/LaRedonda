@@ -13,7 +13,7 @@ export async function getCLResults(jornadaCL) {
     console.log(data);
     data.events.forEach((event) => {
       let resultDiv = document.createElement("div");
-      resultDiv.classList.add("tarjetaResultado");
+      resultDiv.classList.add("tarjetaResultadoEquipo");
 
       const fechaContainer = document.createElement("div");
       fechaContainer.classList.add("fecha-container");
@@ -118,7 +118,7 @@ export async function getPLResults(jornadaPL) {
     console.log(data);
     data.events.forEach((event) => {
       let resultDiv = document.createElement("div");
-      resultDiv.classList.add("tarjetaResultado");
+      resultDiv.classList.add("tarjetaResultadoEquipo");
 
       const fechaContainer = document.createElement("div");
       fechaContainer.classList.add("fecha-container");
@@ -219,7 +219,7 @@ export async function getLLResults(jornadaLL) {
     console.log(data);
     data.events.forEach((event) => {
       let resultDiv = document.createElement("div");
-      resultDiv.classList.add("tarjetaResultado");
+      resultDiv.classList.add("tarjetaResultadoEquipo");
 
       const fechaContainer = document.createElement("div");
       fechaContainer.classList.add("fecha-container");
@@ -319,7 +319,7 @@ export async function getSAResults(jornadaSA) {
     console.log(data);
     data.events.forEach((event) => {
       let resultDiv = document.createElement("div");
-      resultDiv.classList.add("tarjetaResultado");
+      resultDiv.classList.add("tarjetaResultadoEquipo");
 
       const fechaContainer = document.createElement("div");
       fechaContainer.classList.add("fecha-container");
@@ -419,7 +419,7 @@ export async function getBLResults(jornadaBL) {
     console.log(data);
     data.events.forEach((event) => {
       let resultDiv = document.createElement("div");
-      resultDiv.classList.add("tarjetaResultado");
+      resultDiv.classList.add("tarjetaResultadoEquipo");
 
       const fechaContainer = document.createElement("div");
       fechaContainer.classList.add("fecha-container");
