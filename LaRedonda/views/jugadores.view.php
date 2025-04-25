@@ -32,10 +32,10 @@
                     <?php if(isset($data)): ?>
                         <?php foreach($data['player'] as $player): ?>
                         <?php if($player['strSport']=='Soccer'):?>
-                            <div class="player-card">
+                            <a href="<?=BASE_PATH .'/jugador?p='.$player['strPlayer']?>" style="text-decoration: none;"><div class="player-card">
                                 <img src="<?= $player['strCutout'] ?: '/views/img/placeholder.png' ?>"
                                     alt="Imagen de <?= $player['strPlayer'] ?>">
-                                <div class="player-name"><?= $player['strPlayer'] ?></div>
+                                <div class="player-name"><?= $player['strPlayer'] ?></div></a>
                             </div>
                         <?php endif;?>
                         <?php endforeach; ?>
