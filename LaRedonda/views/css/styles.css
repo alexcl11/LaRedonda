@@ -29,6 +29,12 @@ h4, h5{
 }
 
 /* Navegación */
+@media (max-width:767px){
+    .menu{
+        display: flex;
+        flex-direction: column;
+    }
+}
 
 .nav-link.active {
   background-color: #dc3545 !important; /* color danger */
