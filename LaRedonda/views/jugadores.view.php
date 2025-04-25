@@ -9,7 +9,7 @@
             <div class="col">
                 <h4>Jugadores Destacados</h4>
                 <?php foreach($featuredPlayers as $player):?>                    
-                    <a href="<?=BASE_PATH .'/jugador?p='.$player['strPlayer']?>" style="text-decoration: none;"><div class="featured-card">
+                    <a href="<?=BASE_PATH .'/jugador?id='.$player['idPlayer']?>" style="text-decoration: none;"><div class="featured-card">
                         <img class="featured-img" src="<?= $player['strCutout'] ?: 'https://via.placeholder.com/50' ?>" alt="Foto de <?= $player['strPlayer'] ?>">
                         <div class="featured-name"><?= $player['strPlayer'] ?></div>
                     </div></a>
@@ -32,7 +32,7 @@
                     <?php if(isset($data)): ?>
                         <?php foreach($data['player'] as $player): ?>
                         <?php if($player['strSport']=='Soccer'):?>
-                            <a href="<?=BASE_PATH .'/jugador?p='.$player['strPlayer']?>" style="text-decoration: none;"><div class="player-card">
+                            <a href="<?=BASE_PATH .'/jugador?id='.$player['idPlayer']?>" style="text-decoration: none;"><div class="player-card">
                                 <img src="<?= $player['strCutout'] ?: '/views/img/placeholder.png' ?>"
                                     alt="Imagen de <?= $player['strPlayer'] ?>">
                                 <div class="player-name"><?= $player['strPlayer'] ?></div></a>

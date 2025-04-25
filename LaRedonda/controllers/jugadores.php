@@ -16,7 +16,7 @@ $featuredPlayers = featuredPlayers($players);
 
 if(isset($_POST['name'])){
    $name = $_POST['name'];
-   $data = searchPlayers($name);
+   $data = searchPlayersByName($name);
 }
 
 require_once 'views/jugadores.view.php';
