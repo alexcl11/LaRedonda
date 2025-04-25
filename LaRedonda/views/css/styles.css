@@ -13,8 +13,12 @@
   width: 100%;
 }
 
-
-
+html, body{
+    height: 100%
+}
+main{
+    min-height: 60vh;
+}
 h2 {
   font-family: "Klops Personal", sans-serif;
   font-size: 40px;
