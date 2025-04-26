@@ -7,7 +7,7 @@ import { validarEmail } from "./modules/validacionCambioDatos.js";
 import { ligasPais } from "./modules/buscarLigasPais.js";
 import { datosEquipos } from "./modules/datosEquipos.js"; 
 import { desplegarClasificacionResultados } from "./modules/resultsPorLiga.js";
-import { searchPlayer } from "./modules/buscarJugadores.js";
+import { pagJugador } from "./modules/pagJugador.js";
 document.addEventListener("DOMContentLoaded", () => {
 
   const page = window.location.pathname
@@ -37,6 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const urlParamsEquipo = new URLSearchParams(window.location.search); 
         const idEquipo = urlParamsEquipo.get('t');
         datosEquipos(idEquipo);
+        break;
+      case "/jugador":
+        pagJugador();
         break;
       default:
         console.log("Pagina no encontrada");

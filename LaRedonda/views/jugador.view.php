@@ -6,7 +6,12 @@
 <main>
   <div class="player-page">
     <div class="player-header">
-      <img src="<?= $player['strCutout'] ?: 'https://via.placeholder.com/150' ?>" alt="<?= $player['strPlayer'] ?>">
+      <div class="player-img-fav">
+        <img src="<?= $player['strCutout'] ?: 'https://via.placeholder.com/150' ?>" alt="<?= $player['strPlayer'] ?>">
+        <div id="favoritos" class="col-1 " data-user-id="<?=$_SESSION['currentUser']['id']?>" data-player-id="<?=$player['idPlayer']?>" data-player-name="<?=$player['strPlayer']?>" data-player-img="<?=$player['strCutout']?>">
+          <i id="heartIcon" class="bi <?=$favoritosButton?>" style="font-size: 30px;"></i>
+        </div>         
+      </div>
       <div class="player-details">
         <h1><?= $player['strPlayer'] ?></h1>
         <p><strong>Nombre alternativo:</strong> <?= $player['strPlayerAlternate'] ?></p>
@@ -32,6 +37,7 @@
           <?php endif; ?>
         </p>
       </div>
+      
     </div>
 
     <div class="player-description">

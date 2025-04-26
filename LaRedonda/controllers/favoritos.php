@@ -26,6 +26,7 @@ if($userFavs){
            
         if($userFav['tipo_favorito']==='jugador'){
             $players[] = [
+                'id' => $userFav['id_favorito'],
                 'name' => $userFav['nombre_favorito'],
                 'img' => $userFav['img_favorito']
             ];

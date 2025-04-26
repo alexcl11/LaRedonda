@@ -494,6 +494,20 @@ h4, h5{
   transform: scale(1.05);
 }
 
+.player-img-fav{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media(max-width:767px){
+  .player-img-fav{
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
 @media (min-width: 768px) {
   h2 {
       font-size: 2rem;
@@ -502,4 +516,6 @@ h4, h5{
   .favoritos-img {
       height: 60px;
   }
+  
 }
+
