@@ -11,7 +11,7 @@ if(!isset($_SESSION['currentUser'])){
     exit();
 }
 
-$players = ['Leo Messi', 'Cristiano Ronaldo', 'Raphinha', 'Lewandowski', 'Vinicius Júnior', 'Mbappe', 'Antoine Griezmann'];
+$players = ['Julián Álvarez','Leo Messi', 'Cristiano Ronaldo', 'Raphinha'];
 $featuredPlayers = featuredPlayers($players);
 
 if(isset($_POST['name'])){

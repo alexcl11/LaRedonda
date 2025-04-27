@@ -9,6 +9,12 @@ require_once 'controllers/Core/buscarJugador.php';
 
 $id=$_GET['id'];
 $player = searchPlayersByID($id)['players'][0];
+$formerClubs = searchPlayerFormerClubs($id);
+
+usort($formerClubs->formerteams, function($a, $b) {
+    return intval($b->strJoined) - intval($a->strJoined);
+});
+
 $positionClass = str_replace(' ', '-', $player['strPosition']); 
 
 require_once 'models/Favoritos.php';
