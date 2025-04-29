@@ -26,7 +26,7 @@ class Usuario {
 
     public function createUser($email, $name, $password)
     {
-        $query = "INSERT INTO usuarios(email, name, password) VALUES (:email, :name, :password)";
+        $query = "INSERT INTO usuarios(email, name, password, role) VALUES (:email, :name, :password, 2)";
         $params = [
             'email' => $email,
             'name' => $name,
@@ -34,6 +34,17 @@ class Usuario {
         ];
         $this->db->query($query, $params);
     }
+
+    public function createAdmin($email, $name, $password)
+    {
+        $query = "INSERT INTO usuarios(email, name, password, role) VALUES (:email, :name, :password, 1)";
+        $params = [
+            'email' => $email,
+            'name' => $name,
+            'password' => password_hash($password, PASSWORD_DEFAULT)
+        ];
+        $this->db->query($query, $params);
+    } 
 
     public function updateUserEmail($id, $email){
         $query = "UPDATE `usuarios` SET `email` = :email WHERE `usuarios`.`id` = :id";

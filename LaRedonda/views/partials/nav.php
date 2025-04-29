@@ -44,11 +44,16 @@ if (session_status() === PHP_SESSION_NONE) {
 
             </ul>
             <?php if(isset($_SESSION['currentUser'])):  ?>
-            <ul class="nav ms-auto">
-                <li class="nav-item ">
-                    <a class="nav-link text-light " href="<?= BASE_PATH . '/perfil'; ?>"><i class="bi bi-person-fill"></i> <?=$_SESSION['currentUser']['name']?></a>
-                </li>
-            </ul>
+                <ul class="nav ms-auto">
+                    <?php if(($_SESSION['currentUser']['role']===1)):?>                        
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="<?=BASE_PATH?>/panel-admin">Panel de Administrador</a>
+                        </li>
+                    <?php endif; ?>
+                    <li class="nav-item ">
+                        <a class="nav-link text-light " href="<?= BASE_PATH . '/perfil'; ?>"><i class="bi bi-person-fill"></i> <?=$_SESSION['currentUser']['name']?></a>
+                    </li>
+                </ul>
             <?php else: ?>
             <ul class="nav ms-auto">
                 <li class="nav-item">

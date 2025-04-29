@@ -17,5 +17,6 @@ return [
     '/borrar_favorito' => '/controllers/Core/borrar_favorito.php',
     '/temporadas_anteriores' => 'controllers/temporadas_anteriores.php',
     '/jugadores' => 'controllers/jugadores.php',
-    '/jugador' => 'controllers/jugador.php'
+    '/jugador' => 'controllers/jugador.php',
+    '/panel-admin' => 'controllers/panel_admin.php'
 ];
