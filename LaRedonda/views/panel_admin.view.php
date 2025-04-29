@@ -66,12 +66,12 @@
             <div class="col-md-6 mb-3">
               <label class="form-label">Rol</label>
               <select class="form-select" name="form-create-role">
-                <option value="usuario">Usuario</option>
-                <option value="admin">Administrador</option>
+                <option value="2">Usuario</option>
+                <option value="1">Administrador</option>
               </select>
             </div>
           </div>
-          <button type="submit" class="btn btn-success">Crear Usuario</button>
+          <button type="submit" class="btn btn-danger">Crear Usuario</button>
         </form>
       </div>
     </div>
