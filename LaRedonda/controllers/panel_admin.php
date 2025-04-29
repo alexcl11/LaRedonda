@@ -19,9 +19,11 @@ if(isset($_POST['form-create-name']) && isset($_POST['form-create-email']) && is
                 $userExists = '';
         }
 
-        if($userExists == '')
+        if($userExists == ''){  
             $createUser = ($role==1) ? $usuario -> createAdmin($email, $name, $password) : $usuario -> createUser($email, $name, $password);   
-
+            unset($_POST['email']);
+            header('Location: '.BASE_PATH.'/panel-admin');
+        }
  
     
 }

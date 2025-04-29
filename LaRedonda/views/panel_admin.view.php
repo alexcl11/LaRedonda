@@ -30,7 +30,7 @@
                   <button class="btn btn-sm btn-primary me-md-2">
                     <i class="bi bi-pencil"></i>
                   </button>
-                  <button class="btn btn-sm btn-danger" data-user-email="<?=$user['email']?>">
+                  <button id="delete-button" class="btn btn-sm btn-danger" data-user-email="<?=$user['email']?>">
                     <i class="bi bi-trash"></i>
                   </button>
                 </td>
@@ -48,7 +48,7 @@
         <h5 class="mb-0">Añadir Usuario</h5>
       </div>
       <div class="card-body">
-        <p class="text-danger"><?=$userExists?></p>
+        <?=(isset($userExists)) ? '<p class="text-danger">'.$userExists.'</p>': ''?>
         <form action="" method="POST"> 
           <div class="row">
             <div class="col-md-6 mb-3">
