@@ -4,7 +4,7 @@
   <div class="container py-5">
     <h2 class="mb-4">Panel de Administrador</h2>
 
-
+    <?=(isset($userExistsUpdate)) ? '<tr><p class="text-danger">'.$userExistsUpdate.'</p></tr>': ''?>
     <div class="card mb-5">
       <div class="card-header">
         <h5 class="mb-0">Usuarios</h5>
@@ -27,7 +27,7 @@
                 <td><?=$user['email']?></td>
                 <td><?=($user['role']==1)?'Administrador':'Autenticado'?></td>
                 <td class="text-end">
-                  <button class="btn btn-sm btn-primary me-md-2">
+                  <button id="modify-button" class="btn btn-sm btn-primary me-md-2" data-id-user="<?=$user['id']?>">
                     <i class="bi bi-pencil"></i>
                   </button>
                   <button id="delete-button" class="btn btn-sm btn-danger" data-user-email="<?=$user['email']?>">
@@ -35,6 +35,34 @@
                   </button>
                 </td>
               </tr>
+              <tr class="d-none" id="modify-button-<?=$user['id']?>">
+                <form method="POST" action="">
+                  <input type="hidden" name="form-modify-id" value="<?=$user['id']?>" >
+                  <td>
+                    <input type="text" name="form-modify-name" class="form-control form-control-sm" value="<?=$user['name']?>">
+                  </td>
+                  <td>
+                    <input type="email" name="form-modify-email" class="form-control form-control-sm" value="<?=$user['email']?>" >
+                  </td>
+                  <td>
+                    <select name="form-modify-role" class="form-select form-select-sm">
+                      <?php if($user['role']==1):?>
+                        <option value="1" >Administrador</option>
+                        <option value="0">Autenticado</option>
+                      <?php else :?>                        
+                        <option value="0" >Autenticado</option>
+                        <option value="1">Administrador</option>
+                      <?php endif; ?>
+                    </select>
+                  </td>
+                  <td class="text-end">
+                    <button type="submit" class="btn btn-sm btn-success me-md-2">
+                      <i class="bi bi-check-lg"></i>
+                    </button>
+                  </td>
+                </form>
+              </tr>
+
               <?php endforeach; ?>    
             </tbody>
           </table>

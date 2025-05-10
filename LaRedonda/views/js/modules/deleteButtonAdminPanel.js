@@ -25,3 +25,17 @@ export function deleteButton(){
         });
   
 }
+
+export function modifyButton(){
+  const modifyButtons = document.querySelectorAll('#modify-button');
+  modifyButtons.forEach(boton => {
+    boton.addEventListener('click', () => {
+      const userId = boton.getAttribute('data-id-user');
+      const modifyRow = document.getElementById('modify-button-' + userId);
+      
+      modifyRow.classList.toggle('d-none'); 
+    });
+  });
+
+  
+}

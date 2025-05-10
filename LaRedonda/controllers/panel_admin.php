@@ -6,6 +6,29 @@ require_once 'models/Usuario.php';
 $usuario = new Usuario();
 $users = $usuario -> getUsers();
 
+if(isset($_POST['form-modify-id']) && isset($_POST['form-modify-name']) && isset($_POST['form-modify-email']) && isset($_POST['form-modify-role'])){
+    $id = $_POST['form-modify-id'];
+    $name = $_POST['form-modify-name'];
+    $email = $_POST['form-modify-email'];
+    $role = $_POST['form-modify-role'];
+
+    $numberOfEqualEmails = 0;
+    foreach ($users as $user){
+        if($user['email'] === $email && $user['id'] != $id)
+            $numberOfEqualEmails++;   }
+    
+
+    if($numberOfEqualEmails>0)
+        $userExistsUpdate = 'El email introducido ya pertenece a un usuario';
+    else{
+        $userExistsUpdate = '';
+    }
+    if($userExistsUpdate == ''){  
+        $modifyUser = $usuario -> updateUser($id, $name, $email, $role);   
+        header('Location: '.BASE_PATH.'/panel-admin');
+    }
+}
+
 if(isset($_POST['form-create-name']) && isset($_POST['form-create-email']) && isset($_POST['form-create-password']) && isset($_POST['form-create-role'])){
         $name = $_POST['form-create-name'];
         $email = $_POST['form-create-email'];

@@ -63,6 +63,16 @@ class Usuario {
         ];
         $this->db->query($query, $params);
     }
+    public function updateUser($id, $name, $email, $role){
+        $query = "UPDATE `usuarios` SET `name` = :name, `email` = :email, `role`= :role WHERE `usuarios`.`id` = :id";
+        $params = [
+            'id' => $id,
+            'name' => $name,
+            'email' => $email, 
+            'role' => $role
+        ];
+        $this->db->query($query, $params);
+    }
 
     public function deleteUser($email){    
         $query = "DELETE FROM `usuarios` WHERE `usuarios`.`email` = :email";

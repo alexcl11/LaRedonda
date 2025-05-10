@@ -8,7 +8,7 @@ import { ligasPais } from "./modules/buscarLigasPais.js";
 import { datosEquipos } from "./modules/datosEquipos.js"; 
 import { desplegarClasificacionResultados } from "./modules/resultsPorLiga.js";
 import { pagJugador } from "./modules/pagJugador.js";
-import { deleteButton } from "./modules/deleteButtonAdminPanel.js";
+import { deleteButton, modifyButton } from "./modules/deleteButtonAdminPanel.js";
 document.addEventListener("DOMContentLoaded", () => {
 
   const page = window.location.pathname
@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         break;
       case "/panel-admin":
       deleteButton();
+      modifyButton();
       break;
       default:
         console.log("Pagina no encontrada");
