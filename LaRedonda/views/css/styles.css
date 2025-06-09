@@ -519,3 +519,255 @@ h4, h5{
   
 }
 
+.flag-link {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 50%;
+}
+
+.flag-link:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.flag-img {
+  padding: 4px;
+}
+
+
+
+/* --- ESTILOS PERSONALIZADOS --- */
+.navbar {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover, .dropdown-item:hover {
+    transform: scale(1.05);
+    transition: all 0.2s ease;
+}
+
+.dropdown-menu {
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.navbar-brand img {
+    transition: transform 0.3s ease;
+}
+.navbar-brand img:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.2);
+    font-size: 0.95rem;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer h6 {
+    font-size: 1rem;
+}
+
+.modal-content {
+    border-radius: 0.75rem;
+}
+
+.modal-footer .btn {
+    min-width: 120px;
+}
+
+#filaLigas h4 {
+    font-weight: bold;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #dc3545;
+    color: #dc3545;
+    text-align: center;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+
+#seccionDatos {
+    background-color: #ffffff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    border: 2px solid #dc3545;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#seccionDatos:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+#logoEquipo {
+    background: linear-gradient(135deg, #dc3545 0%, #8e8c8c 100%);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#logoEquipo img {
+    max-height: 90px;
+    object-fit: contain;
+}
+
+#favoritos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#favoritos:hover {
+    transform: scale(1.2);
+}
+
+#heartIcon {
+    font-size: 36px;
+    transition: color 0.3s ease;
+}
+
+#heartIcon:hover {
+    color: #ff073a;
+}
+
+#nomEquipo h5 {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #dc3545;
+    font-size: 1.5rem;
+}
+
+#infoEquipo {
+    font-size: 0.95rem;
+    color: #333;
+    margin-top: 1rem;
+}
+
+#infoEquipo b {
+    color: #dc3545;
+}
+
+#infoEquipo ul {
+    padding-left: 1.2rem;
+    list-style-type: square;
+}
+
+
+/* Contenedor general */
+.col-sm-6.mx-sm-4.border.rounded {
+    background-color: #fff;
+    border: 2px solid #dc3545;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Pestañas de navegación */
+.nav-tabs {
+    border-bottom: 2px solid #dc3545;
+}
+
+.nav-tabs .nav-link {
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #dc3545;
+    color: white !important;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+/* Resultado de partidos */
+.tarjetaResultadoEquipo {
+    background-color: #f8f9fa;
+    border: 2px solid #dee2e6;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjetaResultadoEquipo:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Encabezado liga y fecha */
+.league-container,
+.fecha-container {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.league-name {
+    font-weight: bold;
+    color: #dc3545;
+}
+
+.fecha-container p {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Estado del partido */
+.estado-partido {
+    text-align: center;
+    font-weight: bold;
+    color: #343a40;
+    margin-bottom: 0.5rem;
+}
+
+/* Logos y equipos */
+.logo-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.team-logo {
+    height: 50px;
+    width: auto;
+    margin-bottom: 0.3rem;
+    transition: transform 0.3s ease;
+}
+
+.team-logo:hover {
+    transform: scale(1.1);
+}
+
+.team-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Marcador */
+.marcador {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #dc3545;
+    margin: 0 1rem;
+}
+
+/* Estadio */
+.venue {
+    text-align: center;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: #6c757d;
+}

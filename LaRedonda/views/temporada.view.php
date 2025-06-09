@@ -1,22 +1,38 @@
 <?php require_once 'views/partials/head.php'; ?>
 <?php require_once 'views/partials/nav.php'; ?>
 
-<main>
-    <div class="container p-5">
-        <div id="ligasDomesticas" class="row">
-            <h2>Temporada <?=$_GET['s']?></h2>
-            <h4>Ligas domésticas</h4>
-            <div class="col"><a href="<?= BASE_PATH . "/ligas_pais?p=England&s={$_GET['s']}"; ?>"><img class="" src="views/img/banderas/reino-unido.png" alt="Bandera Reino Unido" width="30"></a></div>
-            <div class="col"><a href="<?= BASE_PATH . "/ligas_pais?p=Spain&s={$_GET['s']}"; ?>"><img class="" src="views/img/banderas/espana.png" alt="Bandera España" width="30"></a></div>
-            <div class="col"><a href="<?= BASE_PATH . "/ligas_pais?p=Italy&s={$_GET['s']}"; ?>"><img class="" src="views/img/banderas/italia.png" alt="Bandera Italia" width="30"></a></div>
-            <div class="col"><a href="<?= BASE_PATH . "/ligas_pais?p=Germany&s={$_GET['s']}"; ?>"><img class="" src="views/img/banderas/alemania.png" alt="Bandera Alemania" width="30"></a></div>
-            <div class="col"><a href="<?= BASE_PATH . "/ligas_pais?p=France&s={$_GET['s']}"; ?>"><img class="" src="views/img/banderas/francia.png" alt="Bandera Francia" width="30"></a></div>
-            <div class="col"><a href="<?= BASE_PATH . "/ligas_pais?p=Belgium&s={$_GET['s']}"; ?>"><img class="" src="views/img/banderas/belgica.png" alt="Bandera Francia" width="30"></a></div>
-            <div class="col"><a href="<?= BASE_PATH . "/ligas_pais?p=Portugal&s={$_GET['s']}"; ?>"><img class="" src="views/img/banderas/portugal.png" alt="Bandera Francia" width="30"></a></div>
-            <div class="col"><a href="<?= BASE_PATH . "/ligas_pais?p=Mexico&s={$_GET['s']}"; ?>"><img class="" src="views/img/banderas/mexico.png" alt="Bandera Francia" width="30"></a></div>
+<main class="container py-5">
+    <h2 class="mb-3 text-center text-danger">Temporada <?=$_GET['s']?></h2>
+    <h4 class="text-center mb-4">Ligas Domésticas</h4>
+    <div class="row justify-content-center ligas g-4 text-center">
+        <div class="row justify-content-center ligas g-4 text-center py-4 rounded shadow-sm">
+            <?php
+                $paises = [
+                ['nombre' => 'England', 'img' => 'reino-unido.png', 'alt' => 'UK'],
+                ['nombre' => 'Spain',   'img' => 'espana.png', 'alt' => 'ES'],
+                ['nombre' => 'Italy',   'img' => 'italia.png', 'alt' => 'IT'],
+                ['nombre' => 'Germany', 'img' => 'alemania.png', 'alt' => 'DE'],
+                ['nombre' => 'France',  'img' => 'francia.png', 'alt' => 'FR'],
+                ['nombre' => 'Belgium', 'img' => 'belgica.png', 'alt' => 'BE'],
+                ['nombre' => 'Portugal','img' => 'portugal.png', 'alt' => 'PT'],
+                ['nombre' => 'Mexico',  'img' => 'mexico.png', 'alt' => 'MX']
+                ];
+
+                foreach ($paises as $pais) {
+                echo '
+                <div class="col-auto">
+                    <a href="' . BASE_PATH . '/ligas_pais?p=' . $pais['nombre'] . '&s=' . $_GET['s'] . '" class="flag-link d-inline-block">
+                    <img src="views/img/banderas/' . $pais['img'] . '" width="50" class="rounded-circle flag-img" alt="' . $pais['alt'] . '">
+                    </a>
+                </div>';
+                }
+            ?>
         </div>
+
     </div>
+
 </main>
+
 
 
 <?php require_once 'views/partials/footer.php'; ?>

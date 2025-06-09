@@ -9,6 +9,7 @@ import { datosEquipos } from "./modules/datosEquipos.js";
 import { desplegarClasificacionResultados } from "./modules/resultsPorLiga.js";
 import { pagJugador } from "./modules/pagJugador.js";
 import { deleteButton, modifyButton } from "./modules/deleteButtonAdminPanel.js";
+import { initAdminUserValidation } from "./modules/validacionAdminUser.js";
 document.addEventListener("DOMContentLoaded", () => {
 
   const page = window.location.pathname
@@ -45,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
       case "/panel-admin":
       deleteButton();
       modifyButton();
+      initAdminUserValidation();
       break;
       default:
         console.log("Pagina no encontrada");

@@ -81,15 +81,20 @@
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="nombreUsuario" class="form-label">Nombre de Usuario</label>
+              <i class="bi bi-check-lg d-none" id="admin-name-check"></i>
               <input type="text" class="form-control" id="nombreUsuario" name="form-create-name" placeholder="Introduce el nombre">
             </div>
             <div class="col-md-6 mb-3">
               <label for="emailUsuario" class="form-label">Email</label>
+              <i class="bi bi-check-lg d-none" id="admin-email-check"></i>
               <input type="email" class="form-control" id="emailUsuario" name="form-create-email" placeholder="Introduce el email">
+              <small id="admin-emailHelp" class="form-text text-muted">Ejemplo: ejemplo@gmail.com</small>
             </div>
             <div class="col-md-6 mb-3">
               <label for="contraseñaUsuario" class="form-label" >Contraseña</label>
+              <i class="bi bi-check-lg d-none" id="admin-password-check"></i>
               <input type="password" class="form-control" id="contraseñaUsuario" name="form-create-password" placeholder="Introduce la contraseña">
+              <small id="admin-passwordHelp" class="form-text text-muted">Debe contener: más de 8 caracteres, al menos una letra mayúscula, una minúscula, un número y un caracter especial.</small>
             </div>
             <div class="col-md-6 mb-3">
               <label class="form-label">Rol</label>
@@ -107,5 +112,24 @@
   </div>
 </main>
 
+
+<!-- Modal de confirmación de eliminación -->
+<div class="modal fade" id="deleteConfirmModal" tabindex="-1" aria-labelledby="deleteConfirmModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteConfirmModalLabel">Confirmar eliminación</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        ¿Estás seguro de que quieres eliminar al usuario con email: <span id="modal-user-email"></span>?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <?php require_once 'views/partials/footer.php' ?>

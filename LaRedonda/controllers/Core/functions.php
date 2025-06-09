@@ -32,3 +32,20 @@ function userExists($email)
     }
     return false;
 }
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['form-create-name'])) {
+    require_once 'controllers/Core/functions.php';
+    $name = $_POST['form-create-name'] ?? '';
+    $email = $_POST['form-create-email'] ?? '';
+    $password = $_POST['form-create-password'] ?? '';
+
+    if (!isValidString($name)) {
+        $userExists = "Nombre inválido.";
+    } elseif (!isValidEmail($email)) {
+        $userExists = "Email inválido.";
+    } elseif (!isValidPassword($password)) {
+        $userExists = "Contraseña inválida.";
+    } else {
+        // Crear usuario normalmente
+    }
+}

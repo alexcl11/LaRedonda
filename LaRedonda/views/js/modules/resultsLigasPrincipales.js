@@ -6,8 +6,8 @@ export async function getCLResults(jornadaCL) {
     contenedorResultadosCL.innerHTML = "";
     const response = await fetch(
       "https://www.thesportsdb.com/api/v1/json/3/eventsround.php?id=4480&r=" +
-        jornadaCL +
-        "&s=2024-2025"
+      jornadaCL +
+      "&s=2024-2025"
     );
     const data = await response.json();
     console.log(data);
@@ -40,16 +40,19 @@ export async function getCLResults(jornadaCL) {
       homeContainer.style.flexDirection = "column";
       homeContainer.style.alignItems = "center";
 
+      const aHomeLogo = document.createElement("a");
+      aHomeLogo.href = `http://localhost:8080/equipo?t=${event.strHomeTeam}`;
       const homeLogo = document.createElement("img");
-      homeLogo.classList.add("team-logo"); // Aplicando la clase de estilo
+      homeLogo.classList.add("team-logo");
       homeLogo.src = event.strHomeTeamBadge;
       homeLogo.alt = event.strHomeTeam + " Logo";
+      aHomeLogo.appendChild(homeLogo);
 
       const homeName = document.createElement("p");
-      homeName.classList.add("team-name"); // Aplicando la clase de estilo
+      homeName.classList.add("team-name");
       homeName.innerText = event.strHomeTeam;
 
-      homeContainer.appendChild(homeLogo);
+      homeContainer.appendChild(aHomeLogo);
       homeContainer.appendChild(homeName);
 
       // Lo mismo para el equipo visitante
@@ -59,16 +62,19 @@ export async function getCLResults(jornadaCL) {
       awayContainer.style.flexDirection = "column";
       awayContainer.style.alignItems = "center";
 
+      const aAwayLogo = document.createElement("a");
+      aAwayLogo.href = `http://localhost:8080/equipo?t=${event.strAwayTeam}`;
       const awayLogo = document.createElement("img");
-      awayLogo.classList.add("team-logo"); // Aplicando la clase de estilo
+      awayLogo.classList.add("team-logo");
       awayLogo.src = event.strAwayTeamBadge;
       awayLogo.alt = event.strAwayTeam + " Logo";
+      aAwayLogo.appendChild(awayLogo);
 
       const awayName = document.createElement("p");
-      awayName.classList.add("team-name"); // Aplicando la clase de estilo
+      awayName.classList.add("team-name");
       awayName.innerText = event.strAwayTeam;
 
-      awayContainer.appendChild(awayLogo);
+      awayContainer.appendChild(aAwayLogo);
       awayContainer.appendChild(awayName);
 
       // El marcador
@@ -111,8 +117,8 @@ export async function getPLResults(jornadaPL) {
     contenedorResultadosPL.innerHTML = "";
     const response = await fetch(
       "https://www.thesportsdb.com/api/v1/json/3/eventsround.php?id=4328&r=" +
-        jornadaPL +
-        "&s=2024-2025"
+      jornadaPL +
+      "&s=2024-2025"
     );
     const data = await response.json();
     console.log(data);
@@ -145,16 +151,19 @@ export async function getPLResults(jornadaPL) {
       homeContainer.style.flexDirection = "column";
       homeContainer.style.alignItems = "center";
 
+      const aHomeLogo = document.createElement("a");
+      aHomeLogo.href = `http://localhost:8080/equipo?t=${event.strHomeTeam}`;
       const homeLogo = document.createElement("img");
       homeLogo.classList.add("team-logo");
       homeLogo.src = event.strHomeTeamBadge;
       homeLogo.alt = event.strHomeTeam + " Logo";
+      aHomeLogo.appendChild(homeLogo);
 
       const homeName = document.createElement("p");
       homeName.classList.add("team-name");
       homeName.innerText = event.strHomeTeam;
 
-      homeContainer.appendChild(homeLogo);
+      homeContainer.appendChild(aHomeLogo);
       homeContainer.appendChild(homeName);
 
       const awayContainer = document.createElement("div");
@@ -163,16 +172,19 @@ export async function getPLResults(jornadaPL) {
       awayContainer.style.flexDirection = "column";
       awayContainer.style.alignItems = "center";
 
+      const aAwayLogo = document.createElement("a");
+      aAwayLogo.href = `http://localhost:8080/equipo?t=${event.strAwayTeam}`;
       const awayLogo = document.createElement("img");
       awayLogo.classList.add("team-logo");
       awayLogo.src = event.strAwayTeamBadge;
       awayLogo.alt = event.strAwayTeam + " Logo";
+      aAwayLogo.appendChild(awayLogo);
 
       const awayName = document.createElement("p");
       awayName.classList.add("team-name");
       awayName.innerText = event.strAwayTeam;
 
-      awayContainer.appendChild(awayLogo);
+      awayContainer.appendChild(aAwayLogo);
       awayContainer.appendChild(awayName);
 
       const marcador = document.createElement("span");
@@ -212,8 +224,8 @@ export async function getLLResults(jornadaLL) {
     contenedorResultadosLL.innerHTML = "";
     const response = await fetch(
       "https://www.thesportsdb.com/api/v1/json/3/eventsround.php?id=4335&r=" +
-        jornadaLL +
-        "&s=2024-2025"
+      jornadaLL +
+      "&s=2024-2025"
     );
     const data = await response.json();
     console.log(data);
@@ -245,16 +257,19 @@ export async function getLLResults(jornadaLL) {
       homeContainer.style.flexDirection = "column";
       homeContainer.style.alignItems = "center";
 
+      const aHomeLogo = document.createElement("a");
+      aHomeLogo.href = `http://localhost:8080/equipo?t=${event.strHomeTeam}`;
       const homeLogo = document.createElement("img");
       homeLogo.classList.add("team-logo");
       homeLogo.src = event.strHomeTeamBadge;
       homeLogo.alt = event.strHomeTeam + " Logo";
+      aHomeLogo.appendChild(homeLogo);
 
       const homeName = document.createElement("p");
       homeName.classList.add("team-name");
       homeName.innerText = event.strHomeTeam;
 
-      homeContainer.appendChild(homeLogo);
+      homeContainer.appendChild(aHomeLogo);
       homeContainer.appendChild(homeName);
 
       const awayContainer = document.createElement("div");
@@ -263,16 +278,19 @@ export async function getLLResults(jornadaLL) {
       awayContainer.style.flexDirection = "column";
       awayContainer.style.alignItems = "center";
 
+      const aAwayLogo = document.createElement("a");
+      aAwayLogo.href = `http://localhost:8080/equipo?t=${event.strAwayTeam}`;
       const awayLogo = document.createElement("img");
       awayLogo.classList.add("team-logo");
       awayLogo.src = event.strAwayTeamBadge;
       awayLogo.alt = event.strAwayTeam + " Logo";
+      aAwayLogo.appendChild(awayLogo);
 
       const awayName = document.createElement("p");
       awayName.classList.add("team-name");
       awayName.innerText = event.strAwayTeam;
 
-      awayContainer.appendChild(awayLogo);
+      awayContainer.appendChild(aAwayLogo);
       awayContainer.appendChild(awayName);
 
       const marcador = document.createElement("span");
@@ -312,8 +330,8 @@ export async function getSAResults(jornadaSA) {
     contenedorResultadosSA.innerHTML = "";
     const response = await fetch(
       "https://www.thesportsdb.com/api/v1/json/3/eventsround.php?id=4332&r=" +
-        jornadaSA +
-        "&s=2024-2025"
+      jornadaSA +
+      "&s=2024-2025"
     );
     const data = await response.json();
     console.log(data);
@@ -345,16 +363,19 @@ export async function getSAResults(jornadaSA) {
       homeContainer.style.flexDirection = "column";
       homeContainer.style.alignItems = "center";
 
+      const aHomeLogo = document.createElement("a");
+      aHomeLogo.href = `http://localhost:8080/equipo?t=${event.strHomeTeam}`;
       const homeLogo = document.createElement("img");
       homeLogo.classList.add("team-logo");
       homeLogo.src = event.strHomeTeamBadge;
       homeLogo.alt = event.strHomeTeam + " Logo";
+      aHomeLogo.appendChild(homeLogo);
 
       const homeName = document.createElement("p");
       homeName.classList.add("team-name");
       homeName.innerText = event.strHomeTeam;
 
-      homeContainer.appendChild(homeLogo);
+      homeContainer.appendChild(aHomeLogo);
       homeContainer.appendChild(homeName);
 
       const awayContainer = document.createElement("div");
@@ -363,16 +384,19 @@ export async function getSAResults(jornadaSA) {
       awayContainer.style.flexDirection = "column";
       awayContainer.style.alignItems = "center";
 
+      const aAwayLogo = document.createElement("a");
+      aAwayLogo.href = `http://localhost:8080/equipo?t=${event.strAwayTeam}`;
       const awayLogo = document.createElement("img");
       awayLogo.classList.add("team-logo");
       awayLogo.src = event.strAwayTeamBadge;
       awayLogo.alt = event.strAwayTeam + " Logo";
+      aAwayLogo.appendChild(awayLogo);
 
       const awayName = document.createElement("p");
       awayName.classList.add("team-name");
       awayName.innerText = event.strAwayTeam;
 
-      awayContainer.appendChild(awayLogo);
+      awayContainer.appendChild(aAwayLogo);
       awayContainer.appendChild(awayName);
 
       const marcador = document.createElement("span");
@@ -412,8 +436,8 @@ export async function getBLResults(jornadaBL) {
     contenedorResultadosBL.innerHTML = "";
     const response = await fetch(
       "https://www.thesportsdb.com/api/v1/json/3/eventsround.php?id=4331&r=" +
-        jornadaBL +
-        "&s=2024-2025"
+      jornadaBL +
+      "&s=2024-2025"
     );
     const data = await response.json();
     console.log(data);
@@ -445,16 +469,19 @@ export async function getBLResults(jornadaBL) {
       homeContainer.style.flexDirection = "column";
       homeContainer.style.alignItems = "center";
 
+      const aHomeLogo = document.createElement("a");
+      aHomeLogo.href = `http://localhost:8080/equipo?t=${event.strHomeTeam}`;
       const homeLogo = document.createElement("img");
       homeLogo.classList.add("team-logo");
       homeLogo.src = event.strHomeTeamBadge;
       homeLogo.alt = event.strHomeTeam + " Logo";
+      aHomeLogo.appendChild(homeLogo);
 
       const homeName = document.createElement("p");
       homeName.classList.add("team-name");
       homeName.innerText = event.strHomeTeam;
 
-      homeContainer.appendChild(homeLogo);
+      homeContainer.appendChild(aHomeLogo);
       homeContainer.appendChild(homeName);
 
       const awayContainer = document.createElement("div");
@@ -463,16 +490,19 @@ export async function getBLResults(jornadaBL) {
       awayContainer.style.flexDirection = "column";
       awayContainer.style.alignItems = "center";
 
+      const aAwayLogo = document.createElement("a");
+      aAwayLogo.href = `http://localhost:8080/equipo?t=${event.strAwayTeam}`;
       const awayLogo = document.createElement("img");
       awayLogo.classList.add("team-logo");
       awayLogo.src = event.strAwayTeamBadge;
       awayLogo.alt = event.strAwayTeam + " Logo";
+      aAwayLogo.appendChild(awayLogo);
 
       const awayName = document.createElement("p");
       awayName.classList.add("team-name");
       awayName.innerText = event.strAwayTeam;
 
-      awayContainer.appendChild(awayLogo);
+      awayContainer.appendChild(aAwayLogo);
       awayContainer.appendChild(awayName);
 
       const marcador = document.createElement("span");

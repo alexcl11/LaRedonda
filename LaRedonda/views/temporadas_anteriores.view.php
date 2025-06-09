@@ -8,8 +8,9 @@ require_once "views/partials/nav.php";
         <h2 class="text-center mx-1">Seleccione la temporada</h2>
         <form action="/temporada" method="GET" class="w-100  d-flex flex-column align-items-center">
             <select class="form-select w-50 selectpicker" data-live-search="true" size="3" name="s" id="temporada">
+                <option value="2024-2025" selected>Temporada 24/25</option>
                 <script>
-                for (var i = 25; i > 10; i--) {
+                for (var i = 24; i > 10; i--) {
                     if(i>10)
                     document.write(`<option value="20${i-1}-20${i}">Temporada ${i-1}/${i}</option>`);
                     

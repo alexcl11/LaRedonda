@@ -30,7 +30,7 @@ export async function newsApi() {
       const title = document.createElement("h4");
       title.innerText = article.title;
 
-      const date = new Date(article.publishedAt);
+      const date = new Date(article.publish_date);
       const fechaPublicacion = document.createElement("p");
       fechaPublicacion.innerText = 'Publicado: '+date.toLocaleDateString();
 
