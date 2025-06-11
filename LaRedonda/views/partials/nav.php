@@ -39,7 +39,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     <a class="nav-link text-light" <?= (isset($_SESSION['currentUser'])) ? 'href="'.BASE_PATH .'/jugadores"' : 'href="#" data-bs-toggle="modal" data-bs-target="#modalInicioSesion"'; ?> >Jugadores</a>
                 </li>
                 <li class="nav-item favoritos">
-                    <a class="nav-link text-light " <?= (isset($_SESSION['currentUser'])) ? 'href="'. BASE_PATH . '/favoritos"' : 'href="#" data-bs-toggle="modal" data-bs-target="#modalInicioSesion"'; ?> >Favoritos 🤍</a>
+                    <a class="nav-link text-light " <?= (isset($_SESSION['currentUser'])) ? 'href="'. BASE_PATH . '/favoritos"' : 'href="#" data-bs-toggle="modal" data-bs-target="#modalInicioSesion"'; ?> >Favoritos <i class="bi bi-heart-fill"></i></a>
                 </li>
 
             </ul>
