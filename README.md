@@ -1,9 +1,8 @@
 # ⚽ La Redonda: Plataforma Full Stack de Datos de Fútbol y Noticias (TFG)
 
 [![Tecnologías](https://img.shields.io/badge/PHP-7.4+-blue.svg)](https://www.php.net/)
-[![Tecnologías](https://img.shields.io/badge/logo-javascript-blue?logo=javascript)]()
+[![Tecnologías](https://img.shields.io/badge/-javascript-blue?logo=javascript)]()
 [![Base de Datos](https://img.shields.io/badge/Database-MySQL-orange.svg)]()
-[![Arquitectura](https.shields.io/badge/Architecture-MVC-lightgrey)]()
 
 Este proyecto fue desarrollado como mi Trabajo de Fin de Grado (TFG) y es una aplicación web Full Stack enfocada en la visualización de datos de fútbol (clasificaciones y resultados) y noticias deportivas. El proyecto demuestra el desarrollo end-to-end con una arquitectura **Modelo-Vista-Controlador (MVC)**.
 
