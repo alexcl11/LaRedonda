@@ -12,21 +12,21 @@ Este proyecto fue desarrollado como mi Trabajo de Fin de Grado (TFG) y es una ap
 
 La aplicación está actualmente operativa en el siguiente enlace. Puedes interactuar con ella directamente:
 
-➡️ **Aplicación en Vivo:** [AQUÍ VA TU ENLACE EN INFINITYFREE, ej: `http://laredonda.gt.tc`]
+➡️ **Aplicación en Vivo:** [La Redonda](http://laredonda.gt.tc)
 
 ---
 
 ## 🛠 Tecnologías Utilizadas
 
-* **Backend:** PHP Nativo (v7.4+)
+* **Backend:** PHP Nativo
 * **Frontend:** JavaScript Nativo, HTML5, CSS3, Bootstrap
 * **Base de Datos:** MySQL
 * **Arquitectura:** Patrón Modelo-Vista-Controlador (MVC)
 
 ### **Integración de APIs Externas**
 
-* **Datos de Fútbol:** Integración de la API de **TheSportsDB** para clasificaciones y resultados en tiempo real.
-* **Noticias Deportivas:** Integración de la API de **WorldNewsAPI** para el contenido noticioso.
+* **Datos de Fútbol:** Integración de la API de [**TheSportsDB**](https://www.thesportsdb.com/) para clasificaciones y resultados en tiempo real.
+* **Noticias Deportivas:** Integración de la API de [**WorldNewsAPI**](https://worldnewsapi.com/) para el contenido de noticias.
 
 ---
 
