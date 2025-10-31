@@ -31,18 +31,13 @@ CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  'role' int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
-
-INSERT INTO `usuarios` (`id`, `email`, `name`, `password`) VALUES
-(1, 'aleecanovaslopez@gmail.com', 'Alejandro', '$2y$10$WEFEHsMdl6deZx0Y3WDifuAj4dyWV4.xHQkwZKSyZNtQ.gFrMrEdu'),
-(2, 'alex@gmail.com', 'Alex', '$2y$10$xElanN0qikm9Yv5A3kaf0urKOoNJu6z6L/SUsaqHaWOKj2rsOnGsi'),
-(3, 'val@gmail.com', 'Val', '$2y$10$suNNZWDFuKuHmdxrDo/EV.Aa1HiuOz/b6KLC0o.z9/XNm09vsDNiO'),
-(10, 'jorge.canovas@gmail.com', 'Jorge', '$2y$10$UHMRHTRzMNBA1FQ/LzoSLO3sK2bMyXfzSSTkNxk.E0illaaZUO4zG');
 
 -- --------------------------------------------------------
 
@@ -61,15 +56,6 @@ CREATE TABLE `usuario_favoritos` (
 --
 -- Volcado de datos para la tabla `usuario_favoritos`
 --
-
-INSERT INTO `usuario_favoritos` (`id_usuario`, `id_favorito`, `nombre_favorito`, `tipo_favorito`, `img_favorito`) VALUES
-(3, 133739, 'Barcelona', 'equipo', ''),
-(3, 133729, 'Atletico Madrid', 'equipo', ''),
-(1, 133729, 'Atletico Madrid', 'equipo', ''),
-(2, 133729, 'Atletico Madrid', 'equipo', 'https://r2.thesportsdb.com/images/media/team/badge/0ulh3q1719984315.png'),
-(2, 4328, 'English Premier League', 'competicion', '\"/views/img/logos_ligas/4328.png\"'),
-(2, 4332, 'Italian Serie A', 'competicion', '\"/views/img/logos_ligas/4332.png\"'),
-(2, 133739, 'Barcelona', 'equipo', 'https://r2.thesportsdb.com/images/media/team/badge/wq9sir1639406443.png');
 
 --
 -- Índices para tablas volcadas
