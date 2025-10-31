@@ -1,7 +1,7 @@
 # ⚽ La Redonda: Plataforma Full Stack de Datos de Fútbol y Noticias (TFG)
 
 [![Tecnologías](https://img.shields.io/badge/PHP-7.4+-blue.svg)](https://www.php.net/)
-[![Tecnologías](https.img.shields.io/badge/JavaScript-Native-yellow.svg)]()
+[![Tecnologías](https://img.shields.io/badge/logo-javascript-blue?logo=javascript)]()
 [![Base de Datos](https://img.shields.io/badge/Database-MySQL-orange.svg)]()
 [![Arquitectura](https.shields.io/badge/Architecture-MVC-lightgrey)]()
 
